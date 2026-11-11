@@ -3,7 +3,7 @@ import { createViewport } from './viewport.js';
 import { instantiate, stepExplode, setHighlight, disposeInstance, PART_COLOR } from './instance.js';
 import { catalog } from './products/index.js';
 import { icon } from './icons.js';
-import { cachedThumb, requestThumb } from './thumbs.js';
+import { cachedThumb, requestThumb, cachedObjectThumb, requestObjectThumb } from './thumbs.js';
 import { portrait } from './people.js';
 import { registerPWA } from './pwa.js';
 
@@ -19,7 +19,7 @@ const detailEl = document.getElementById('detail');
 const libToggle = document.getElementById('lib-toggle');
 const vp = createViewport(canvas);
 
-const state = { instances: [], active: null, selected: null, invention: 0, hover: null, exploded: false };
+const state = { instances: [], active: null, selected: null, invention: 0, hover: null, exploded: false, expanded: false };
 let pickables = [];
 
 const pad = (n) => String(n).padStart(2, '0');
@@ -172,6 +172,7 @@ function renderLibrary() {
               .map(
                 (i) => `<li class="row-wrap">
                   <button class="row ${i === state.active ? 'is-active' : ''}" data-focus="${i.product.id}">
+                    ${objectThumbHtml(i.product)}
                     <span class="grow">${i.product.name}<span class="sub">${countInventions(i.product)} inventions</span></span>
                   </button>
                   <button class="icon-btn" data-remove="${i.product.id}" aria-label="Remove ${i.product.name}" title="Remove from scene">${icon('x', 14)}</button>
@@ -187,15 +188,27 @@ function renderLibrary() {
         available.length
           ? `<ul class="rows">${available
               .map(
-                (p) => `<li><button class="row" data-add="${p.id}">
-                  <span class="add">${icon('plus', 14)}</span>
+                (p) => `<li><button class="row" data-add="${p.id}" aria-label="Add ${p.name}">
+                  ${objectThumbHtml(p)}
                   <span class="grow">${p.name}<span class="sub">${countInventions(p)} inventions</span></span>
+                  <span class="add">${icon('plus', 14)}</span>
                 </button></li>`
               )
               .join('')}</ul>`
           : `<p class="empty">Every object in the library is on the grid.</p>`
       }
     </section>`;
+  libraryEl.querySelectorAll('img[data-object]:not([src])').forEach((img) => {
+    const product = catalog.find((p) => p.id === img.dataset.object);
+    requestObjectThumb(product).then((url) => {
+      if (img.isConnected) img.src = url;
+    });
+  });
+}
+
+function objectThumbHtml(product) {
+  const url = cachedObjectThumb(product);
+  return `<img class="thumb sm" alt="" data-object="${product.id}" ${url ? `src="${url}"` : ''} />`;
 }
 
 const timelineHtml = (items) =>
@@ -251,7 +264,25 @@ function hydratePortraits() {
   });
 }
 
+// Drawer handle (touch layouts): tap or drag to expand / collapse the drawer
 function renderDetail() {
+  renderDetailContent();
+  detailEl.insertAdjacentHTML(
+    'afterbegin',
+    `<button class="drawer-handle" data-drawer aria-expanded="${state.expanded}" aria-label="${state.expanded ? 'Collapse' : 'Expand'} panel"><span></span></button>`
+  );
+}
+
+function setExpanded(on) {
+  if (state.expanded === on) return;
+  state.expanded = on;
+  detailEl.classList.toggle('is-expanded', on);
+  const h = detailEl.querySelector('[data-drawer]');
+  h?.setAttribute('aria-expanded', String(on));
+  h?.setAttribute('aria-label', `${on ? 'Collapse' : 'Expand'} panel`);
+}
+
+function renderDetailContent() {
   const inst = state.active;
   if (!inst) {
     detailEl.style.removeProperty('--c');
@@ -376,6 +407,10 @@ libraryEl.addEventListener('click', (e) => {
 detailEl.addEventListener('click', (e) => {
   const b = e.target.closest('button');
   if (!b) return;
+  if ('drawer' in b.dataset) {
+    if (!dragMoved) setExpanded(!state.expanded);
+    return;
+  }
   if (b.dataset.part) select(state.active.parts[+b.dataset.part]);
   else if ('back' in b.dataset) select(null);
   else if (b.dataset.step) step(+b.dataset.step);
@@ -506,10 +541,41 @@ function measureInsets() {
   const lib = libraryEl.getBoundingClientRect();
   const det = detailEl.getBoundingClientRect();
   const compact = w <= 1100; // touch layouts: library is a dropdown, panel is a drawer
-  if (det.width > w * 0.7) vp.setInsets({ l: 0, r: 0, t: 56, b: h - det.top }); // bottom sheet
-  else vp.setInsets({ l: compact ? 0 : lib.right, r: w - det.left, t: compact ? 56 : 0, b: 0 }); // side panel
+  if (!compact) vp.setInsets({ l: lib.right, r: w - det.left }); // desktop: between the two panels
+  else if (det.width > w * 0.7) vp.setInsets({ t: 56, b: h - det.top }); // phone bottom sheet: above it
+  else if (state.expanded) vp.setInsets({ t: 56, r: w - det.left + 8 }); // unfolded, drawer full height: left centre
+  else vp.setInsets({ t: 56, b: 56, fit: 1.3 }); // unfolded, drawer in the corner: centre of the screen
   vp.setGizmoCorner(compact);
 }
+
+// Re-frame once the drawer has finished growing or shrinking
+detailEl.addEventListener('transitionend', (e) => {
+  if (e.target !== detailEl || !['height', 'width'].includes(e.propertyName)) return;
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(() => {
+    measureInsets();
+    frameActive(null);
+  }, 30);
+});
+
+// Drag the handle up to expand, down to collapse
+let dragStart = null, dragMoved = false;
+detailEl.addEventListener('pointerdown', (e) => {
+  if (!e.target.closest('[data-drawer]')) return;
+  dragStart = e.clientY;
+  dragMoved = false;
+});
+window.addEventListener('pointermove', (e) => {
+  if (dragStart === null) return;
+  const dy = e.clientY - dragStart;
+  if (Math.abs(dy) < 24) return;
+  dragMoved = true;
+  setExpanded(dy < 0);
+});
+window.addEventListener('pointerup', () => {
+  dragStart = null;
+  setTimeout(() => (dragMoved = false), 0);
+});
 let resizeTimer;
 window.addEventListener('resize', () => {
   clearTimeout(resizeTimer);

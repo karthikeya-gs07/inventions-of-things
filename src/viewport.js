@@ -107,7 +107,8 @@ export function createViewport(canvas) {
   gizmo.location.right = 12;
   gizmo.location.bottom = 12;
 
-  const insets = { l: 0, r: 0, t: 0, b: 0 };
+  // Screen space the UI covers. The model is centred in what is left; fit > 1 frames it smaller.
+  const insets = { l: 0, r: 0, t: 0, b: 0, fit: 1 };
   let dirty = true, shadowDirty = true, lowRes = false, lastMotion = 0;
   const invalidate = (shadows = false) => {
     dirty = true;
@@ -147,7 +148,7 @@ export function createViewport(canvas) {
     const w = canvas.clientWidth, h = canvas.clientHeight;
     const freeW = Math.max(120, w - insets.l - insets.r);
     const freeH = Math.max(120, h - insets.t - insets.b);
-    const dist = (radius / Math.sin(fov / 2)) * Math.max(h / freeH, h / freeW) * 0.94;
+    const dist = (radius / Math.sin(fov / 2)) * Math.max(h / freeH, h / freeW) * 0.94 * insets.fit;
     flyTo(center.clone().addScaledVector(d, dist), center);
   }
 
@@ -194,7 +195,7 @@ export function createViewport(canvas) {
   }
 
   function setInsets(next) {
-    Object.assign(insets, next);
+    Object.assign(insets, { fit: 1 }, next);
     resize();
   }
 

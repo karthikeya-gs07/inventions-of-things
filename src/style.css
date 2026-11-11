@@ -71,7 +71,18 @@ h2, h3, h4, h5, p { margin: 0; }
 .library { top: 72px; left: var(--gap); width: 240px; max-height: calc(100% - 72px - 150px); }
 .detail {
   top: var(--gap); right: var(--gap); width: 388px; max-height: calc(100% - var(--gap) - 164px);
+  /* Frosted glass: the scene stays visible, blurred, behind the panel */
+  background: color-mix(in srgb, var(--surface) 58%, transparent);
+  -webkit-backdrop-filter: blur(22px) saturate(1.4);
+  backdrop-filter: blur(22px) saturate(1.4);
+  border-color: color-mix(in srgb, var(--line-strong) 70%, transparent);
 }
+.detail .stats div, .detail .person, .detail .chips li, .detail .tabs button {
+  background: color-mix(in srgb, var(--surface-2) 70%, transparent);
+}
+.thumb.sm { width: 40px; height: 40px; border-radius: 10px; }
+
+.drawer-handle { display: none; }
 
 .rows { list-style: none; margin: 10px 0 0; padding: 0; display: grid; gap: 4px; }
 .row {
@@ -80,7 +91,7 @@ h2, h3, h4, h5, p { margin: 0; }
   border: 1px solid transparent; border-radius: 12px;
 }
 .row:hover, .row.is-hover { background: var(--surface-2); }
-.row.is-active { border-color: var(--line-strong); background: var(--surface-2); box-shadow: inset 2px 0 0 var(--accent-hi); }
+.row.is-active { border-color: var(--line-strong); background: var(--surface-2); }
 .row .grow { flex: 1; min-width: 0; }
 .row .sub { display: block; color: var(--muted); font-size: 12px; line-height: 1.4; }
 .row-wrap { display: flex; align-items: center; gap: 2px; }
@@ -327,16 +338,29 @@ h2, h3, h4, h5, p { margin: 0; }
   .icon-btn { width: 44px; height: 44px; }
   .pager button { height: 44px; }
 
-  /* Unfolded foldable / tablet: drawer fills the bottom-right half */
+  /* Unfolded foldable / tablet: drawer fills the bottom-right half; expanded, the full right side */
   .detail {
     top: auto; left: auto; right: var(--gap); bottom: var(--gap);
     width: min(440px, 48%); height: calc(50% - var(--gap)); max-height: none;
+    transition: height 0.32s cubic-bezier(0.2, 0.8, 0.2, 1), width 0.32s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
+  .detail.is-expanded { width: min(520px, 52%); height: calc(100% - 60px - var(--gap)); }
+
+  .drawer-handle {
+    display: grid; place-items: center; position: sticky; top: 0; z-index: 2;
+    width: 100%; height: 30px; touch-action: none; cursor: grab;
+    background: color-mix(in srgb, var(--surface) 70%, transparent);
+    -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px);
+  }
+  .drawer-handle span { width: 40px; height: 5px; border-radius: 999px; background: var(--line-strong); transition: background 0.15s; }
+  .drawer-handle:hover span, .drawer-handle[aria-expanded='true'] span { background: var(--muted); }
+  .detail > .drawer-handle + section { padding-top: 6px; }
 }
 
 /* Phone and folded cover screen: drawer becomes a full-width bottom sheet */
 @media (max-width: 640px) {
   .detail { left: var(--gap); width: auto; height: 42%; }
+  .detail.is-expanded { width: auto; height: calc(100% - 176px - var(--gap)); }
   .detail h2 { font-size: 18px; }
   .thumb.lg { width: 56px; height: 56px; }
 }
