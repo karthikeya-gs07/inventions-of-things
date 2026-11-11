@@ -18,7 +18,7 @@ export function createViewport(canvas) {
   renderer.setPixelRatio(pixelRatio);
   renderer.transmissionResolutionScale = 0.5;
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 1.0;
+  renderer.toneMappingExposure = 0.85;
   renderer.shadowMap.enabled = true;
   renderer.shadowMap.type = THREE.PCFShadowMap;
   renderer.autoClear = false;
@@ -29,13 +29,13 @@ export function createViewport(canvas) {
 
   const pmrem = new THREE.PMREMGenerator(renderer);
   scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.03).texture;
-  scene.environmentIntensity = 0.6;
+  scene.environmentIntensity = 0.42;
 
   const camera = new THREE.PerspectiveCamera(36, 1, 0.1, 400);
   camera.position.copy(HOME_DIR).multiplyScalar(12);
 
   /* ---------- Studio lighting: warm key with soft shadows, cool rim, low fill ---------- */
-  const key = new THREE.DirectionalLight(0xfff2e0, 2.7);
+  const key = new THREE.DirectionalLight(0xfff2e0, 1.9);
   key.position.set(7, 13, 9);
   key.castShadow = true;
   key.shadow.mapSize.set(2048, 2048);
@@ -47,11 +47,11 @@ export function createViewport(canvas) {
   key.shadow.radius = 5;
   key.shadow.blurSamples = 16;
 
-  const rim = new THREE.DirectionalLight(0x7fb0ff, 1.6);
+  const rim = new THREE.DirectionalLight(0x7fb0ff, 0.9);
   rim.position.set(-9, 6, -10);
-  const fill = new THREE.DirectionalLight(0xffd9b0, 0.5);
+  const fill = new THREE.DirectionalLight(0xffd9b0, 0.35);
   fill.position.set(-6, 3, 9);
-  scene.add(key, key.target, rim, fill, new THREE.HemisphereLight(0xcfe0ff, 0x0a0b0d, 0.35));
+  scene.add(key, key.target, rim, fill, new THREE.HemisphereLight(0xcfe0ff, 0x0a0b0d, 0.3));
 
   /* ---------- Floor: lit surface so shadows and light pools read, plus the grid ---------- */
   const ground = new THREE.Mesh(
@@ -88,7 +88,7 @@ export function createViewport(canvas) {
   const composer = new EffectComposer(renderer, target);
   composer.setPixelRatio(pixelRatio);
   composer.addPass(new RenderPass(scene, camera));
-  const bloom = new UnrealBloomPass(new THREE.Vector2(1, 1), 0.22, 0.6, 1.4);
+  const bloom = new UnrealBloomPass(new THREE.Vector2(1, 1), 0.12, 0.5, 1.6);
   composer.addPass(bloom);
   composer.addPass(new OutputPass());
 

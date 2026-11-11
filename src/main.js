@@ -569,7 +569,9 @@ function measureInsets(det = detailEl.getBoundingClientRect(), ms = 0) {
     // Phone: frame above the sheet. Fully expanded, the sheet covers everything, so leave the framing alone.
     if (state.drawer !== 'max') vp.setInsets({ t: 56, b: h - det.top }, ms);
   } else if (state.drawer === 'max') vp.setInsets({ t: 56, r: w - det.left + 8 }, ms); // unfolded, full height: left centre
-  else vp.setInsets({ t: 56, b: 56, fit: state.drawer === 'min' ? 1.1 : 1.3 }, ms); // unfolded: centre of the screen
+  else if (state.drawer === 'min') vp.setInsets({ t: 56, b: 56, fit: 1.1 }, ms); // unfolded, minimised: centre of the screen
+  // unfolded, default: top-left, in the space above the drawer, so the drawer never covers it
+  else vp.setInsets({ t: 56, b: h - det.top + 16, r: w * 0.14 }, ms);
   vp.setGizmoCorner(compact);
 }
 

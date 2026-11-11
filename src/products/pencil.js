@@ -94,7 +94,7 @@ export default {
       anchor: [-0.19, -0.3, 0.11],
       explode: [0, 0, 0],
       make: () =>
-        cyl(0.22, 0.22, 3.5, -0.05, mat(0xffffff, { map: pencilPaint(), roughness: 0.3, clearcoat: 0.8, clearcoatRoughness: 0.2, flatShading: true }), 6),
+        cyl(0.22, 0.22, 3.5, -0.05, mat(0xffffff, { map: pencilPaint(), roughness: 0.45, clearcoat: 0.3, clearcoatRoughness: 0.45, flatShading: true }), 6),
       inventions: [
         {
           name: 'Wood-cased pencil',

@@ -37,7 +37,7 @@ export default {
           cyl(0.4, 0.4, 0.66, 0.47, nickel()),
           thread,
           ring(0.41, 0.03, 0.8, nickel()),
-          lathe([[0.4, 0.14], [0.36, 0.1], [0.18, 0.03], [0.16, 0.03]], mat(0x1a1b20, { roughness: 0.25, clearcoat: 1 }), 64),
+          lathe([[0.4, 0.14], [0.36, 0.1], [0.18, 0.03], [0.16, 0.03]], mat(0x1a1b20, { roughness: 0.4, clearcoat: 0.3 }), 64),
           lathe([[0, -0.01], [0.1, -0.01], [0.15, 0.03], [0, 0.03]], metal(0xd9c08a, { roughness: 0.35 }), 48)
         );
       },
@@ -98,11 +98,11 @@ export default {
       anchor: [0, 2.36, 0.05],
       explode: [0, 1.5, 0],
       make: () => {
-        const coil = helix(0.045, 0.72, 22, 0.011, mat(0xffb060, { emissive: 0xff9838, emissiveIntensity: 2.6 }));
+        const coil = helix(0.045, 0.72, 22, 0.011, mat(0xffb060, { emissive: 0xff9838, emissiveIntensity: 2 }));
         coil.rotation.z = -Math.PI / 2;
         coil.position.set(-0.36, 2.3, 0);
         coil.userData.noTint = true;
-        const glow = new THREE.PointLight(0xffb066, 7, 14, 1.8);
+        const glow = new THREE.PointLight(0xffb066, 4, 14, 1.8);
         glow.position.set(0, 2.3, 0);
         return group(coil, glow);
       },

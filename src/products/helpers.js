@@ -6,13 +6,13 @@ export const mat = (color, opts = {}) =>
   new THREE.MeshPhysicalMaterial({ color, roughness: 0.5, metalness: 0, ...opts });
 
 export const metal = (color, opts = {}) =>
-  new THREE.MeshPhysicalMaterial({ color, roughness: 0.3, metalness: 1, ...opts });
+  new THREE.MeshPhysicalMaterial({ color, roughness: 0.42, metalness: 1, ...opts });
 
 // Real refractive glass. depthWrite is off so things inside stay visible.
 export const glass = (opts = {}) =>
   new THREE.MeshPhysicalMaterial({
     color: 0xffffff, transmission: 1, thickness: 0.04, ior: 1.5, roughness: 0.03, metalness: 0,
-    side: THREE.DoubleSide, depthWrite: false, envMapIntensity: 1.4, ...opts,
+    side: THREE.DoubleSide, depthWrite: false, envMapIntensity: 1.0, ...opts,
   });
 
 // Cheap see-through material for glass that sits *inside* other glass.

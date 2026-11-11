@@ -3,13 +3,13 @@ import { mat, metal, glass, clear, knurl, batteryLabel, cyl, lathe, ring, annulu
 
 // Built along local +Y (tail -> head), then laid on its side along world +X.
 // With this rotation, local -X points up.
-const anodised = (o = {}) => metal(0x2e3238, { roughness: 0.48, metalness: 0.9, clearcoat: 0.25, clearcoatRoughness: 0.6, ...o });
+const anodised = (o = {}) => metal(0x2e3238, { roughness: 0.62, metalness: 0.85, ...o });
 const steel = () => metal(0xd4d8de, { roughness: 0.22 });
 const bare = () => metal(0xb9bdc4, { roughness: 0.35 });
 
 function battery(y) {
   // y = centre of the 1.0-long can
-  const label = mat(0xffffff, { map: batteryLabel(), roughness: 0.38, clearcoat: 0.6, clearcoatRoughness: 0.25 });
+  const label = mat(0xffffff, { map: batteryLabel(), roughness: 0.5, clearcoat: 0.2, clearcoatRoughness: 0.5 });
   return group(
     cyl(0.36, 0.36, 1.0, y, label, 64, true),
     cyl(0.355, 0.355, 0.02, y + 0.5, steel()),
@@ -54,7 +54,7 @@ export default {
       make: () =>
         group(
           lathe([[0, -2.2], [0.46, -2.2], [0.52, -2.14], [0.52, -1.84], [0.5, -1.8], [0, -1.8]], anodised({ side: THREE.DoubleSide })),
-          cyl(0.525, 0.525, 0.2, -2.0, anodised({ bumpMap: knurl(56, 4), bumpScale: 4 }), 64, true),
+          cyl(0.525, 0.525, 0.2, -2.0, anodised({ bumpMap: knurl(56, 4), bumpScale: 1.4 }), 64, true),
           cyl(0.2, 0.22, 0.05, -2.22, mat(0x16181b, { roughness: 0.9 }), 48)
         ),
       inventions: [
@@ -114,7 +114,7 @@ export default {
         const shell = () => anodised({ side: THREE.DoubleSide });
         return group(
           cyl(0.5, 0.5, 0.3, -1.65, shell(), 64, true),
-          cyl(0.508, 0.508, 1.2, -0.9, anodised({ side: THREE.DoubleSide, bumpMap: knurl(56, 22), bumpScale: 4 }), 64, true),
+          cyl(0.508, 0.508, 1.2, -0.9, anodised({ side: THREE.DoubleSide, bumpMap: knurl(56, 22), bumpScale: 1.4 }), 64, true),
           cyl(0.5, 0.5, 1.1, 0.25, shell(), 64, true),
           ring(0.5, 0.012, -1.5, anodised()),
           ring(0.5, 0.012, -0.3, anodised()),
@@ -228,12 +228,12 @@ export default {
       anchor: [0, 1.0, 0],
       explode: [0, 0.5, 0],
       make: () => {
-        const chip = new THREE.Mesh(new THREE.BoxGeometry(0.15, 0.03, 0.15), mat(0xffe27a, { emissive: 0xfff0c0, emissiveIntensity: 3 }));
+        const chip = new THREE.Mesh(new THREE.BoxGeometry(0.15, 0.03, 0.15), mat(0xffe27a, { emissive: 0xfff0c0, emissiveIntensity: 2 }));
         chip.position.y = 0.95;
         chip.userData.noTint = true;
         const dome = new THREE.Mesh(new THREE.SphereGeometry(0.11, 32, 16, 0, Math.PI * 2, 0, Math.PI / 2), clear(0.28, 0xffffff));
         dome.position.y = 0.945;
-        const beam = new THREE.SpotLight(0xfff0d8, 90, 40, 0.36, 0.7, 1.7);
+        const beam = new THREE.SpotLight(0xfff0d8, 40, 40, 0.36, 0.75, 1.7);
         beam.position.y = 1.0;
         beam.target.position.y = 8;
         return group(
@@ -324,7 +324,7 @@ export default {
       name: 'Parabolic reflector',
       anchor: [-0.43, 1.6, 0.43],
       explode: [0, 2.4, 0],
-      make: () => lathe(reflectorProfile(), metal(0xffffff, { roughness: 0.04, side: THREE.DoubleSide, envMapIntensity: 1.6 })),
+      make: () => lathe(reflectorProfile(), metal(0xe8eaee, { roughness: 0.16, side: THREE.DoubleSide, envMapIntensity: 1.0 })),
       inventions: [
         {
           name: 'Parabolic reflector',
