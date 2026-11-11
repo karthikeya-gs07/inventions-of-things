@@ -359,7 +359,7 @@ export default {
           what: 'Discovered independently within days of each other: a clear plastic far tougher under impact than glass.',
           here: 'The window keeps water and grit off the reflector and LED, and survives the drops that would shatter a glass lens.',
           people: [
-            { name: 'Hermann Schnell', life: 'Active 1953', role: 'German chemist at Bayer; his polycarbonate was sold as Makrolon.', wiki: null },
+            { name: 'Hermann Schnell', life: 'Active 1953', role: 'German chemist at Bayer; his polycarbonate was sold as Makrolon.', wiki: 'Hermann_Josef_Schnell' },
             { name: 'Daniel W. Fox', life: 'Died 1989', role: 'American chemist at General Electric; his version was sold as Lexan.', wiki: 'Daniel_Fox_(chemist)' },
           ],
           uses: ['Safety glasses', 'CDs and DVDs', 'Helmet visors', 'Riot shields', 'Spectacle lenses'],

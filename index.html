@@ -6,6 +6,9 @@
     <meta name="color-scheme" content="dark" />
     <meta name="theme-color" content="#14181c" />
     <meta name="description" content="Take everyday objects apart in 3D and see the inventions that made each part possible." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&display=swap" />
     <link rel="manifest" href="./manifest.webmanifest" />
     <link rel="icon" type="image/png" href="./favicon.png" />
     <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png" />
@@ -24,6 +27,12 @@
       <header class="brand">
         <h1>What <em>Inventions</em><br />Made Things Work</h1>
       </header>
+
+      <!-- Touch layouts (phones, unfolded foldables): gestures replace the toolbar -->
+      <nav class="quick" aria-label="View controls">
+        <button data-act="reset" data-icon="frame" aria-label="Reset view" title="Reset view"></button>
+        <button data-act="explode" data-icon="explode" aria-pressed="false" aria-label="Exploded view" title="Exploded view"></button>
+      </nav>
 
       <button class="lib-toggle" id="lib-toggle" aria-expanded="false" aria-controls="library">Objects</button>
       <aside class="panel library" id="library" aria-label="Objects"></aside>

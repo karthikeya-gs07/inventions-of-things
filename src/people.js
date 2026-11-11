@@ -1,5 +1,5 @@
 // Inventor portraits come from Wikipedia's public page-summary API at view time.
-// Only the article title is sent. People with no article or no photo fall back to initials.
+// Only the article title is sent. People with no article or no photo simply show no picture.
 const cache = new Map();
 
 export function portrait(wiki) {
@@ -15,6 +15,3 @@ export function portrait(wiki) {
   }
   return cache.get(wiki);
 }
-
-export const initials = (name) =>
-  name.replace(/\(.*?\)/g, '').split(/[\s&-]+/).filter((w) => /^[A-ZÀ-Ý]/.test(w)).map((w) => w[0]).slice(0, 2).join('');

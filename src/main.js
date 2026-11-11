@@ -4,7 +4,7 @@ import { instantiate, stepExplode, setHighlight, disposeInstance, PART_COLOR } f
 import { catalog } from './products/index.js';
 import { icon } from './icons.js';
 import { cachedThumb, requestThumb } from './thumbs.js';
-import { portrait, initials } from './people.js';
+import { portrait } from './people.js';
 import { registerPWA } from './pwa.js';
 
 registerPWA();
@@ -129,7 +129,7 @@ function setExploded(on) {
   state.exploded = on;
   vp.invalidate();
   for (const i of state.instances) i.explodeTarget = on ? 1 : 0;
-  document.querySelector('[data-act="explode"]').setAttribute('aria-pressed', String(on));
+  document.querySelectorAll('[data-act="explode"]').forEach((b) => b.setAttribute('aria-pressed', String(on)));
   frameActive(null);
 }
 
@@ -205,12 +205,15 @@ const heading = (name, text) => `<h4 class="section-title">${icon(name, 14)}<spa
 
 function personHtml(p) {
   return `<article class="person">
-    <div class="avatar" data-wiki="${p.wiki ?? ''}" data-name="${p.name}"><span>${initials(p.name)}</span></div>
+    ${p.wiki ? `<div class="avatar" data-wiki="${p.wiki}" data-name="${p.name}"></div>` : ''}
     <div class="who">
-      <h5>${p.name}</h5>
+      <h5>${
+        p.wiki
+          ? `<a href="https://en.wikipedia.org/wiki/${encodeURIComponent(p.wiki)}" target="_blank" rel="noopener" title="Open ${p.name} on Wikipedia in a new tab">${p.name}${icon('link', 13)}</a>`
+          : p.name
+      }</h5>
       <p class="life">${p.life}</p>
       <p class="role">${p.role}</p>
-      ${p.wiki ? `<a href="https://en.wikipedia.org/wiki/${encodeURIComponent(p.wiki)}" target="_blank" rel="noopener">Wikipedia ${icon('link', 12)}</a>` : ''}
     </div>
   </article>`;
 }
@@ -388,8 +391,9 @@ detailEl.addEventListener('pointerover', (e) => {
 });
 detailEl.addEventListener('pointerleave', () => setHover(null));
 
-document.querySelector('.toolbar').addEventListener('click', (e) => {
-  const b = e.target.closest('button');
+// Toolbar (desktop) and the round quick buttons (touch layouts) share these actions
+document.getElementById('app').addEventListener('click', (e) => {
+  const b = e.target.closest('button[data-mode], button[data-act]');
   if (!b) return;
   if (b.dataset.mode) {
     vp.setMode(b.dataset.mode);
@@ -501,9 +505,10 @@ function measureInsets() {
   const w = window.innerWidth, h = window.innerHeight;
   const lib = libraryEl.getBoundingClientRect();
   const det = detailEl.getBoundingClientRect();
-  if (w > 860) vp.setInsets({ l: lib.right, r: w - det.left, t: 0, b: 0 });
-  else vp.setInsets({ l: 0, r: 0, t: 56, b: h - det.top });
-  vp.setGizmoCorner(w <= 860);
+  const compact = w <= 1100; // touch layouts: library is a dropdown, panel is a drawer
+  if (det.width > w * 0.7) vp.setInsets({ l: 0, r: 0, t: 56, b: h - det.top }); // bottom sheet
+  else vp.setInsets({ l: compact ? 0 : lib.right, r: w - det.left, t: compact ? 56 : 0, b: 0 }); // side panel
+  vp.setGizmoCorner(compact);
 }
 let resizeTimer;
 window.addEventListener('resize', () => {

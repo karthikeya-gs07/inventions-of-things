@@ -25,6 +25,8 @@ self.addEventListener('message', (event) => {
   if (event.data === 'skip-waiting') self.skipWaiting();
 });
 
+const isFont = (url) => url.hostname === 'fonts.googleapis.com' || url.hostname === 'fonts.gstatic.com';
+
 const isPortrait = (url) =>
   (url.hostname === 'en.wikipedia.org' && url.pathname.startsWith('/api/rest_v1/page/summary/')) ||
   url.hostname === 'upload.wikimedia.org';
@@ -47,6 +49,10 @@ self.addEventListener('fetch', (event) => {
   if (request.method !== 'GET') return;
   const url = new URL(request.url);
 
+  if (isFont(url)) {
+    event.respondWith(staleWhileRevalidate(request, 'fonts-v1'));
+    return;
+  }
   if (isPortrait(url)) {
     event.respondWith(staleWhileRevalidate(request, PORTRAITS));
     return;
