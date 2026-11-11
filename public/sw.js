@@ -59,10 +59,14 @@ self.addEventListener('fetch', (event) => {
   }
   if (url.origin !== self.location.origin) return;
 
-  // Page loads: the cached app shell works offline and on any in-scope URL.
+  // Page loads: always try the network first so a new deploy is picked up at once
+  // (and an old page never asks for files the host has since deleted).
+  // Offline, fall back to the cached app shell.
   if (request.mode === 'navigate') {
     event.respondWith(
-      caches.match('index.html', { ignoreVary: true }).then((cached) => cached || fetch(request))
+      fetch(request).catch(() =>
+        caches.match('index.html', { ignoreVary: true }).then((cached) => cached || Response.error())
+      )
     );
     return;
   }
