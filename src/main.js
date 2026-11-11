@@ -571,7 +571,8 @@ function measureInsets(det = detailEl.getBoundingClientRect(), ms = 0) {
   } else if (state.drawer === 'max') vp.setInsets({ t: 56, r: w - det.left + 8 }, ms); // unfolded, full height: left centre
   else if (state.drawer === 'min') vp.setInsets({ t: 56, b: 56, fit: 1.1 }, ms); // unfolded, minimised: centre of the screen
   // unfolded, default: top-left, in the space above the drawer, so the drawer never covers it
-  else vp.setInsets({ t: 56, b: h - det.top + 16, r: w * 0.14 }, ms);
+  // (fit < 1: the bounding sphere is generous for long, flat objects, so frame a little tighter)
+  else vp.setInsets({ t: 56, b: h - det.top + 16, r: w * 0.3, fit: 0.78 }, ms);
   vp.setGizmoCorner(compact);
 }
 
