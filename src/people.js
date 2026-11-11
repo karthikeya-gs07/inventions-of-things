@@ -38,7 +38,13 @@ const NAMES = {
   'J. J. Thomson': 'J._J._Thomson', 'Conté': 'Nicolas-Jacques_Conté', 'Hymen Lipman': 'Hymen_Lipman',
   'Lipman': 'Hymen_Lipman', 'Joseph Hardtmuth': 'Joseph_Hardtmuth', 'Nairne': 'Edward_Nairne',
   'Joseph Priestley': 'Joseph_Priestley', 'Goodyear': 'Charles_Goodyear', 'Thomas Hancock': 'Thomas_Hancock_(inventor)',
-  'John Boyd Dunlop': 'John_Boyd_Dunlop', 'Fritz Hofmann': 'Fritz_Hofmann_(chemist)', 'Tokuji Hayakawa': 'Tokuji_Hayakawa',
+  'John Boyd Dunlop': 'John_Boyd_Dunlop',
+  // People with no article of their own link to the page that covers their work
+  'David Misell': 'Eveready_Battery_Company', 'Conrad Hubert': 'Eveready_Battery_Company',
+  'Bernacottis': 'Pencil#Wood_encasement',
+  // Companies, products and places named in the evolution timelines
+  'Eveready': 'Eveready_Battery_Company', 'Maglite': 'Maglite', 'Hardtmuth': 'Koh-i-Noor_Hardtmuth',
+  'Koh-i-Noor': 'Koh-i-Noor_Hardtmuth', 'Borrowdale': 'Borrowdale', 'Fritz Hofmann': 'Fritz_Hofmann_(chemist)', 'Tokuji Hayakawa': 'Tokuji_Hayakawa',
 };
 
 const escape = (t) => t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -47,7 +53,10 @@ const NAME_RE = new RegExp(
   'gu'
 );
 
-export const wikiUrl = (title) => `https://en.wikipedia.org/wiki/${encodeURIComponent(title)}`;
+export const wikiUrl = (title) => {
+  const [page, section] = title.split('#');
+  return `https://en.wikipedia.org/wiki/${encodeURIComponent(page)}${section ? `#${section}` : ''}`;
+};
 
 // Wraps known names in a sentence with links that open Wikipedia in a new tab
 export function linkNames(text) {
