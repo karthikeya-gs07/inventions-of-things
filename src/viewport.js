@@ -109,6 +109,7 @@ export function createViewport(canvas) {
 
   // Screen space the UI covers. The model is centred in what is left; fit > 1 frames it smaller.
   const insets = { l: 0, r: 0, t: 0, b: 0, fit: 1 };
+  let insetTween = null; // eases the framing offset alongside a panel animation
   let dirty = true, shadowDirty = true, lowRes = false, lastMotion = 0;
   const invalidate = (shadows = false) => {
     dirty = true;
@@ -142,14 +143,15 @@ export function createViewport(canvas) {
   }
 
   // Frame a bounding sphere inside the area the UI leaves free. dir = null keeps the current direction.
-  function frame(center, radius, dir = HOME_DIR) {
+  function frame(center, radius, dir = HOME_DIR, ms = 650) {
+    const goal = insetTween ? insetTween.to : insets; // fit to where the panels are heading
     const d = dir ? dir.clone() : camera.position.clone().sub(controls.target).normalize();
     const fov = THREE.MathUtils.degToRad(camera.fov);
     const w = canvas.clientWidth, h = canvas.clientHeight;
-    const freeW = Math.max(120, w - insets.l - insets.r);
-    const freeH = Math.max(120, h - insets.t - insets.b);
-    const dist = (radius / Math.sin(fov / 2)) * Math.max(h / freeH, h / freeW) * 0.94 * insets.fit;
-    flyTo(center.clone().addScaledVector(d, dist), center);
+    const freeW = Math.max(120, w - goal.l - goal.r);
+    const freeH = Math.max(120, h - goal.t - goal.b);
+    const dist = (radius / Math.sin(fov / 2)) * Math.max(h / freeH, h / freeW) * 0.94 * goal.fit;
+    flyTo(center.clone().addScaledVector(d, dist), center, ms);
   }
 
   function zoomBy(factor) {
@@ -194,9 +196,31 @@ export function createViewport(canvas) {
     dirty = true;
   }
 
-  function setInsets(next) {
-    Object.assign(insets, { fit: 1 }, next);
-    resize();
+  function setInsets(next, ms = 0) {
+    const to = { l: 0, r: 0, t: 0, b: 0, fit: 1, ...next };
+    if (ms > 0) insetTween = { from: { ...insets }, to, start: performance.now(), ms };
+    else {
+      insetTween = null;
+      Object.assign(insets, to);
+      resize();
+    }
+  }
+
+  function stepInsets(now) {
+    if (!insetTween) return false;
+    const raw = Math.min(1, (now - insetTween.start) / insetTween.ms);
+    const k = 1 - Math.pow(1 - raw, 3);
+    for (const key of ['l', 'r', 't', 'b', 'fit']) insets[key] = THREE.MathUtils.lerp(insetTween.from[key], insetTween.to[key], k);
+    applyOffset();
+    if (raw >= 1) insetTween = null;
+    return true;
+  }
+
+  function applyOffset() {
+    const w = canvas.clientWidth, h = canvas.clientHeight;
+    if (!w || !h) return;
+    camera.setViewOffset(w, h, (insets.r - insets.l) / 2, (insets.b - insets.t) / 2, w, h);
+    dirty = true;
   }
 
   // Corner gizmo sits bottom-right, or top-right when a bottom sheet covers that corner
@@ -214,8 +238,7 @@ export function createViewport(canvas) {
     composer.setSize(w, h);
     camera.aspect = w / h;
     // Shift the optical centre into the area not covered by UI panels
-    camera.setViewOffset(w, h, (insets.r - insets.l) / 2, (insets.b - insets.t) / 2, w, h);
-    dirty = true;
+    applyOffset();
   }
   new ResizeObserver(resize).observe(canvas.parentElement);
   resize();
@@ -230,6 +253,7 @@ export function createViewport(canvas) {
 
     let moving = !!tween;
     stepTween(now);
+    if (stepInsets(now)) moving = true;
     if (gizmo.animating) {
       gizmo.update(dt);
       moving = true;

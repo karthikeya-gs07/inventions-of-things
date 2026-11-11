@@ -75,8 +75,14 @@ h2, h3, h4, h5, p { margin: 0; }
   background: color-mix(in srgb, var(--surface) 58%, transparent);
   -webkit-backdrop-filter: blur(22px) saturate(1.4);
   backdrop-filter: blur(22px) saturate(1.4);
-  border-color: color-mix(in srgb, var(--line-strong) 70%, transparent);
+  border: 0;
+  display: flex; flex-direction: column; overflow: hidden;
 }
+.detail-body {
+  flex: 1 1 auto; min-height: 0; overflow-y: auto; overscroll-behavior: contain;
+  scrollbar-width: none; /* scrolls by touch, wheel and trackpad; no visible bar */
+}
+.detail-body::-webkit-scrollbar { display: none; }
 .detail .stats div, .detail .person, .detail .chips li, .detail .tabs button {
   background: color-mix(in srgb, var(--surface-2) 70%, transparent);
 }
@@ -342,19 +348,18 @@ h2, h3, h4, h5, p { margin: 0; }
   .detail {
     top: auto; left: auto; right: var(--gap); bottom: var(--gap);
     width: min(440px, 48%); height: calc(50% - var(--gap)); max-height: none;
-    transition: height 0.32s cubic-bezier(0.2, 0.8, 0.2, 1), width 0.32s cubic-bezier(0.2, 0.8, 0.2, 1);
+    transition: height 0.42s cubic-bezier(0.32, 0.72, 0, 1);
+    will-change: height;
   }
-  .detail.is-expanded { width: min(520px, 52%); height: calc(100% - 60px - var(--gap)); }
+  .detail.is-expanded { height: calc(100% - 60px - var(--gap)); }
 
   .drawer-handle {
-    display: grid; place-items: center; position: sticky; top: 0; z-index: 2;
-    width: 100%; height: 30px; touch-action: none; cursor: grab;
-    background: color-mix(in srgb, var(--surface) 70%, transparent);
-    -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px);
+    display: grid; place-items: center; flex: none;
+    width: 100%; height: 24px; touch-action: none; cursor: grab;
   }
   .drawer-handle span { width: 40px; height: 5px; border-radius: 999px; background: var(--line-strong); transition: background 0.15s; }
   .drawer-handle:hover span, .drawer-handle[aria-expanded='true'] span { background: var(--muted); }
-  .detail > .drawer-handle + section { padding-top: 6px; }
+  .drawer-handle + .detail-body > section:first-child { padding-top: 4px; }
 }
 
 /* Phone and folded cover screen: drawer becomes a full-width bottom sheet */
@@ -384,4 +389,5 @@ h2, h3, h4, h5, p { margin: 0; }
 
 @media (prefers-reduced-motion: reduce) {
   .marker::after { animation: none; }
+  .detail { transition: none !important; }
 }

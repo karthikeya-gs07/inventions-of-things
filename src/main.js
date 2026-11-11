@@ -16,6 +16,10 @@ const canvas = document.getElementById('view');
 const markersEl = document.getElementById('markers');
 const libraryEl = document.getElementById('library');
 const detailEl = document.getElementById('detail');
+// Drawer: a fixed handle (touch layouts) above a scrolling body, so the handle never scrolls away
+detailEl.innerHTML = `<button class="drawer-handle" data-drawer aria-expanded="false" aria-label="Expand panel"><span></span></button><div class="detail-body"></div>`;
+const bodyEl = detailEl.querySelector('.detail-body');
+const DRAWER_MS = 420; // keep in step with the .detail transition in style.css
 const libToggle = document.getElementById('lib-toggle');
 const vp = createViewport(canvas);
 
@@ -96,10 +100,10 @@ function removeInstance(instance) {
   render();
 }
 
-function frameActive(dir = vp.HOME_DIR) {
+function frameActive(dir = vp.HOME_DIR, ms) {
   if (!state.active) return;
   const s = state.active.bounds(state.exploded);
-  vp.frame(s.center, s.radius, dir);
+  vp.frame(s.center, s.radius, dir, ms);
 }
 
 function setActive(instance, { frame = true } = {}) {
@@ -115,7 +119,7 @@ function select(part) {
   if (part !== state.selected) state.invention = 0;
   state.selected = part;
   render();
-  detailEl.scrollTop = 0;
+  bodyEl.scrollTop = 0;
 }
 
 function setHover(part) {
@@ -264,29 +268,36 @@ function hydratePortraits() {
   });
 }
 
-// Drawer handle (touch layouts): tap or drag to expand / collapse the drawer
-function renderDetail() {
-  renderDetailContent();
-  detailEl.insertAdjacentHTML(
-    'afterbegin',
-    `<button class="drawer-handle" data-drawer aria-expanded="${state.expanded}" aria-label="${state.expanded ? 'Collapse' : 'Expand'} panel"><span></span></button>`
-  );
-}
-
+// Expand / collapse the drawer. The camera re-frames over the same duration as the
+// drawer animates, so the object glides to its new place instead of jumping after.
 function setExpanded(on) {
   if (state.expanded === on) return;
   state.expanded = on;
+
+  // Measure where the drawer will end up, without painting the in-between state
+  const transition = detailEl.style.transition;
+  detailEl.style.transition = 'none';
+  detailEl.classList.toggle('is-expanded', on);
+  const target = detailEl.getBoundingClientRect();
+  detailEl.classList.toggle('is-expanded', !on);
+  void detailEl.offsetHeight;
+  detailEl.style.transition = transition;
+
   detailEl.classList.toggle('is-expanded', on);
   const h = detailEl.querySelector('[data-drawer]');
-  h?.setAttribute('aria-expanded', String(on));
-  h?.setAttribute('aria-label', `${on ? 'Collapse' : 'Expand'} panel`);
+  h.setAttribute('aria-expanded', String(on));
+  h.setAttribute('aria-label', `${on ? 'Collapse' : 'Expand'} panel`);
+
+  const ms = matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : DRAWER_MS;
+  measureInsets(target, ms);
+  frameActive(null, ms);
 }
 
-function renderDetailContent() {
+function renderDetail() {
   const inst = state.active;
   if (!inst) {
     detailEl.style.removeProperty('--c');
-    detailEl.innerHTML = `<section><p class="eyebrow">Empty scene</p><h2>Pick something to take apart</h2><p>Add an object from the library to see the inventions inside it.</p></section>`;
+    bodyEl.innerHTML = `<section><p class="eyebrow">Empty scene</p><h2>Pick something to take apart</h2><p>Add an object from the library to see the inventions inside it.</p></section>`;
     return;
   }
   const { product } = inst;
@@ -294,7 +305,7 @@ function renderDetailContent() {
 
   if (!part) {
     detailEl.style.setProperty('--c', PART_COLOR);
-    detailEl.innerHTML = `
+    bodyEl.innerHTML = `
       <section class="hero">
         <p class="eyebrow">Object</p>
         <h2>${product.name}</h2>
@@ -330,7 +341,7 @@ function renderDetailContent() {
   const list = part.def.inventions;
   const v = list[Math.min(state.invention, list.length - 1)];
   detailEl.style.setProperty('--c', part.color);
-  detailEl.innerHTML = `
+  bodyEl.innerHTML = `
     <section class="part-head">
       <button class="back" data-back>${icon('back', 13)} ${product.name}</button>
       <div class="part-title">
@@ -536,27 +547,16 @@ vp.onFrame((dt, moving) => {
 
 /* ---------- Keep the model centred in the space the panels leave free ---------- */
 
-function measureInsets() {
+function measureInsets(det = detailEl.getBoundingClientRect(), ms = 0) {
   const w = window.innerWidth, h = window.innerHeight;
   const lib = libraryEl.getBoundingClientRect();
-  const det = detailEl.getBoundingClientRect();
   const compact = w <= 1100; // touch layouts: library is a dropdown, panel is a drawer
-  if (!compact) vp.setInsets({ l: lib.right, r: w - det.left }); // desktop: between the two panels
-  else if (det.width > w * 0.7) vp.setInsets({ t: 56, b: h - det.top }); // phone bottom sheet: above it
-  else if (state.expanded) vp.setInsets({ t: 56, r: w - det.left + 8 }); // unfolded, drawer full height: left centre
-  else vp.setInsets({ t: 56, b: 56, fit: 1.3 }); // unfolded, drawer in the corner: centre of the screen
+  if (!compact) vp.setInsets({ l: lib.right, r: w - det.left }, ms); // desktop: between the two panels
+  else if (det.width > w * 0.7) vp.setInsets({ t: 56, b: h - det.top }, ms); // phone bottom sheet: above it
+  else if (state.expanded) vp.setInsets({ t: 56, r: w - det.left + 8 }, ms); // unfolded, drawer full height: left centre
+  else vp.setInsets({ t: 56, b: 56, fit: 1.3 }, ms); // unfolded, drawer in the corner: centre of the screen
   vp.setGizmoCorner(compact);
 }
-
-// Re-frame once the drawer has finished growing or shrinking
-detailEl.addEventListener('transitionend', (e) => {
-  if (e.target !== detailEl || !['height', 'width'].includes(e.propertyName)) return;
-  clearTimeout(resizeTimer);
-  resizeTimer = setTimeout(() => {
-    measureInsets();
-    frameActive(null);
-  }, 30);
-});
 
 // Drag the handle up to expand, down to collapse
 let dragStart = null, dragMoved = false;
