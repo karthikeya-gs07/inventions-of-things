@@ -4,7 +4,7 @@ import { instantiate, stepExplode, setHighlight, disposeInstance, PART_COLOR } f
 import { catalog } from './products/index.js';
 import { icon } from './icons.js';
 import { cachedThumb, requestThumb, cachedObjectThumb, requestObjectThumb } from './thumbs.js';
-import { portrait } from './people.js';
+import { portrait, linkNames } from './people.js';
 import { registerPWA } from './pwa.js';
 
 registerPWA();
@@ -23,7 +23,8 @@ const DRAWER_MS = 420; // keep in step with the .detail transition in style.css
 const libToggle = document.getElementById('lib-toggle');
 const vp = createViewport(canvas);
 
-const state = { instances: [], active: null, selected: null, invention: 0, hover: null, exploded: false, expanded: false };
+// drawer: 'min' (handle only) · 'mid' (default) · 'max' (expanded) — touch layouts only
+const state = { instances: [], active: null, selected: null, invention: 0, hover: null, exploded: false, drawer: 'mid' };
 let pickables = [];
 
 const pad = (n) => String(n).padStart(2, '0');
@@ -216,7 +217,7 @@ function objectThumbHtml(product) {
 }
 
 const timelineHtml = (items) =>
-  `<ol class="timeline">${items.map(([year, text]) => `<li><span class="when">${year}</span><span class="what">${text}</span></li>`).join('')}</ol>`;
+  `<ol class="timeline">${items.map(([year, text]) => `<li><span class="when">${year}</span><span class="what">${linkNames(text)}</span></li>`).join('')}</ol>`;
 
 const heading = (name, text) => `<h4 class="section-title">${icon(name, 14)}<span>${text}</span></h4>`;
 
@@ -268,30 +269,41 @@ function hydratePortraits() {
   });
 }
 
-// Expand / collapse the drawer. The camera re-frames over the same duration as the
-// drawer animates, so the object glides to its new place instead of jumping after.
-function setExpanded(on) {
-  if (state.expanded === on) return;
-  state.expanded = on;
+const DRAWER_ORDER = ['min', 'mid', 'max'];
+const DRAWER_CLASS = { min: 'is-min', mid: '', max: 'is-expanded' };
+
+// Minimise / restore / expand the drawer. The camera re-frames over the same duration
+// as the drawer animates, so the object glides to its new place instead of jumping after.
+function setDrawer(next) {
+  if (state.drawer === next) return;
+  const prev = state.drawer;
+  state.drawer = next;
+  const apply = (name) => {
+    detailEl.classList.remove('is-min', 'is-expanded');
+    if (DRAWER_CLASS[name]) detailEl.classList.add(DRAWER_CLASS[name]);
+  };
 
   // Measure where the drawer will end up, without painting the in-between state
   const transition = detailEl.style.transition;
   detailEl.style.transition = 'none';
-  detailEl.classList.toggle('is-expanded', on);
+  apply(next);
   const target = detailEl.getBoundingClientRect();
-  detailEl.classList.toggle('is-expanded', !on);
+  apply(prev);
   void detailEl.offsetHeight;
   detailEl.style.transition = transition;
+  apply(next);
 
-  detailEl.classList.toggle('is-expanded', on);
   const h = detailEl.querySelector('[data-drawer]');
-  h.setAttribute('aria-expanded', String(on));
-  h.setAttribute('aria-label', `${on ? 'Collapse' : 'Expand'} panel`);
+  h.setAttribute('aria-expanded', String(next !== 'min'));
+  h.setAttribute('aria-label', next === 'min' ? 'Show panel' : next === 'max' ? 'Shrink panel' : 'Expand panel');
 
   const ms = matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : DRAWER_MS;
   measureInsets(target, ms);
   frameActive(null, ms);
 }
+
+const stepDrawer = (delta) =>
+  setDrawer(DRAWER_ORDER[Math.max(0, Math.min(2, DRAWER_ORDER.indexOf(state.drawer) + delta))]);
 
 function renderDetail() {
   const inst = state.active;
@@ -419,7 +431,8 @@ detailEl.addEventListener('click', (e) => {
   const b = e.target.closest('button');
   if (!b) return;
   if ('drawer' in b.dataset) {
-    if (!dragMoved) setExpanded(!state.expanded);
+    // Tap: minimised -> default -> expanded -> default
+    if (!dragMoved) setDrawer(state.drawer === 'mid' ? 'max' : 'mid');
     return;
   }
   if (b.dataset.part) select(state.active.parts[+b.dataset.part]);
@@ -552,13 +565,15 @@ function measureInsets(det = detailEl.getBoundingClientRect(), ms = 0) {
   const lib = libraryEl.getBoundingClientRect();
   const compact = w <= 1100; // touch layouts: library is a dropdown, panel is a drawer
   if (!compact) vp.setInsets({ l: lib.right, r: w - det.left }, ms); // desktop: between the two panels
-  else if (det.width > w * 0.7) vp.setInsets({ t: 56, b: h - det.top }, ms); // phone bottom sheet: above it
-  else if (state.expanded) vp.setInsets({ t: 56, r: w - det.left + 8 }, ms); // unfolded, drawer full height: left centre
-  else vp.setInsets({ t: 56, b: 56, fit: 1.3 }, ms); // unfolded, drawer in the corner: centre of the screen
+  else if (det.width > w * 0.7) {
+    // Phone: frame above the sheet. Fully expanded, the sheet covers everything, so leave the framing alone.
+    if (state.drawer !== 'max') vp.setInsets({ t: 56, b: h - det.top }, ms);
+  } else if (state.drawer === 'max') vp.setInsets({ t: 56, r: w - det.left + 8 }, ms); // unfolded, full height: left centre
+  else vp.setInsets({ t: 56, b: 56, fit: state.drawer === 'min' ? 1.1 : 1.3 }, ms); // unfolded: centre of the screen
   vp.setGizmoCorner(compact);
 }
 
-// Drag the handle up to expand, down to collapse
+// Drag the handle: up grows the drawer one step, down shrinks it one step
 let dragStart = null, dragMoved = false;
 detailEl.addEventListener('pointerdown', (e) => {
   if (!e.target.closest('[data-drawer]')) return;
@@ -568,9 +583,9 @@ detailEl.addEventListener('pointerdown', (e) => {
 window.addEventListener('pointermove', (e) => {
   if (dragStart === null) return;
   const dy = e.clientY - dragStart;
-  if (Math.abs(dy) < 24) return;
-  dragMoved = true;
-  setExpanded(dy < 0);
+  if (Math.abs(dy) < 24 || dragMoved) return;
+  dragMoved = true; // one step per drag
+  stepDrawer(dy < 0 ? 1 : -1);
 });
 window.addEventListener('pointerup', () => {
   dragStart = null;
