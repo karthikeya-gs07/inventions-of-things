@@ -4,6 +4,13 @@ Take everyday objects apart in 3D and see the inventions that made each part pos
 
 Click a hotspot on the model to read about the invention behind that part: who made it, where else it is used, and how it evolved.
 
+## Links
+
+- **Live site:** https://karthikeya-gs07.github.io/inventions-of-things/
+- **Repository:** https://github.com/karthikeya-gs07/inventions-of-things
+
+The live site can be installed as an app: use the install icon in Chrome's address bar, or Add to Home Screen on a phone.
+
 ## Run locally
 
 ```bash
