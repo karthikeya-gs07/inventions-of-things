@@ -44,7 +44,21 @@ const NAMES = {
   'Bernacottis': 'Pencil#Wood_encasement',
   // Companies, products and places named in the evolution timelines
   'Eveready': 'Eveready_Battery_Company', 'Maglite': 'Maglite', 'Hardtmuth': 'Koh-i-Noor_Hardtmuth',
-  'Koh-i-Noor': 'Koh-i-Noor_Hardtmuth', 'Borrowdale': 'Borrowdale', 'Fritz Hofmann': 'Fritz_Hofmann_(chemist)', 'Tokuji Hayakawa': 'Tokuji_Hayakawa',
+  'Koh-i-Noor': 'Koh-i-Noor_Hardtmuth', 'Borrowdale': 'Borrowdale',
+  // "Through time" timelines: people without their own article -> the page that covers their work
+  'Tredwell': 'Upholstery_coil_springs', 'Heinrich Westphal': 'List_of_German_inventions_and_discoveries',
+  'William J. Newton': 'Light_switch', 'Herbert Maruska': 'History_of_the_LED',
+  'Gower': 'Anodizing', 'O’Brien': 'Anodizing', 'Joseph Reckendorfer': 'Hymen_Lipman',
+  'Reckendorfer v. Faber': 'Hymen_Lipman', 'William Munroe': 'Pencil#United_States',
+  'Lassimonne': 'Pencil_sharpener', 'Thierry des Estivaux': 'Pencil_sharpener', 'Walter K. Foster': 'Pencil_sharpener',
+  'Junichi Miura': 'Incandescent_light_bulb',
+  // Companies, institutions and named things in those timelines
+  'Sony': 'Sony', 'Bayer': 'Bayer', 'General Electric': 'General_Electric', 'GE': 'General_Electric',
+  'Thomson-Houston': 'Thomson-Houston_Electric_Company', 'Westinghouse': 'Westinghouse_Electric_Corporation',
+  'Ediswan': 'Edison_and_Swan_Electric_Light_Company', 'Ever-Ready Sharp': 'Mechanical_pencil', 'Sharp': 'Sharp_Corporation',
+  'Apollo': 'Apollo_program', 'Wright Flyer': 'Wright_Flyer', 'Washington Monument': 'Washington_Monument',
+  'Nobel Prize in Physics': 'Nobel_Prize_in_Physics', 'Supreme Court': 'Supreme_Court_of_the_United_States',
+  'Stanford': 'Stanford_University', 'Mesoamericans': 'Mesoamerica', 'Fritz Hofmann': 'Fritz_Hofmann_(chemist)', 'Tokuji Hayakawa': 'Tokuji_Hayakawa',
 };
 
 const escape = (t) => t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
