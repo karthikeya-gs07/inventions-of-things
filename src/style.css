@@ -72,7 +72,7 @@ h2, h3, h4, h5, p { margin: 0; }
 .detail {
   top: var(--gap); right: var(--gap); width: 388px; max-height: calc(100% - var(--gap) - 164px);
   /* Frosted glass: the scene stays visible, blurred, behind the panel */
-  background: color-mix(in srgb, var(--surface) 58%, transparent);
+  background: color-mix(in srgb, #0c0f12 74%, transparent);
   -webkit-backdrop-filter: blur(22px) saturate(1.4);
   backdrop-filter: blur(22px) saturate(1.4);
   border: 0;
