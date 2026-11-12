@@ -5,9 +5,10 @@ import { catalog } from './products/index.js';
 import { icon } from './icons.js';
 import { cachedThumb, requestThumb, cachedObjectThumb, requestObjectThumb } from './thumbs.js';
 import { portrait, linkNames } from './people.js';
-import { registerPWA } from './pwa.js';
+import { registerPWA, canInstall, onInstallChange, promptInstall } from './pwa.js';
 
 registerPWA();
+onInstallChange(() => renderLibrary());
 
 const STORE_KEY = 'inventions.scene';
 const SLOT_SPACING = 10; // objects sit side by side along X so none hides another
@@ -202,7 +203,12 @@ function renderLibrary() {
               .join('')}</ul>`
           : `<p class="empty">Every object in the library is on the grid.</p>`
       }
-    </section>`;
+    </section>
+    ${
+      canInstall()
+        ? `<section><button class="install" data-install>${icon('download', 15)}<span>Install as an app</span></button></section>`
+        : ''
+    }`;
   libraryEl.querySelectorAll('img[data-object]:not([src])').forEach((img) => {
     const product = catalog.find((p) => p.id === img.dataset.object);
     requestObjectThumb(product).then((url) => {
@@ -422,6 +428,7 @@ canvas.addEventListener('pointerdown', () => setLibraryOpen(false));
 libraryEl.addEventListener('click', (e) => {
   const b = e.target.closest('button');
   if (!b) return;
+  if ('install' in b.dataset) return promptInstall();
   if (!b.dataset.remove) setLibraryOpen(false);
   const byId = (id) => state.instances.find((i) => i.product.id === id);
   if (b.dataset.add) addProduct(b.dataset.add);

@@ -112,6 +112,11 @@ h2, h3, h4, h5, p { margin: 0; }
   color: var(--accent-hi); background: var(--surface-3);
 }
 .empty { color: var(--muted); margin-top: 10px; font-size: 13px; }
+.install {
+  display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; height: 42px;
+  border-radius: 999px; background: var(--blue); color: #06121f; font-weight: 600; font-size: 13px;
+}
+.install:hover { filter: brightness(1.08); }
 
 /* Detail: shared */
 .detail h2 { margin-top: 6px; font-size: 21px; line-height: 1.2; font-weight: 650; letter-spacing: -0.01em; }

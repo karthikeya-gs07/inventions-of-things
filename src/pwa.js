@@ -38,3 +38,32 @@ function showUpdateToast(onAccept) {
   toast.querySelector('button').addEventListener('click', onAccept);
   document.getElementById('app').append(toast);
 }
+
+// ---------- Install button ----------
+// Chrome, Edge and Samsung Internet fire `beforeinstallprompt` when they consider the
+// site installable. We keep the event so an in-app button can open the install dialog.
+let installEvent = null;
+const listeners = new Set();
+const notify = () => listeners.forEach((cb) => cb(!!installEvent));
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  installEvent = e;
+  notify();
+});
+window.addEventListener('appinstalled', () => {
+  installEvent = null;
+  notify();
+});
+
+export const canInstall = () => !!installEvent;
+export function onInstallChange(cb) {
+  listeners.add(cb);
+}
+export async function promptInstall() {
+  if (!installEvent) return;
+  const e = installEvent;
+  installEvent = null;
+  notify();
+  await e.prompt();
+}
