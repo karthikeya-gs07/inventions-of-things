@@ -31,7 +31,7 @@ The production build is an installable PWA that works offline. Pushing to `main`
 
 Each object is one file in `src/products/`, registered in `src/products/index.js`. `flashlight.js` is the template: geometry for each part, plus the inventions, inventors, uses and timeline shown in the panel.
 
-Every invention needs `name`, `year`, `by`, `what`, `here`, `story`, `people`, `uses` and `timeline`. Its read-aloud transcript (the voice button in the panel) is generated from these, worded for listening; set a `transcript` field to write one by hand instead.
+Every invention needs `name`, `kind`, `year`, `by`, `what`, `here`, `story`, `people`, `uses` and `timeline`. `kind` says what sort of contribution it is, because not everything is strictly an invention: `invention`, `process`, `material`, `discovery`, `standard`, `technique`, `design` or `tool` (see `src/kinds.js`). An optional `kindNote` adds a one-line caveat, for example that a court ruled a patent invalid. Its read-aloud transcript (the voice button in the panel) is generated from these, worded for listening; set a `transcript` field to write one by hand instead.
 
 ### Read-aloud narration
 

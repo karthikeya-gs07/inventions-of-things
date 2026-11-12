@@ -44,6 +44,8 @@ export default {
       inventions: [
         {
           name: 'Edison screw',
+          kind: 'invention',
+          kindNote: 'It became the standard lamp fitting, still used by LED bulbs today.',
           year: '1881',
           by: 'Thomas Edison',
           what: 'A threaded metal cap that is both the mechanical mount and one electrical contact, with the second contact at the tip.',
@@ -80,6 +82,7 @@ export default {
       inventions: [
         {
           name: 'Dumet wire',
+          kind: 'material',
           year: '1912',
           by: 'Colin G. Fink',
           what: 'A nickel-iron core clad in copper that expands with heat at the same rate as glass, replacing the costly platinum used until then.',
@@ -115,6 +118,7 @@ export default {
       inventions: [
         {
           name: 'Carbon-filament lamp',
+          kind: 'invention',
           year: '1879',
           by: 'Joseph Swan & Thomas Edison',
           what: 'Working separately, both showed that a thin carbonised thread in a vacuum could glow for hours rather than seconds.',
@@ -137,6 +141,8 @@ export default {
         },
         {
           name: 'Ductile tungsten',
+          kind: 'process',
+          kindNote: 'In 1928 a US court ruled that Coolidge’s patent on it was not a valid invention.',
           year: '1906',
           by: 'William D. Coolidge (General Electric)',
           what: 'Tungsten has the highest melting point of any metal but was too brittle to shape. Coolidge found how to work it hot until it could be drawn into wire.',
@@ -155,6 +161,30 @@ export default {
             ['1959', 'The halogen lamp pushes tungsten hotter still.'],
           ],
         },
+        {
+          name: "Coiled-coil filament",
+          kind: "invention",
+          year: "1917",
+          by: "Burnie Lee Benbow (General Electric)",
+          what: "The filament is wound into a tiny coil, and that coil is wound again into a larger coil. A long wire fits into a small space and loses less heat to the gas around it.",
+          here: "The glowing filament is a coil of a coil. Folding it up keeps it hot with less power, so more of the electricity becomes light.",
+          story: "In 1913 Irving Langmuir showed that a coiled filament in a gas-filled bulb gave far more light than a straight one, because a tight coil loses less heat to the gas. The next step was to coil the coil. Burnie Lee Benbow, who managed General Electric’s wire works in Cleveland, patented the coiled-coil filament in 1917: a fine coil of tungsten wound in turn around a rod called a mandrel, so that it formed a second, larger coil. Making it reliably was hard. In Japan, Junichi Miura of the company Hakunetsusha, which later became part of Toshiba, made the first double-coil bulb in 1921, but there was still no machinery to make such filaments in quantity. Hakunetsusha developed a way to mass-produce them by 1936, and coiled-coil filaments became standard in household bulbs.",
+          read: [
+            { label: "Burnie Lee Benbow", wiki: "Burnie_Lee_Benbow" },
+            { label: "Incandescent light bulb", wiki: "Incandescent_light_bulb" },
+          ],
+          people: [
+            { name: "Burnie Lee Benbow", life: "1885 – 1976", role: "American engineer who managed the Cleveland Wire Works of General Electric’s lighting business.", wiki: "Burnie_Lee_Benbow" },
+            { name: "Junichi Miura", life: "Active 1921", role: "Japanese engineer at Hakunetsusha, a forerunner of Toshiba, who made the first double-coil bulb.", wiki: null, link: "Incandescent_light_bulb" },
+          ],
+          uses: ["Household incandescent bulbs", "Halogen lamps", "Car bulbs", "Projector lamps"],
+          timeline: [
+            ["1913", "Langmuir coils the filament in his gas-filled lamp."],
+            ["1917", "Benbow patents the coiled-coil filament."],
+            ["1921", "Junichi Miura makes the first double-coil bulb at Hakunetsusha."],
+            ["1936", "Hakunetsusha can mass-produce coiled-coil filaments."],
+          ],
+        },
       ],
     },
     {
@@ -167,6 +197,8 @@ export default {
       inventions: [
         {
           name: 'Sprengel mercury pump',
+          kind: 'tool',
+          kindNote: 'It was used in the factory to empty the bulb of air. It is not part of the finished bulb.',
           year: '1865',
           by: 'Hermann Sprengel',
           what: 'Falling drops of mercury trap and carry away air, reaching a far harder vacuum than any piston pump before it.',
@@ -186,6 +218,7 @@ export default {
         },
         {
           name: 'Gas-filled lamp',
+          kind: 'invention',
           year: '1913',
           by: 'Irving Langmuir',
           what: 'Langmuir showed that filling the bulb with inert gas (and coiling the filament) slows tungsten evaporating off the wire.',
@@ -200,6 +233,28 @@ export default {
             ['1921', 'Junichi Miura makes the first coiled-coil filament.'],
             ['1959', 'Halogen gas lets the filament redeposit its own tungsten.'],
             ['2009', 'Efficiency rules begin retiring the incandescent lamp.'],
+          ],
+        },
+        {
+          name: "Inside frosting",
+          kind: "process",
+          year: "1925",
+          by: "Marvin Pipkin",
+          what: "Etching the inside of the glass to a fine frost, so the light leaves the bulb as a soft, even glow instead of a dazzling point.",
+          here: "This bulb is clear, so you can see the filament. A frosted bulb spreads the same glow across the whole glass, which is much easier on the eyes.",
+          story: "A bare glowing filament is dazzling, so lamp makers looked for ways to soften it. Frosting the inside of the bulb would leave the outside smooth and easy to clean, but it was thought to weaken the thin glass too much. Marvin Pipkin was a chemist from Florida who had worked on gas masks for the army during the First World War at General Electric’s Nela Park laboratory in Cleveland, and stayed on there afterwards to work on lamps. In 1925 he patented a process for frosting the inside of bulbs that did not weaken them; in fact the frosted bulbs held up well to ordinary handling. In 1947 he patented a coating of silica for the inside of bulbs. His work became General Electric’s Soft-White range.",
+          read: [
+            { label: "Marvin Pipkin", wiki: "Marvin_Pipkin" },
+            { label: "Incandescent light bulb", wiki: "Incandescent_light_bulb" },
+          ],
+          people: [
+            { name: "Marvin Pipkin", life: "1889 – 1977", role: "American chemist at General Electric’s Nela Park laboratory, who also held patents for photographic flash bulbs.", wiki: "Marvin_Pipkin" },
+          ],
+          uses: ["Soft-white bulbs", "Frosted LED bulbs", "Lamp diffusers", "Frosted glassware"],
+          timeline: [
+            ["1925", "Pipkin patents inside frosting that does not weaken the bulb."],
+            ["1947", "He patents a silica coating for the inside of bulbs."],
+            ["Today", "Many LED bulbs copy the frosted look."],
           ],
         },
       ],

@@ -3,6 +3,7 @@
 // added in future automatically gets a complete transcript.
 import { catalog } from '../src/products/index.js';
 import { TRANSCRIPT_FIELDS, transcriptFor } from '../src/transcripts.js';
+import { KINDS } from '../src/kinds.js';
 import { existsSync, readFileSync } from 'node:fs';
 import { AUDIO_DIR, MANIFEST, inventions } from './audio-common.mjs';
 
@@ -19,6 +20,7 @@ for (const product of catalog) {
           if (v === undefined || v === null || v === '' || (Array.isArray(v) && v.length === 0)) problems.push(`${where}: missing "${f}"`);
         }
       }
+      if (inv.kind && !KINDS[inv.kind]) problems.push(`${where}: unknown kind "${inv.kind}" (use one of ${Object.keys(KINDS).join(', ')})`);
       if (!problems.some((p) => p.startsWith(where))) {
         const words = transcriptFor(product, part, inv).join(' ').split(/\s+/).length;
         if (words < 80) problems.push(`${where}: transcript is only ${words} words`);

@@ -81,6 +81,8 @@ export default {
       inventions: [
         {
           name: 'Headband headset',
+          kind: 'design',
+          kindNote: 'Baldwin himself thought joining two earpieces with a band was too trivial to patent.',
           year: '1910',
           by: 'Nathaniel Baldwin',
           what: 'Two earpieces joined by a sprung band over the head, so both ears are covered and both hands stay free.',
@@ -112,6 +114,7 @@ export default {
       inventions: [
         {
           name: 'Stereophonic sound',
+          kind: 'technique',
           year: '1931',
           by: 'Alan Blumlein',
           what: 'Two separate channels of sound, one for each ear. Small differences between them let the brain place each voice and instrument in space.',
@@ -125,6 +128,30 @@ export default {
             ['1881', 'Paris Opera performances are sent down pairs of telephone lines to listeners with two earpieces.'],
             ['1931', 'Blumlein applies for his patent on two-channel sound.'],
             ['1958', 'Stereo records go on sale, and John C. Koss makes stereo headphones.'],
+          ],
+        },
+        {
+          name: "Stereo headphones",
+          kind: "design",
+          kindNote: "Stereo sound and headphones both existed. Koss and Lange put them together for listening to music.",
+          year: "1958",
+          by: "John C. Koss and Martin Lange",
+          what: "Headphones made for enjoying music in stereo, rather than for telephone and radio operators.",
+          here: "Large cups that cover each ear and carry full-range music, one channel to each side, are the kind of headphone Koss introduced.",
+          story: "Until the late 1950s headphones were working tools for telephone operators, radio operators and pilots, built to make speech clear rather than to make music sound good. John C. Koss ran a business in Milwaukee renting televisions to hospital patients. Looking for new ideas, he and the engineer Martin Lange developed a portable record player. To show off its sound they gave it a pair of headphones and a switch so the listener could listen privately. At a hi-fi show in Milwaukee in 1958, visitors were more taken with the headphones than with the record player. Koss began making his SP/3 Stereophones from his basement apartment, and other makers soon copied them.",
+          read: [
+            { label: "Koss Corporation", wiki: "Koss_Corporation" },
+            { label: "Headphones", wiki: "Headphones" },
+          ],
+          people: [
+            { name: "John C. Koss", life: "Active 1958", role: "Milwaukee businessman, with only a high-school education, who founded Koss Corporation.", wiki: null, link: "Koss_Corporation" },
+            { name: "Martin Lange", life: "Active 1958", role: "Engineer who developed the first Koss headphones with John Koss.", wiki: null, link: "Koss_Corporation" },
+          ],
+          uses: ["Home hi-fi listening", "Recording studios", "Portable music players", "Gaming", "Radio studios"],
+          timeline: [
+            ["1953", "John C. Koss starts a hospital television rental business."],
+            ["1958", "The Koss SP/3 Stereophones are shown at a hi-fi show in Milwaukee."],
+            ["1979", "The Sony Walkman takes headphones out onto the street."],
           ],
         },
       ],
@@ -143,6 +170,7 @@ export default {
       inventions: [
         {
           name: 'Memory foam',
+          kind: 'material',
           year: '1966',
           by: 'NASA Ames Research Center',
           what: 'A soft foam that gives way slowly under pressure and warmth, takes the shape of whatever presses on it, and slowly springs back.',
@@ -177,6 +205,7 @@ export default {
       inventions: [
         {
           name: 'Moving-coil loudspeaker',
+          kind: 'invention',
           year: '1925',
           by: 'Chester Rice and Edward Kellogg',
           what: 'A coil of wire glued to a light diaphragm sits in the gap of a magnet. The music signal flowing through the coil pushes it back and forth, and the diaphragm moves the air.',
@@ -198,6 +227,7 @@ export default {
         },
         {
           name: 'Neodymium magnet',
+          kind: 'material',
           year: '1984',
           by: 'Masato Sagawa, and General Motors',
           what: 'A magnet made from neodymium, iron and boron. It is the strongest kind of permanent magnet you can buy.',
@@ -237,6 +267,7 @@ export default {
       inventions: [
         {
           name: 'Active noise cancellation',
+          kind: 'technique',
           year: '1936',
           by: 'Paul Lueg',
           what: 'A microphone listens to the noise around you. Electronics make a mirror image of that sound wave and play it, so the two cancel and you hear less.',
@@ -259,6 +290,7 @@ export default {
         },
         {
           name: 'Electret microphone',
+          kind: 'invention',
           year: '1962',
           by: 'Gerhard Sessler and James West',
           what: 'A microphone built around a thin plastic film that holds a permanent electric charge. Sound moves the film, and the movement becomes a signal, with no high-voltage supply needed.',
@@ -297,6 +329,7 @@ export default {
       inventions: [
         {
           name: 'Bluetooth',
+          kind: 'standard',
           year: '1994',
           by: 'Jaap Haartsen and Sven Mattisson, at Ericsson',
           what: 'A short-range radio link that lets devices from different makers talk to each other without a cable, hopping quickly between frequencies to dodge interference.',
@@ -336,6 +369,7 @@ export default {
       inventions: [
         {
           name: 'Lithium-ion battery',
+          kind: 'invention',
           year: '1985',
           by: 'Akira Yoshino',
           what: 'A rechargeable battery in which lithium ions move between two electrodes that soak them up like sponges. It stores a lot of energy for its weight.',

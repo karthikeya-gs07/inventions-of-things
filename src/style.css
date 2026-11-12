@@ -174,11 +174,24 @@ h2, h3, h4, h5, p { margin: 0; }
 }
 .tabs button[aria-selected='true'] b { color: var(--c); }
 
+.invention .tags { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
 .invention .year {
   display: inline-block; padding: 3px 9px; border-radius: 999px;
   font: 600 12px var(--mono); letter-spacing: 0.05em;
   color: var(--bg); background: var(--c);
 }
+.invention .kind {
+  display: inline-block; padding: 3px 10px; border-radius: 999px;
+  font-size: 12px; font-weight: 600; letter-spacing: 0.02em;
+  color: color-mix(in srgb, var(--c) 70%, var(--text));
+  background: color-mix(in srgb, var(--c) 14%, transparent);
+}
+.invention .kind:empty { display: none; }
+.kind-note {
+  display: flex; gap: 8px; align-items: flex-start; margin-top: 10px;
+  font-size: 13px; line-height: 1.5; color: var(--muted);
+}
+.kind-note svg { flex: none; margin-top: 3px; color: var(--c); }
 .invention h3 { margin-top: 10px; font-size: 18px; line-height: 1.25; font-weight: 650; }
 .callout {
   margin-top: 14px; padding: 12px 14px; border-radius: 14px;

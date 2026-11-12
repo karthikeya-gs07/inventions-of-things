@@ -66,6 +66,7 @@ export default {
       inventions: [
         {
           name: 'Laminated steel padlock',
+          kind: 'invention',
           year: '1919',
           by: 'Harry Soref',
           what: 'The body is a stack of plates punched from sheet steel and riveted together, the way a bank-vault door is built. It is cheap to make and very hard to break.',
@@ -92,6 +93,7 @@ export default {
       inventions: [
         {
           name: 'Bessemer steel',
+          kind: 'process',
           year: '1856',
           by: 'Henry Bessemer',
           what: 'Blowing air through molten iron burns out the excess carbon in minutes. It made steel, until then a costly craft material, cheap enough to use by the tonne.',
@@ -128,6 +130,7 @@ export default {
       inventions: [
         {
           name: 'Cylinder lock with flat key',
+          kind: 'invention',
           year: '1861',
           by: 'Linus Yale Jr.',
           what: 'Yale shrank the pin lock into a small rotating plug, opened by a thin flat key with a serrated edge instead of a heavy iron one.',
@@ -167,6 +170,8 @@ export default {
       inventions: [
         {
           name: 'Pin tumbler lock',
+          kind: 'invention',
+          kindNote: 'The principle is about four thousand years old. Linus Yale Sr. made the modern metal form.',
           year: '1848',
           by: 'Linus Yale Sr.',
           what: 'Spring-loaded pins, each cut in two, block the plug from turning. Only a key that lifts every pin so its cut lines up with the edge of the plug lets it move.',

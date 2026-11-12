@@ -1,3 +1,4 @@
+import { KINDS } from './kinds.js';
 // Read-aloud transcripts.
 //
 // Every invention gets a narration-friendly transcript, built from its data rather than
@@ -10,7 +11,7 @@
 const MONTHS = { Jan: 'January', Feb: 'February', Mar: 'March', Apr: 'April', May: 'May', Jun: 'June', Jul: 'July', Aug: 'August', Sep: 'September', Oct: 'October', Nov: 'November', Dec: 'December' };
 
 // Fields every invention must have for its transcript (checked at build time)
-export const TRANSCRIPT_FIELDS = ['name', 'year', 'by', 'what', 'here', 'story', 'people', 'uses', 'timeline'];
+export const TRANSCRIPT_FIELDS = ['name', 'kind', 'year', 'by', 'what', 'here', 'story', 'people', 'uses', 'timeline'];
 
 // Make written text comfortable to hear
 export function speakable(text) {
@@ -42,6 +43,10 @@ export function speakable(text) {
     .replace(/\bMOS\b/g, 'moss')
     .replace(/\b(SLR|RCA|TDK|IBM|EMI|MIT)\b/g, (w) => w.split('').join('.'))
     .replace(/\bQi\b/g, 'chee')
+    .replace(/\bJPEG\b/g, 'jay-peg')
+    .replace(/\bSP\/3\b/g, 'S.P. 3')
+    .replace(/\b(VR|EF|IS)\b/g, (w) => w.split('').join('.'))
+    .replace(/\bII\b/g, 'two')
     .replace(/\bDS-1P\b/g, 'D.S 1 P')
     .replace(/\bC35 AF\b/g, 'C 35 A.F')
     .replace(/\bME F\b/g, 'M.E F')
@@ -86,7 +91,8 @@ export function transcriptFor(product, part, inv) {
   const object = product.name.toLowerCase().replace('led ', 'LED ');
   const paras = [
     `${inv.name}.`,
-    `This invention lives in the ${lower(part.name)} of the ${object}. It dates from ${inv.year}, and is credited to ${inv.by}.`,
+    `It lives in the ${lower(part.name)} of the ${object}. It dates from ${inv.year}, and is credited to ${inv.by}.`,
+    [KINDS[inv.kind]?.speech, inv.kindNote].filter(Boolean).join(' '),
     `What it is. ${inv.what}`,
     `How the ${object} uses it. ${inv.here}`,
     `The story. ${inv.story}`,
@@ -95,7 +101,7 @@ export function transcriptFor(product, part, inv) {
     const life = sayLife(p.life);
     return `${p.name}${life ? `, ${life}` : ''}. ${p.role}`;
   });
-  paras.push(`${inv.people.length > 1 ? 'The inventors' : 'The inventor'}. ${people.join(' ')}`);
+  paras.push(`${inv.kind === 'discovery' ? 'Who found it' : inv.people.length > 1 ? 'The inventors' : 'The inventor'}. ${people.join(' ')}`);
   // Capitals are left as written: voices ignore them, and names must keep theirs
   paras.push(`Where else you will find it. It is also used in ${list(inv.uses)}.`);
   paras.push(`Through time. ${inv.timeline.map(([when, text]) => `${sayWhen(when)}, ${text}`).join(' ')}`);

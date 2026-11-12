@@ -49,6 +49,7 @@ export default {
       inventions: [
         {
           name: 'Pneumatic tyre',
+          kind: 'invention',
           year: '1888',
           by: 'John Boyd Dunlop',
           what: 'A rubber tube filled with air under pressure, wrapped around the wheel. The air is the spring: it swallows bumps that a solid tyre passes straight to the rider.',
@@ -68,6 +69,30 @@ export default {
             ['1889', 'Riders on pneumatic tyres win races in Ireland and then England.'],
           ],
         },
+        {
+          name: "Schrader valve",
+          kind: "invention",
+          year: "1891",
+          by: "August and George Schrader",
+          what: "A small spring-loaded valve in the tyre. Air can be pumped in, but the pressure inside holds the valve shut.",
+          here: "The valve stem poking through the rim is how the tyre is pumped up, and how it keeps its air.",
+          story: "August Schrader was a German immigrant who ran a shop selling rubber goods in New York. From 1845 he made fittings and valves for rubber products made by the Goodyear brothers, and he also designed a diving helmet and an air pump to go with it. Around 1890, hearing of the success English cyclists were having with air-filled tyres, he saw that tyres would need a reliable valve. By 1891 his company had one: a stem with a spring-loaded core that opens only when a pump pushes air against it. His son George, who is generally credited with the experimental work, patented the valve in 1893. It is still used on nearly every car tyre in the world, and on many bicycles.",
+          read: [
+            { label: "Schrader valve", wiki: "Schrader_valve" },
+            { label: "August Schrader", wiki: "August_Schrader" },
+          ],
+          people: [
+            { name: "August Schrader", life: "1807 – 1894", role: "German-American maker of rubber goods, valves and diving equipment in New York.", wiki: "August_Schrader" },
+            { name: "George Schrader", life: "1858 – 1915", role: "August’s son, credited with the experimental work behind the valve, which he patented in 1893.", wiki: "George_Schrader" },
+          ],
+          uses: ["Car and lorry tyres", "Motorcycle and aircraft tyres", "Air-conditioning and fridge pipes", "Lawnmower tyres", "Inflatable boats"],
+          timeline: [
+            ["1845", "August Schrader begins making valves for rubber goods."],
+            ["1891", "The Schrader valve is produced."],
+            ["1893", "George Schrader patents it."],
+            ["Today", "It is used on virtually every motor vehicle in the world."],
+          ],
+        },
       ],
     },
     {
@@ -80,6 +105,7 @@ export default {
       inventions: [
         {
           name: 'Wire tension wheel',
+          kind: 'invention',
           year: '1869',
           by: 'Eugène Meyer',
           what: 'Instead of thick wooden spokes that push outward, thin wires pull the rim inward. The hub hangs from the spokes above it, so the wheel can be very light.',
@@ -113,6 +139,8 @@ export default {
       inventions: [
         {
           name: 'Bicycle ball bearing',
+          kind: 'invention',
+          kindNote: 'Ball bearings are older. Suriray’s patent was for using them in bicycles.',
           year: '1869',
           by: 'Jules Suriray',
           what: 'A ring of hard steel balls rolling between the axle and the hub. Rolling wastes far less energy than sliding, so the wheel spins almost freely.',
@@ -151,6 +179,8 @@ export default {
       inventions: [
         {
           name: 'Safety bicycle',
+          kind: 'design',
+          kindNote: 'Every part of it existed already. The invention was the arrangement: two equal wheels and a chain to the back.',
           year: '1885',
           by: 'John Kemp Starley',
           what: 'Two wheels of the same size, the rider sitting low between them, and a chain driving the rear wheel. Unlike the high-wheeler, a sudden stop no longer threw the rider over the handlebars.',
@@ -169,6 +199,7 @@ export default {
         },
         {
           name: 'Seamless steel tube',
+          kind: 'process',
           year: '1886',
           by: 'Reinhard & Max Mannesmann',
           what: 'A solid steel bar is pierced and rolled into a tube with no welded seam, so there is no weak line along its length.',
@@ -207,6 +238,7 @@ export default {
       inventions: [
         {
           name: 'Steerable two-wheeler',
+          kind: 'invention',
           year: '1817',
           by: 'Karl Drais',
           what: 'Two wheels in a line, with the front one turned by a handlebar. Drais found that a rider can balance simply by steering into each wobble.',
@@ -238,6 +270,7 @@ export default {
       inventions: [
         {
           name: 'Leather tension saddle',
+          kind: 'invention',
           year: '1882',
           by: 'John Boultbee Brooks',
           what: 'A sheet of thick leather stretched like a hammock between a metal nose and a rear frame. It gives under the rider and slowly moulds to their shape.',
@@ -272,6 +305,7 @@ export default {
       inventions: [
         {
           name: 'Bush roller chain',
+          kind: 'invention',
           year: '1880',
           by: 'Hans Renold',
           what: 'Links joined by pins, with a free-turning roller on each pin. The rollers roll onto the sprocket teeth instead of scraping, so very little power is lost.',
@@ -290,6 +324,7 @@ export default {
         },
         {
           name: 'Freewheel',
+          kind: 'invention',
           year: '1869',
           by: 'William Van Anden',
           what: 'A ratchet in the hub that grips when you pedal forward and slips when you stop, so the wheel can keep turning on its own.',
@@ -327,6 +362,7 @@ export default {
       inventions: [
         {
           name: 'Pedal crank drive',
+          kind: 'invention',
           year: 'c. 1864',
           by: 'Pierre Michaux & Pierre Lallement',
           what: 'Cranks turn the push of the legs into rotation. Historians still argue over who fitted them first; the earliest date they agree on is 1864.',
@@ -370,6 +406,7 @@ export default {
       inventions: [
         {
           name: 'Caliper brake',
+          kind: 'invention',
           year: '1887',
           by: 'Browett & Harrison',
           what: 'Two arms reach around the wheel and squeeze a rubber block against each side of the rim, like a hand gripping it.',
@@ -383,6 +420,28 @@ export default {
             ['1860s', 'Early pedal bicycles press a metal spoon onto the tyre.'],
             ['1887', 'Browett and Harrison patent the caliper brake.'],
             ['1890s', 'Coaster brakes and cable-pulled hand brakes appear.'],
+          ],
+        },
+        {
+          name: "Bowden cable",
+          kind: "invention",
+          year: "1896",
+          by: "Ernest Monnington Bowden",
+          what: "A steel wire that slides inside a flexible tube. Pulling one end pulls the other, even around bends, so a lever in one place can work a brake somewhere else.",
+          here: "Squeezing the brake lever pulls the inner wire, which closes the brake on the rim, however the handlebar is turned.",
+          story: "Early bicycle brakes were worked by rigid rods running from the lever to the brake. Ernest Monnington Bowden, an Irishman living in London, patented a better link in 1896: a cable that slides inside a flexible casing. Because the casing takes the push and the wire takes the pull, the whole thing can bend freely along the frame. He meant it for bicycle brakes. The Bowden brake was launched the same year to great enthusiasm in the cycling press: a lever on the handlebar pulled a stirrup that pressed rubber pads against the rim of the rear wheel. Bowden died in 1904. The invention is often credited to a different man, Sir Frank Bowden, owner of the Raleigh bicycle company, but no evidence has been found to support that.",
+          read: [
+            { label: "Bowden cable", wiki: "Bowden_cable" },
+            { label: "Bicycle brake", wiki: "Bicycle_brake" },
+          ],
+          people: [
+            { name: "Ernest Monnington Bowden", life: "1860 – 1904", role: "Irish inventor living in London who patented the cable in 1896, for use with bicycle brakes.", wiki: null, link: "Bowden_cable#History" },
+          ],
+          uses: ["Bicycle gear changers", "Motorcycle clutches and throttles", "Car handbrakes", "Light aircraft throttles", "Lawnmower controls"],
+          timeline: [
+            ["1896", "Bowden patents his cable, and the Bowden brake is launched."],
+            ["1904", "Ernest Bowden dies; the invention is later wrongly credited to Frank Bowden of Raleigh."],
+            ["20th c.", "Bowden cables spread to motorcycles, cars and aircraft controls."],
           ],
         },
       ],

@@ -53,6 +53,7 @@ export default {
       inventions: [
         {
           name: 'Silicone rubber',
+          kind: 'material',
           year: '1901',
           by: 'Frederic Kipping and James Franklin Hyde',
           what: 'A rubbery material whose backbone is silicon and oxygen, the ingredients of sand and glass, instead of carbon. It stays soft and stable from freezing cold to oven heat.',
@@ -87,6 +88,8 @@ export default {
       inventions: [
         {
           name: 'Electromagnetic induction',
+          kind: 'discovery',
+          kindNote: 'Faraday did not invent induction; he discovered a law of nature. Every transformer and charger is built on it.',
           year: '1831',
           by: 'Michael Faraday',
           what: 'A magnetic field that is changing drives an electric current in any wire it passes through. Two coils can therefore pass energy to each other without touching.',
@@ -108,6 +111,7 @@ export default {
         },
         {
           name: 'Wireless power transfer',
+          kind: 'technique',
           year: '1891',
           by: 'Nikola Tesla',
           what: 'Sending useful electrical power across a gap. It works far better when the sending and receiving coils are tuned to the same frequency, like two matching tuning forks.',
@@ -125,6 +129,31 @@ export default {
             ['2010', 'Version 1.0 of the Qi standard is released.'],
           ],
         },
+        {
+          name: "Closed-core transformer",
+          kind: "invention",
+          year: "1885",
+          by: "Ottó Bláthy, Miksa Déri and Károly Zipernowsky",
+          what: "Two coils sharing one iron core. Alternating current in one coil induces a current in the other, and the ratio of their turns sets the voltage.",
+          here: "The coil in the pad and the matching coil in the phone form a transformer split in two, with a gap where the iron core would be.",
+          story: "Faraday’s iron ring of 1831 was in effect the first transformer, but he only ever sent brief pulses through it. In 1881 Lucien Gaulard of France and John Dixon Gibbs of England showed a device in London for passing alternating current from one coil to another, and in 1884 it was adopted for an electric lighting system in Turin. It used an open core, a straight bundle of iron, and could not hold the voltage steady. That autumn three engineers at the Ganz works in Budapest, Károly Zipernowsky, Ottó Bláthy and Miksa Déri, concluded that open cores were impractical. Bláthy suggested closing the iron into a loop around the coils, Zipernowsky suggested connecting the devices side by side, and Déri ran the experiments. Their closed-core transformer of 1885 made it practical to bring electric light into homes. Bláthy also gave it its name.",
+          read: [
+            { label: "Transformer", wiki: "Transformer" },
+            { label: "Ottó Bláthy", wiki: "Ottó_Bláthy" },
+          ],
+          people: [
+            { name: "Ottó Bláthy", life: "1860 – 1939", role: "Hungarian engineer who also co-invented the alternating-current electricity meter.", wiki: "Ottó_Bláthy" },
+            { name: "Miksa Déri", life: "1854 – 1938", role: "Hungarian engineer and power-station builder who carried out the experiments.", wiki: "Miksa_Déri" },
+            { name: "Károly Zipernowsky", life: "1853 – 1942", role: "Vienna-born Hungarian engineer who proposed connecting transformers side by side.", wiki: "Károly_Zipernowsky" },
+          ],
+          uses: ["Power-station substations", "Phone and laptop chargers", "Doorbells", "Welding machines", "Audio equipment"],
+          timeline: [
+            ["1831", "Faraday’s iron ring works as a transformer, but only for brief pulses."],
+            ["1881", "Gaulard and Gibbs show an open-core device in London."],
+            ["1885", "The closed-core transformer is invented at the Ganz works in Budapest."],
+            ["1885", "William Stanley builds the first practical American transformer for Westinghouse."],
+          ],
+        },
       ],
     },
     {
@@ -136,6 +165,7 @@ export default {
       inventions: [
         {
           name: 'Ferrite',
+          kind: 'material',
           year: '1930',
           by: 'Yogoro Kato and Takeshi Takei',
           what: 'A dark ceramic made mostly of iron oxide. It guides magnetic fields as iron does, but it does not conduct electricity, so rapidly changing fields do not waste energy heating it.',
@@ -177,6 +207,7 @@ export default {
       inventions: [
         {
           name: 'Printed circuit board',
+          kind: 'invention',
           year: '1936',
           by: 'Paul Eisler',
           what: 'A flat insulating board with the wiring printed on it as thin copper tracks. Components are soldered straight onto the board, with no loose wires.',
@@ -195,6 +226,7 @@ export default {
         },
         {
           name: 'MOSFET transistor',
+          kind: 'invention',
           year: '1959',
           by: 'Mohamed Atalla and Dawon Kahng',
           what: 'An electronic switch with no moving parts. A tiny voltage on one terminal turns a much larger current on or off, and it takes almost no power to hold it there.',
@@ -231,6 +263,7 @@ export default {
       inventions: [
         {
           name: 'Injection moulding',
+          kind: 'process',
           year: '1872',
           by: 'John Wesley Hyatt',
           what: 'Melted plastic is forced into a shaped steel mould, cools in seconds and drops out as a finished part. The same mould can make millions.',
@@ -263,6 +296,7 @@ export default {
       inventions: [
         {
           name: 'USB',
+          kind: 'standard',
           year: '1996',
           by: 'Ajay Bhatt and a team at Intel, with six other companies',
           what: 'One standard plug and one set of rules for connecting devices, carrying both data and electrical power down the same cable.',

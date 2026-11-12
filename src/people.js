@@ -110,6 +110,17 @@ const NAMES = {
   'Albert Hanson': 'Printed_circuit_board#History', 'Eisler': 'Paul_Eisler', 'Julius Lilienfeld': 'Julius_Edgar_Lilienfeld',
   'Atalla': 'Mohamed_M._Atalla', 'Kahng': 'Dawon_Kahng', 'Hyatt': 'John_Wesley_Hyatt', 'Arthur Eichengrün': 'Arthur_Eichengrün',
   'James Watson Hendry': 'Injection_moulding#History', 'iMac': 'IMac_G3', 'USB-C': 'USB-C',
+  // Additions: white LED, O-ring, graphite, frosting, coiled coil, Bowden cable, Schrader valve,
+  // stereo headphones, microprocessor, JPEG, image stabilisation, transformer
+  'Nichia': 'Nichia', 'J. O. Lundberg': 'O-ring#History', 'Niels Christensen': 'O-ring#History',
+  'Second World War': 'World_War_II', 'Challenger': 'Space_Shuttle_Challenger_disaster',
+  'Carl Wilhelm Scheele': 'Carl_Wilhelm_Scheele', 'Abraham Gottlob Werner': 'Abraham_Gottlob_Werner',
+  'Benbow': 'Burnie_Lee_Benbow', 'Hakunetsusha': 'Toshiba', 'Pipkin': 'Marvin_Pipkin',
+  'August Schrader': 'August_Schrader', 'George Schrader': 'George_Schrader', 'Schrader valve': 'Schrader_valve',
+  'Ernest Bowden': 'Bowden_cable#History', 'Frank Bowden': 'Frank_Bowden', 'Raleigh': 'Raleigh_Bicycle_Company',
+  'Bowden': 'Bowden_cable', 'Koss': 'Koss_Corporation', 'Minolta': 'Minolta', 'Faggin': 'Federico_Faggin',
+  'Shima': 'Masatoshi_Shima', 'Nasir Ahmed': 'Nasir_Ahmed_(engineer)', 'Ahmed': 'Nasir_Ahmed_(engineer)',
+  'JPEG': 'JPEG', 'Gaulard and Gibbs': 'Lucien_Gaulard', 'Ganz works': 'Ganz_Works', 'William Stanley': 'William_Stanley_Jr.',
 };
 
 const escape = (t) => t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');

@@ -20,6 +20,7 @@ const PATHS = {
   stop: '<rect x="6" y="6" width="12" height="12" rx="2"/>',
   book: '<path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2V5z"/><path d="M4 19a2 2 0 0 0 2 2h13"/><path d="M9 7h6"/>',
   download: '<path d="M12 4v11M7 10l5 5 5-5M5 20h14"/>',
+  info: '<circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/>',
   link: '<path d="M14 5h5v5M19 5l-8 8M11 7H6v11h11v-5"/>',
 };
 

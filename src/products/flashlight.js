@@ -60,6 +60,7 @@ export default {
       inventions: [
         {
           name: 'Standardised screw thread',
+          kind: 'standard',
           year: '1841',
           by: 'Joseph Whitworth',
           what: 'Whitworth proposed one fixed thread angle and pitch for every bolt size, so a screw made in one workshop would fit a nut made in any other.',
@@ -80,6 +81,38 @@ export default {
       ],
     },
     {
+      id: 'oring',
+      name: 'O-ring seal',
+      anchor: [-0.36, -1.78, 0.36],
+      explode: [0, -1.3, 0],
+      make: () => ring(0.49, 0.035, -1.78, mat(0x0d0e10, { roughness: 0.75 })),
+      inventions: [
+        {
+          name: "O-ring",
+          kind: "invention",
+          year: "1896",
+          by: "J. O. Lundberg, and Niels Christensen",
+          what: "A loop of rubber with a round cross-section, squeezed into a groove. Pressure from either side pushes it harder against the walls, so it seals tighter the harder it is pushed.",
+          here: "The black ring at the base of the thread seals the tail cap, keeping rain and dust out of the battery tube.",
+          story: "The first patent for an O-ring was granted in Sweden on 12 May 1896, to J. O. Lundberg. Little else is recorded about him, and his idea made little impression. Four decades later it was found again in the United States by Niels Christensen, a Danish-born machinist who had emigrated in 1891 and patented an air brake for streetcars. Working on hydraulic brakes for cars, he found that a plain ring of solid rubber in a groove made a good seal for the pistons, and that the slight rolling of the ring as the piston moved made it last longer. He applied for patents in 1933 and again in 1937, when he was 72. In the Second World War the US government took over the patent as vital to the war effort and let other companies make the rings. Christensen was paid 75,000 dollars. In 1971, nineteen years after his death, his heirs won another 100,000.",
+          read: [
+            { label: "O-ring", wiki: "O-ring" },
+          ],
+          people: [
+            { name: "Niels Christensen", life: "Died 1952", role: "Danish-born American machinist who patented the O-ring while improving hydraulic brakes.", wiki: null, link: "O-ring#History" },
+            { name: "J. O. Lundberg", life: "Active 1896", role: "Swedish inventor who received the first patent for an O-ring.", wiki: null, link: "O-ring#History" },
+          ],
+          uses: ["Taps and plumbing fittings", "Car engines and brakes", "Watches and diving equipment", "Aircraft and spacecraft", "Pressure cookers"],
+          timeline: [
+            ["1896", "J. O. Lundberg receives a Swedish patent for the O-ring."],
+            ["1937", "Niels Christensen files his US patent."],
+            ["1940s", "The US government takes over the patent during the Second World War."],
+            ["1986", "A cold-stiffened O-ring causes the Space Shuttle Challenger disaster."],
+          ],
+        },
+      ],
+    },
+    {
       id: 'spring',
       name: 'Contact spring',
       anchor: [-0.19, -1.62, 0.19],
@@ -92,6 +125,8 @@ export default {
       inventions: [
         {
           name: 'Coil spring',
+          kind: 'invention',
+          kindNote: 'Coiled springs already worked inside locks and clocks in the 1400s. Tredwell’s was the first patent for them.',
           year: '1763',
           by: 'Richard Tredwell',
           what: 'The first patented coil spring, meant for suspending carriages: a wire wound into a helix stores energy when squeezed and pushes back with steady force.',
@@ -132,6 +167,7 @@ export default {
       inventions: [
         {
           name: 'Hall–Héroult aluminium smelting',
+          kind: 'process',
           year: '1886',
           by: 'Charles Martin Hall & Paul Héroult',
           what: 'Dissolving alumina in molten cryolite and splitting it with electric current turned aluminium from a metal dearer than gold into an everyday material.',
@@ -164,6 +200,7 @@ export default {
       inventions: [
         {
           name: 'Voltaic pile',
+          kind: 'invention',
           year: '1800',
           by: 'Alessandro Volta',
           what: 'Stacked discs of zinc and copper separated by brine-soaked card produced the first steady electric current — the first battery.',
@@ -183,6 +220,7 @@ export default {
         },
         {
           name: 'Alkaline dry cell',
+          kind: 'invention',
           year: '1957',
           by: 'Lewis Urry (Eveready)',
           what: 'Urry used powdered zinc and manganese dioxide in an alkaline electrolyte, giving several times the life of the older zinc–carbon cell.',
@@ -222,6 +260,7 @@ export default {
       inventions: [
         {
           name: 'Quick-break switch',
+          kind: 'invention',
           year: '1884',
           by: 'John Henry Holmes',
           what: 'A spring snaps the contacts apart or together faster than a hand can move, so no arc lingers to burn them away.',
@@ -264,6 +303,7 @@ export default {
       inventions: [
         {
           name: 'Visible light-emitting diode',
+          kind: 'invention',
           year: '1962',
           by: 'Nick Holonyak Jr.',
           what: 'A semiconductor junction that emits light directly when current crosses it — no filament to heat, almost nothing to wear out.',
@@ -283,6 +323,7 @@ export default {
         },
         {
           name: 'Efficient blue LED',
+          kind: 'invention',
           year: '1993',
           by: 'Shuji Nakamura, Isamu Akasaki & Hiroshi Amano',
           what: 'Gallium-nitride LEDs finally produced bright blue light, the missing colour for three decades. It earned the 2014 Nobel Prize in Physics.',
@@ -302,6 +343,30 @@ export default {
             ['1993', 'Nakamura’s high-brightness blue LED goes into production.'],
             ['Mid-1990s', 'A yellow phosphor over the blue chip produces the white LED.'],
             ['2014', 'All three share the Nobel Prize in Physics.'],
+          ],
+        },
+        {
+          name: "White LED",
+          kind: "invention",
+          year: "1996",
+          by: "Nichia",
+          what: "A blue LED chip coated with a yellow phosphor. The phosphor turns part of the blue light into yellow, and the eye sees the mix as white.",
+          here: "The yellow coating you can see on the emitter is the phosphor. Without it, the torch would shine blue.",
+          story: "Once Nichia could make bright blue LEDs in 1993, white light was within reach, but there were two ways to get it. One was to put red, green and blue chips side by side and mix their light, which was costly and gave uneven colour. The other borrowed from the fluorescent lamp, which makes white by shining light onto phosphor powders. Nichia had started out making phosphors for fluorescent lamps and colour televisions, so it knew the materials well. Its engineers coated a blue chip with a yellow phosphor, cerium-doped yttrium aluminium garnet, which glows yellow when blue light hits it. Some of the blue passes straight through and the rest becomes yellow; together they look white. Nichia put the first white LED on sale in 1996. Its engineer Yoshinori Shimizu was named as the inventor on the patent.",
+          read: [
+            { label: "Light-emitting diode", wiki: "Light-emitting_diode" },
+            { label: "Nichia", wiki: "Nichia" },
+          ],
+          people: [
+            { name: "Yoshinori Shimizu", life: "Active 1996", role: "Nichia engineer named as the inventor on the patent for a white LED made with a garnet phosphor.", wiki: null, link: "Light-emitting_diode#White_LEDs" },
+            { name: "Nobuo Ogawa", life: "1912 – 2002", role: "Founder of Nichia, which began in 1956 as a maker of phosphors for fluorescent lamps.", wiki: null, link: "Nichia" },
+          ],
+          uses: ["LED light bulbs", "Screen backlights", "Car headlights", "Street lights", "Phone camera flashes"],
+          timeline: [
+            ["1956", "Nichia is founded to make phosphors for fluorescent lamps."],
+            ["1993", "Nichia launches its bright blue LED."],
+            ["1996", "Nichia sells the first white LED: a blue chip under a yellow phosphor."],
+            ["1999", "High-power white LEDs bright enough to replace a bulb reach the market."],
           ],
         },
       ],
@@ -325,6 +390,7 @@ export default {
       inventions: [
         {
           name: 'Anodising',
+          kind: 'process',
           year: '1923',
           by: 'Guy Bengough & John Stuart',
           what: 'Running current through aluminium in an acid bath grows a hard, dyeable oxide skin that is part of the metal rather than a coat of paint.',
@@ -355,6 +421,8 @@ export default {
       inventions: [
         {
           name: 'Parabolic reflector',
+          kind: 'discovery',
+          kindNote: 'Curved mirrors are older. What Diocles found was the mathematical shape that brings light to a single point.',
           year: 'c. 200 BC',
           by: 'Diocles',
           what: 'Diocles proved that a parabola sends every ray from its focus out in parallel lines — the geometry behind lighthouses, headlamps and satellite dishes.',
@@ -384,6 +452,7 @@ export default {
       inventions: [
         {
           name: 'Polycarbonate',
+          kind: 'material',
           year: '1953',
           by: 'Hermann Schnell (Bayer) & Daniel Fox (GE)',
           what: 'Discovered independently within days of each other: a clear plastic far tougher under impact than glass.',

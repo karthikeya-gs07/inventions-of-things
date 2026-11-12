@@ -27,6 +27,8 @@ export default {
       inventions: [
         {
           name: 'Rubber eraser',
+          kind: 'discovery',
+          kindNote: 'Rubber already existed. What was discovered, apparently by accident, was that it rubs out pencil.',
           year: '1770',
           by: 'Edward Nairne',
           what: 'Nairne sold cubes of natural rubber for rubbing out pencil marks — before that, people used balled-up bread. The job gave rubber its English name.',
@@ -46,6 +48,7 @@ export default {
         },
         {
           name: 'Vulcanisation',
+          kind: 'process',
           year: '1839',
           by: 'Charles Goodyear',
           what: 'Heating rubber with sulphur cross-links its molecules, so it stays springy instead of going sticky in heat and brittle in cold.',
@@ -79,6 +82,8 @@ export default {
       inventions: [
         {
           name: 'Pencil with attached eraser',
+          kind: 'design',
+          kindNote: 'In 1875 the US Supreme Court ruled that joining a pencil and an eraser was not an invention, because neither did anything new.',
           year: '1858',
           by: 'Hymen Lipman',
           what: 'Lipman patented fixing an eraser to the end of a pencil. The patent sold for $100,000, then was struck down by the US Supreme Court as merely two known things joined.',
@@ -107,6 +112,7 @@ export default {
       inventions: [
         {
           name: 'Wood-cased pencil',
+          kind: 'invention',
           year: 'c. 1560',
           by: 'Simonio & Lyndiana Bernacotti',
           what: 'An Italian couple hollowed out a juniper stick to hold a graphite rod; soon after, makers switched to two grooved halves glued around the core.',
@@ -134,6 +140,8 @@ export default {
       inventions: [
         {
           name: 'Pencil sharpener',
+          kind: 'tool',
+          kindNote: 'It shapes the point, but it is a separate object, not part of the pencil.',
           year: '1828',
           by: 'Bernard Lassimonne',
           what: 'The first patented sharpener replaced whittling with a knife. Thierry des Estivaux’s 1847 version added the cone-and-blade form still used today.',
@@ -165,6 +173,7 @@ export default {
       inventions: [
         {
           name: 'Conté process',
+          kind: 'process',
           year: '1795',
           by: 'Nicolas-Jacques Conté',
           what: 'Cut off from English graphite by war, Conté mixed powdered graphite with clay and fired it in a kiln. More clay gives a harder, lighter line.',
@@ -180,6 +189,31 @@ export default {
             ['1795', 'Conté patents fired graphite-and-clay leads in France.'],
             ['20th c.', 'The 9H–9B hardness scale becomes the common grading.'],
             ['1915', 'Tokuji Hayakawa’s “Ever-Ready Sharp” mechanical pencil later gives the Sharp company its name.'],
+          ],
+        },
+        {
+          name: "Graphite",
+          kind: "discovery",
+          kindNote: "Graphite is a natural mineral, so it was found rather than invented.",
+          year: "c. 1565",
+          by: "Unknown finders at Borrowdale, England",
+          what: "A soft, black, natural form of carbon. It is made of layers that slide easily over each other, so it leaves a grey trail on paper.",
+          here: "The core is graphite mixed with clay. Every line the pencil draws is a trail of tiny graphite flakes left on the paper.",
+          story: "Sometime before 1565, and perhaps as early as 1500, a large deposit of a soft black mineral was found near the hamlet of Seathwaite in Borrowdale, in the north of England. It was unusually pure and solid, and local people found it handy for marking their sheep. Nobody knew what it was. It looked like lead and left a grey line, so it was called black lead or plumbago, which is why a pencil’s core is still called its lead, although it contains none. It became so valuable for lining the moulds used to cast cannonballs that the Crown took over the mines and had them guarded. In 1778 the chemist Carl Wilhelm Scheele showed that it was a different mineral from the lookalikes it was confused with, and in 1789 Abraham Gottlob Werner named it graphite, from the Greek word meaning to write. It is a form of carbon.",
+          read: [
+            { label: "Graphite", wiki: "Graphite" },
+            { label: "Pencil", wiki: "Pencil" },
+          ],
+          people: [
+            { name: "Carl Wilhelm Scheele", life: "1742 – 1786", role: "German-Swedish chemist who showed graphite was a distinct mineral, and who also discovered oxygen independently.", wiki: "Carl_Wilhelm_Scheele" },
+            { name: "Abraham Gottlob Werner", life: "1749 – 1817", role: "German geologist who gave graphite its name in 1789.", wiki: "Abraham_Gottlob_Werner" },
+          ],
+          uses: ["Lubricants for locks and machines", "Lithium-ion battery electrodes", "Steelmaking", "Brake linings", "Electric motor brushes"],
+          timeline: [
+            ["c. 1565", "A deposit of pure graphite is found in Borrowdale, Cumbria."],
+            ["16th c.", "Borrowdale graphite lines the moulds for English cannonballs."],
+            ["1778", "Carl Wilhelm Scheele shows it is a distinct mineral."],
+            ["1789", "Abraham Gottlob Werner names it graphite."],
           ],
         },
       ],

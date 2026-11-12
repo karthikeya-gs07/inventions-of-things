@@ -96,6 +96,7 @@ export default {
       inventions: [
         {
           name: 'The small 35 mm camera',
+          kind: 'invention',
           year: '1913',
           by: 'Oskar Barnack',
           what: 'A camera small enough for a coat pocket, taking pictures 24 by 36 millimetres on the film made for cinema. Small negatives were enlarged afterwards.',
@@ -110,6 +111,25 @@ export default {
             ['1924', 'Ernst Leitz decides to put the camera into production.'],
             ['1925', 'The Leica I is presented at the Leipzig spring fair.'],
             ['2013', 'The Sony Alpha 7 puts a sensor of the same size in a mirrorless body.'],
+          ],
+        },
+        {
+          name: 'Digital camera',
+          kind: 'invention',
+          year: '1975',
+          by: 'Steven Sasson',
+          what: 'A camera that turns the picture into numbers and stores them, with no film and no chemistry.',
+          here: 'Everything that makes this a digital camera, a sensor in place of film and memory in place of a darkroom, goes back to this prototype.',
+          story:
+            "In 1975 Steven Sasson was a young engineer at Kodak, the company that dominated photographic film. His supervisor, Gareth Lloyd, gave him a small, open assignment: see whether a camera could be built around a new kind of light-sensitive chip. Sasson put one together from the chip, a lens and a cassette recorder, all running on batteries. It weighed 3.6 kilograms. The picture was black and white, 100 dots across by 100 down, and took 23 seconds to record onto the tape. A separate machine showed it on a television. Kodak applied for a patent in 1977 but did not sell such a camera. Sasson’s prototype was not shown in public until 2000.",
+          read: [{ label: 'Steven Sasson', wiki: 'Steven_Sasson' }, { label: 'Digital camera', wiki: 'Digital_camera' }],
+          people: [{ name: 'Steven Sasson', life: 'Born 1950', role: 'American electrical engineer who joined Kodak straight from university and stayed until he retired in 2009.', wiki: 'Steven_Sasson' }],
+          uses: ['Phone cameras', 'Video calls', 'Medical imaging', 'Satellites and space telescopes', 'Security cameras'],
+          timeline: [
+            ['1969', 'The charge-coupled device, the first practical image chip, is invented at Bell Labs.'],
+            ['1975', 'Sasson builds a self-contained digital camera at Kodak.'],
+            ['1981', 'Sony demonstrates the Mavica, a filmless camera that records to a small disk.'],
+            ['1988', 'Fujifilm shows the DS-1P, which saves digital pictures on a memory card.'],
           ],
         },
       ],
@@ -133,6 +153,8 @@ export default {
       inventions: [
         {
           name: 'Autofocus',
+          kind: 'invention',
+          kindNote: 'No single inventor: several companies developed it in turn.',
           year: '1977',
           by: 'Leitz, Konica and Minolta',
           what: 'The camera measures whether the picture is sharp and drives a small motor that moves glass inside the lens until it is.',
@@ -172,6 +194,7 @@ export default {
       inventions: [
         {
           name: 'Anti-reflective coating',
+          kind: 'process',
           year: '1935',
           by: 'Olexander Smakula',
           what: 'A transparent layer a fraction of a wavelength of light thick. Light reflected from its top and its bottom cancels out, so more light passes through the glass.',
@@ -204,6 +227,7 @@ export default {
       inventions: [
         {
           name: 'Focal-plane shutter',
+          kind: 'invention',
           year: '1883',
           by: 'Ottomar Anschütz',
           what: 'A blind placed just in front of the film or sensor. A slit in it sweeps across the picture, and the narrower the slit, the shorter the exposure.',
@@ -235,6 +259,7 @@ export default {
       inventions: [
         {
           name: 'CMOS image sensor',
+          kind: 'invention',
           year: '1993',
           by: 'Eric Fossum and a team at NASA’s Jet Propulsion Laboratory',
           what: 'A silicon chip covered in millions of light-sensitive cells. Each cell has its own tiny amplifier, and the chip can carry the camera’s circuits as well.',
@@ -254,6 +279,7 @@ export default {
         },
         {
           name: 'Bayer colour filter',
+          kind: 'invention',
           year: '1976',
           by: 'Bryce Bayer',
           what: 'A mosaic of tiny colour filters over the sensor: half green, a quarter red and a quarter blue. The camera works out the full colour of every point from its neighbours.',
@@ -267,6 +293,30 @@ export default {
             ['1974', 'Bryce Bayer records the pattern in his laboratory notebook.'],
             ['1975', 'Kodak files a patent application titled “Color imaging array”.'],
             ['1976', 'The patent is granted.'],
+          ],
+        },
+        {
+          name: "Image stabilisation",
+          kind: "invention",
+          kindNote: "No single inventor: Nikon, Canon and Minolta each made a key step.",
+          year: "1994",
+          by: "Nikon, Canon and Minolta",
+          what: "Motion sensors detect the camera shaking, and electromagnets move a lens element or the sensor itself to cancel the movement, so pictures stay sharp in an unsteady hand.",
+          here: "In many mirrorless cameras the sensor floats on magnets and shifts constantly to follow the tremor of your hands.",
+          story: "Long exposures and long lenses magnify every small tremor of the hands, and blur was one of the commonest ways to spoil a photograph. In 1994 Nikon built the first stabilised lens into a compact film camera, the Zoom-Touch 105 VR. Two small motion sensors measured the shake, and electromagnets moved a floating lens element to cancel it. Canon brought the idea to interchangeable lenses in 1995 with its EF 75–300 mm IS. In 2003 Minolta took a different route in its DiMAGE A1: instead of moving glass in the lens, it moved the image sensor. That works with any lens fitted to the camera, and it is now common in mirrorless cameras. Sony, building on Minolta’s design, put five-axis sensor stabilisation in its full-frame Alpha 7 II in 2014.",
+          read: [
+            { label: "Image stabilization", wiki: "Image_stabilization" },
+          ],
+          people: [
+            { name: "Nikon", life: "Active 1994", role: "Japanese camera maker that built the first optically stabilised lens into a compact camera.", wiki: null, link: "Nikon" },
+            { name: "Minolta", life: "Active 2003", role: "Japanese camera maker that first stabilised pictures by moving the sensor.", wiki: null, link: "Minolta" },
+          ],
+          uses: ["Phone cameras", "Stabilised binoculars", "Video cameras", "Telephoto lenses"],
+          timeline: [
+            ["1994", "Nikon’s Zoom-Touch 105 VR has the first two-axis stabilised lens."],
+            ["1995", "Canon’s EF 75–300 mm IS brings stabilisation to interchangeable lenses."],
+            ["2003", "The Minolta DiMAGE A1 stabilises the picture by moving the sensor."],
+            ["2014", "Sony’s Alpha 7 II adds five-axis sensor stabilisation to a full-frame camera."],
           ],
         },
       ],
@@ -285,6 +335,7 @@ export default {
       inventions: [
         {
           name: 'OLED display',
+          kind: 'invention',
           year: '1987',
           by: 'Ching Wan Tang and Steven Van Slyke',
           what: 'A display in which each dot is a thin film of carbon-based material that gives off its own light when a current passes through it.',
@@ -319,6 +370,7 @@ export default {
       inventions: [
         {
           name: 'Liquid-crystal display',
+          kind: 'invention',
           year: '1968',
           by: 'George Heilmeier and a team at RCA',
           what: 'A thin layer of liquid whose molecules line up when a voltage is applied, letting more or less light through. A grid of such cells forms a picture.',
@@ -355,21 +407,87 @@ export default {
         ),
       inventions: [
         {
-          name: 'Digital camera',
-          year: '1975',
-          by: 'Steven Sasson',
-          what: 'A camera that turns the picture into numbers and stores them, with no film and no chemistry.',
-          here: 'The processor on this board reads millions of values from the sensor, turns them into a colour picture and saves it, many times a second.',
-          story:
-            "In 1975 Steven Sasson was a young engineer at Kodak, the company that dominated photographic film. His supervisor, Gareth Lloyd, gave him a small, open assignment: see whether a camera could be built around a new kind of light-sensitive chip. Sasson put one together from the chip, a lens and a cassette recorder, all running on batteries. It weighed 3.6 kilograms. The picture was black and white, 100 dots across by 100 down, and took 23 seconds to record onto the tape. A separate machine showed it on a television. Kodak applied for a patent in 1977 but did not sell such a camera. Sasson’s prototype was not shown in public until 2000.",
-          read: [{ label: 'Steven Sasson', wiki: 'Steven_Sasson' }, { label: 'Digital camera', wiki: 'Digital_camera' }],
-          people: [{ name: 'Steven Sasson', life: 'Born 1950', role: 'American electrical engineer who joined Kodak straight from university and stayed until he retired in 2009.', wiki: 'Steven_Sasson' }],
-          uses: ['Phone cameras', 'Video calls', 'Medical imaging', 'Satellites and space telescopes', 'Security cameras'],
+          name: "Microprocessor",
+          kind: "invention",
+          year: "1971",
+          by: "Ted Hoff, Federico Faggin, Masatoshi Shima and Stanley Mazor",
+          what: "The central processor of a whole computer, built on a single chip.",
+          here: "The processor on this board reads millions of values from the sensor, turns them into a colour picture, runs the autofocus and draws both screens, many times a second.",
+          story: "In 1969 Busicom, a Japanese calculator company, asked the young American firm Intel to make a set of seven custom chips for a new range of calculators, with the processor spread across three of them. Busicom’s engineer Masatoshi Shima had done the logic design. Intel’s Ted Hoff proposed something simpler and more general: a processor on a single chip that ran instructions stored in memory, so the same chip could be programmed to do different jobs. With Stanley Mazor he worked the idea out with Shima. In 1970 the chip itself was designed by Federico Faggin, a new Intel recruit who had developed the silicon-gate method at Fairchild that made it possible to fit enough transistors. The first one worked in March 1971, and it went on sale as the Intel 4004 on 15 November 1971.",
+          read: [
+            { label: "Intel 4004", wiki: "Intel_4004" },
+            { label: "Microprocessor", wiki: "Microprocessor" },
+          ],
+          people: [
+            { name: "Federico Faggin", life: "Born 1941", role: "Italian-American physicist who designed the 4004 and led the project.", wiki: "Federico_Faggin" },
+            { name: "Ted Hoff", life: "Born 1937", role: "American engineer at Intel who proposed putting the whole processor on one chip.", wiki: "Marcian_Hoff" },
+            { name: "Masatoshi Shima", life: "Born 1943", role: "Japanese engineer at Busicom who did the logic design, and later joined Intel.", wiki: "Masatoshi_Shima" },
+          ],
+          uses: ["Computers and phones", "Cars", "Washing machines", "Toys", "Medical devices"],
           timeline: [
-            ['1969', 'The charge-coupled device, the first practical image chip, is invented at Bell Labs.'],
-            ['1975', 'Sasson builds a self-contained digital camera at Kodak.'],
-            ['1981', 'Sony demonstrates the Mavica, a filmless camera that records to a small disk.'],
-            ['1988', 'Fujifilm shows the DS-1P, which saves digital pictures on a memory card.'],
+            ["1969", "Busicom asks Intel to design a set of calculator chips."],
+            ["1970", "Faggin begins designing the single-chip processor, with Shima."],
+            ["1971", "The Intel 4004 goes on sale on 15 November."],
+          ],
+        },
+        {
+          name: "JPEG",
+          kind: "standard",
+          year: "1992",
+          by: "The Joint Photographic Experts Group",
+          what: "A shared method for shrinking photographs by throwing away fine detail the eye barely notices, usually to about a tenth of their size.",
+          here: "The processor squeezes each picture into a JPEG before saving it, so thousands fit on the card and any phone or computer can open them.",
+          story: "A single digital photograph holds millions of numbers, far too many to store or send easily in the 1980s. In 1972 the engineer Nasir Ahmed proposed compressing images with a mathematical tool called the discrete cosine transform. It breaks a picture into patterns of detail, from broad to fine, and the finest patterns, which the eye notices least, can be stored roughly or dropped. He published it with T. Natarajan and K. R. Rao in 1974. In the 1980s the international standards bodies set up a joint committee of experts, the Joint Photographic Experts Group, to agree one method everyone would use. Their standard, published in 1992 and named after the committee, was built on that transform. It usually shrinks a photo about tenfold with little visible loss, and became the most widely used image format in the world.",
+          read: [
+            { label: "JPEG", wiki: "JPEG" },
+            { label: "Nasir Ahmed", wiki: "Nasir_Ahmed_(engineer)" },
+          ],
+          people: [
+            { name: "Nasir Ahmed", life: "Born 1940", role: "American engineer who proposed the discrete cosine transform, the mathematics at the heart of JPEG.", wiki: "Nasir_Ahmed_(engineer)" },
+          ],
+          uses: ["Phone photos", "Web pages", "Messaging apps", "Digital photo frames", "Scanned documents"],
+          timeline: [
+            ["1972", "Nasir Ahmed proposes the discrete cosine transform for compressing images."],
+            ["1974", "Ahmed, Natarajan and Rao publish it."],
+            ["1992", "The JPEG standard is published."],
+            ["2015", "Several billion JPEG images are made every day."],
+          ],
+        },
+      ],
+    },
+    {
+      id: 'battery',
+      name: 'Battery',
+      anchor: [-0.92, 0.86, 0.2],
+      explode: [-1.0, 0, 0.9],
+      make: () =>
+        group(
+          box(0.3, 0.7, 0.16, [-0.92, 0.5, 0.12], mat(0x24262b, { roughness: 0.5 })),
+          box(0.26, 0.04, 0.12, [-0.92, 0.87, 0.12], metal(0xc8a14b, { roughness: 0.4 }))
+        ),
+      inventions: [
+        {
+          name: 'Lithium-ion battery',
+          kind: 'invention',
+          year: '1985',
+          by: 'Akira Yoshino',
+          what: 'A rechargeable battery in which lithium ions move between two electrodes that soak them up like sponges. It stores a lot of energy for its weight.',
+          here: 'A flat lithium-ion pack slides into the grip. It powers the sensor, both screens and the focus motors for hundreds of shots, and can be recharged hundreds of times.',
+          story:
+            "Lithium is the lightest metal and gives up its electrons eagerly, which makes it ideal for a battery and also dangerous. In the 1970s Stanley Whittingham built the first rechargeable lithium battery, but its lithium metal could catch fire and it was never sold. In 1980 John Goodenough, at Oxford, found a better positive electrode, lithium cobalt oxide, which nearly doubled the voltage. The last step came from Akira Yoshino at the Japanese company Asahi Kasei. In 1985 he replaced the lithium metal with carbon that holds lithium ions safely between its layers. His prototype had no pure lithium in it at all. Sony put the battery on sale in 1991. The three shared the Nobel Prize in Chemistry in 2019.",
+          read: [{ label: 'Lithium-ion battery', wiki: 'Lithium-ion_battery' }, { label: 'Akira Yoshino', wiki: 'Akira_Yoshino' }],
+          people: [
+            { name: 'Akira Yoshino', life: 'Born 1948', role: 'Japanese chemist at Asahi Kasei who built the first safe, practical lithium-ion battery.', wiki: 'Akira_Yoshino' },
+            { name: 'John B. Goodenough', life: '1922 – 2023', role: 'American scientist who found the lithium cobalt oxide electrode. He received the Nobel Prize at 97.', wiki: 'John_B._Goodenough' },
+            { name: 'M. Stanley Whittingham', life: 'Born 1941', role: 'British-American chemist who made the first rechargeable lithium battery in the 1970s.', wiki: 'M._Stanley_Whittingham' },
+          ],
+          uses: ['Mobile phones', 'Laptops', 'Electric cars', 'Cordless tools', 'Home energy storage'],
+          timeline: [
+            ['1970s', 'Whittingham builds a rechargeable lithium battery with a titanium disulfide electrode.'],
+            ['1980', 'Goodenough introduces the lithium cobalt oxide electrode.'],
+            ['1985', 'Yoshino makes the first prototype with a carbon electrode.'],
+            ['1991', 'Sony and Asahi Kasei put the lithium-ion battery on sale.'],
+            ['2019', 'Whittingham, Goodenough and Yoshino receive the Nobel Prize in Chemistry.'],
           ],
         },
       ],
@@ -387,6 +505,7 @@ export default {
       inventions: [
         {
           name: 'Flash memory',
+          kind: 'invention',
           year: '1980',
           by: 'Fujio Masuoka',
           what: 'A memory chip that keeps its contents with the power off and can be erased and rewritten electrically, a whole block at a time.',

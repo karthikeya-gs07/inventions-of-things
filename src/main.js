@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import { createViewport } from './viewport.js';
 import { instantiate, stepExplode, setHighlight, disposeInstance, PART_COLOR } from './instance.js';
+import { KINDS } from './kinds.js';
 import { catalog } from './products/index.js';
 import { icon } from './icons.js';
 import { cachedThumb, requestThumb, cachedObjectThumb, requestObjectThumb } from './thumbs.js';
@@ -418,9 +419,10 @@ function renderDetail() {
       }
     </section>
     <section class="invention">
-      <div class="year">${v.year}</div>
+      <div class="tags"><span class="year">${v.year}</span><span class="kind" title="What kind of contribution this is">${KINDS[v.kind]?.label ?? ''}</span></div>
       <h3>${v.name}</h3>
       <p>${v.what}</p>
+      ${v.kindNote ? `<p class="kind-note">${icon('info', 13)}<span>${v.kindNote}</span></p>` : ''}
       <div class="callout">
         ${heading('wrench', `In this ${product.name.toLowerCase()}`)}
         <p>${v.here}</p>
@@ -442,7 +444,7 @@ function renderDetail() {
         : ''
     }
     <section>
-      ${heading('user', v.people.length > 1 ? 'The inventors' : 'The inventor')}
+      ${heading('user', v.kind === 'discovery' ? (v.people.length > 1 ? 'Who found it' : 'Who found it') : v.people.length > 1 ? 'The inventors' : 'The inventor')}
       <div class="people">${v.people.map(personHtml).join('')}</div>
     </section>
     <section>
