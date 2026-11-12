@@ -2,7 +2,6 @@
   "name": "What Inventions Made Things Work",
   "short_name": "Inventions",
   "description": "Take everyday objects apart in 3D and see the inventions that made each part possible.",
-  "id": "./",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
