@@ -85,6 +85,96 @@
       "hash": "a384c11e7df08ccb",
       "seconds": 147
     },
+    "camera/board/0": {
+      "file": "camera/board-0.m4a",
+      "hash": "c9aede7913d6e0e2",
+      "seconds": 140
+    },
+    "camera/body/0": {
+      "file": "camera/body-0.m4a",
+      "hash": "24b1574f65c210d3",
+      "seconds": 158
+    },
+    "camera/card/0": {
+      "file": "camera/card-0.m4a",
+      "hash": "df0e0b32fe785438",
+      "seconds": 139
+    },
+    "camera/evf/0": {
+      "file": "camera/evf-0.m4a",
+      "hash": "f334806037e791ac",
+      "seconds": 158
+    },
+    "camera/glass/0": {
+      "file": "camera/glass-0.m4a",
+      "hash": "63b0ca1dd254c2da",
+      "seconds": 152
+    },
+    "camera/lens/0": {
+      "file": "camera/lens-0.m4a",
+      "hash": "7867f565ce790a5f",
+      "seconds": 173
+    },
+    "camera/screen/0": {
+      "file": "camera/screen-0.m4a",
+      "hash": "3a051b60d9648212",
+      "seconds": 161
+    },
+    "camera/sensor/0": {
+      "file": "camera/sensor-0.m4a",
+      "hash": "862953518868f465",
+      "seconds": 159
+    },
+    "camera/sensor/1": {
+      "file": "camera/sensor-1.m4a",
+      "hash": "ee7e1df635a2e9fc",
+      "seconds": 133
+    },
+    "camera/shutter/0": {
+      "file": "camera/shutter-0.m4a",
+      "hash": "12db68227e014621",
+      "seconds": 146
+    },
+    "charger/base/0": {
+      "file": "charger/base-0.m4a",
+      "hash": "d83ffd9fde918055",
+      "seconds": 142
+    },
+    "charger/board/0": {
+      "file": "charger/board-0.m4a",
+      "hash": "dece01da1371d38a",
+      "seconds": 146
+    },
+    "charger/board/1": {
+      "file": "charger/board-1.m4a",
+      "hash": "eee9a26d04a192e1",
+      "seconds": 168
+    },
+    "charger/coil/0": {
+      "file": "charger/coil-0.m4a",
+      "hash": "85316af2d294c93f",
+      "seconds": 165
+    },
+    "charger/coil/1": {
+      "file": "charger/coil-1.m4a",
+      "hash": "2b31e4de2bd4b368",
+      "seconds": 154
+    },
+    "charger/ferrite/0": {
+      "file": "charger/ferrite-0.m4a",
+      "hash": "86b82d3f3092d188",
+      "seconds": 148
+    },
+    "charger/top/0": {
+      "file": "charger/top-0.m4a",
+      "hash": "8886920d47c8c32f",
+      "seconds": 153
+    },
+    "charger/usb/0": {
+      "file": "charger/usb-0.m4a",
+      "hash": "a53f3553d6521d02",
+      "seconds": 147
+    },
     "flashlight/batteries/0": {
       "file": "flashlight/batteries-0.m4a",
       "hash": "6b46455c6660558b",
@@ -139,6 +229,51 @@
       "file": "flashlight/tailcap-0.m4a",
       "hash": "8f04818ae02bd5b8",
       "seconds": 144
+    },
+    "headphones/battery/0": {
+      "file": "headphones/battery-0.m4a",
+      "hash": "3e7c47f27f2e1fc5",
+      "seconds": 177
+    },
+    "headphones/board/0": {
+      "file": "headphones/board-0.m4a",
+      "hash": "2bffdc61460cc196",
+      "seconds": 156
+    },
+    "headphones/cups/0": {
+      "file": "headphones/cups-0.m4a",
+      "hash": "2c1501c2004d8fda",
+      "seconds": 144
+    },
+    "headphones/cushions/0": {
+      "file": "headphones/cushions-0.m4a",
+      "hash": "c0c133bc243d64d5",
+      "seconds": 132
+    },
+    "headphones/drivers/0": {
+      "file": "headphones/drivers-0.m4a",
+      "hash": "6f9acaad38c4c0fb",
+      "seconds": 163
+    },
+    "headphones/drivers/1": {
+      "file": "headphones/drivers-1.m4a",
+      "hash": "098eaf3feba55ac9",
+      "seconds": 135
+    },
+    "headphones/headband/0": {
+      "file": "headphones/headband-0.m4a",
+      "hash": "7ec7496c74475f7a",
+      "seconds": 135
+    },
+    "headphones/mics/0": {
+      "file": "headphones/mics-0.m4a",
+      "hash": "305284f1e03d6562",
+      "seconds": 159
+    },
+    "headphones/mics/1": {
+      "file": "headphones/mics-1.m4a",
+      "hash": "9f0b5856dd431304",
+      "seconds": 149
     },
     "padlock/body/0": {
       "file": "padlock/body-0.m4a",
