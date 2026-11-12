@@ -97,7 +97,7 @@ export default {
           what: 'The first patented coil spring, meant for suspending carriages: a wire wound into a helix stores energy when squeezed and pushes back with steady force.',
           here: 'It presses the batteries against the front contact so the circuit never breaks when the torch is shaken, and it doubles as the negative terminal.',
           story:
-            "Eighteenth-century coaches were hung on leather straps or stacks of flat leaf springs. The leaves rubbed against each other, so they squeaked, wore out and had to be spread apart and greased regularly. In 1763 Richard Tredwell of Rotherham patented a different idea for hanging coaches: wire wound into a helix. His drawings show nine of these “worm” springs. A coil needs no lubrication, because nothing slides, and it pushes back evenly however it is squeezed. Tredwell’s patent made little impact at the time, and almost nothing else is known about him, but the coil became one of the most common machine parts in the world.",
+            "Eighteenth-century coaches were hung on leather straps or stacks of flat leaf springs. The leaves rubbed against each other, so they squeaked, wore out and had to be spread apart and greased regularly. Coiled springs themselves were not new: they had worked inside door locks and clocks since the 1400s. What Richard Tredwell of Rotherham patented in 1763 was a new use for them, hanging coaches on wire wound into a helix. His drawings show nine of these “worm” springs. A coil needs no lubrication, because nothing slides, and it pushes back evenly however it is squeezed. His was the first patent for coil springs. It made little impact at the time, and almost nothing else is known about him, but the coil became one of the most common machine parts in the world.",
           read: [{ label: "Upholstery coil springs", wiki: "Upholstery_coil_springs" }, { label: "Spring (device)", wiki: "Spring_(device)" }],
           people: [{ name: 'Richard Tredwell', life: 'Active 1763', role: 'Of Rotherham, Yorkshire. His name is also printed as “Tradwell”; little else about him is recorded.', wiki: null }],
           uses: ['Ballpoint pens', 'Mattresses', 'Car suspension', 'Clocks and watches', 'Door locks'],
@@ -269,7 +269,7 @@ export default {
           what: 'A semiconductor junction that emits light directly when current crosses it — no filament to heat, almost nothing to wear out.',
           here: 'The tiny chip replaces the fragile bulb of older torches and turns far more of the battery’s energy into light instead of heat.',
           story:
-            "In 1962 several laboratories raced to build a semiconductor laser. The working ones used gallium arsenide, which glows only in infrared that the eye cannot see. Nick Holonyak, a young physicist at General Electric in Syracuse, wanted light people could see. Instead of a pure crystal, he made an alloy, gallium arsenide phosphide, mixing elements to tune the colour of the light. Colleagues doubted such mixed crystals could be grown well enough to work. On 9 October 1962 his device shone red: the first visible semiconductor light. The red digits on calculators and watches, and every coloured LED since, grew from that alloy approach.",
+            "In 1962 several laboratories raced to build a semiconductor laser. The working ones used gallium arsenide, which glows only in infrared that the eye cannot see. Nick Holonyak, a young physicist at General Electric in Syracuse, wanted light people could see. Instead of a pure crystal, he made an alloy, gallium arsenide phosphide, mixing elements to tune the colour of the light. Colleagues doubted such mixed crystals could be grown well enough to work. On 9 October 1962 his device shone red. Glowing crystals had been seen before, by H. J. Round in 1907 and Oleg Losev in the 1920s, but Holonyak’s was the first visible-light laser diode and the forerunner of the first practical LEDs. The red digits on calculators and watches, and every coloured LED since, grew from that alloy approach.",
           read: [{ label: "History of the LED", wiki: "History_of_the_LED" }, { label: "Nick Holonyak", wiki: "Nick_Holonyak" }],
           people: [{ name: 'Nick Holonyak Jr.', life: '1928 – 2022', role: 'American engineer at General Electric, later a professor at Illinois. He predicted LEDs would replace the light bulb.', wiki: 'Nick_Holonyak' }],
           uses: ['Indicator lights', 'Traffic signals', 'Digital displays', 'Car brake lights'],
@@ -367,7 +367,7 @@ export default {
           timeline: [
             ['c. 200 BC', 'Diocles proves the focal property of the parabola.'],
             ['1721', 'John Hadley builds a reflecting telescope with a parabolic mirror.'],
-            ['1777', 'William Hutchinson develops the first practical reflector optics for lighthouses.'],
+            ['18th c.', 'Lighthouses begin using parabolic mirrors to turn a lamp into a beam.'],
             ['1888', 'Heinrich Hertz focuses radio waves with a parabolic reflector.'],
             ['1937', 'Grote Reber builds the first parabolic radio telescope in his yard.'],
           ],

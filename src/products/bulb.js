@@ -142,7 +142,7 @@ export default {
           what: 'Tungsten has the highest melting point of any metal but was too brittle to shape. Coolidge found how to work it hot until it could be drawn into wire.',
           here: 'The coil runs at around 2,500 °C. Tungsten survives that, glows whiter and lasts far longer than carbon ever did.',
           story:
-            "Tungsten has the highest melting point of any metal, so it can glow far hotter and whiter than carbon. In 1904 two inventors, Sándor Just and Franjo Hanaman, made tungsten filaments, but these were pressed from powder and so brittle that the lamps often broke on the way to the shop. General Electric gave the problem to William Coolidge, a physicist in its research laboratory. Tungsten would crack under any normal metalworking. Coolidge found that by working it while very hot, step by step, he could gradually make it tough enough to be drawn through dies into a fine, flexible wire. By 1911 General Electric was selling lamps with his ductile tungsten.",
+            "Tungsten has the highest melting point of any metal, so it can glow far hotter and whiter than carbon. In 1904 two inventors, Sándor Just and Franjo Hanaman, made tungsten filaments, but these were pressed from powder and so brittle that the lamps often broke on the way to the shop. General Electric gave the problem to William Coolidge, a physicist in its research laboratory. Tungsten would crack under any normal metalworking. Coolidge found that by working it while very hot, step by step, he could gradually make it tough enough to be drawn through dies into a fine, flexible wire. By 1911 General Electric was selling lamps with his ductile tungsten. His 1913 patent did not last: in 1928 a US court ruled that the process was not a valid invention, though the lamps it made had already changed lighting.",
           read: [{ label: "William D. Coolidge", wiki: "William_D._Coolidge" }, { label: "Incandescent light bulb", wiki: "Incandescent_light_bulb" }],
           people: [{ name: 'William D. Coolidge', life: '1873 – 1975', role: 'American physicist at General Electric. He also invented the modern X-ray tube, and lived to 101.', wiki: 'William_D._Coolidge' }],
           uses: ['X-ray tubes', 'Vacuum-tube cathodes', 'Welding electrodes', 'Halogen lamps'],
@@ -151,6 +151,7 @@ export default {
             ['1906', 'Coolidge develops a way to make tungsten ductile enough to draw into wire.'],
             ['1911', 'General Electric sells ductile-tungsten lamps.'],
             ['1913', 'The Coolidge X-ray tube uses a hot tungsten cathode.'],
+            ['1928', 'A US court rules Coolidge’s 1913 patent invalid.'],
             ['1959', 'The halogen lamp pushes tungsten hotter still.'],
           ],
         },

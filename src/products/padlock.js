@@ -45,7 +45,7 @@ export default {
     ['AD 850', 'Padlocks from this date survive from the Viking settlement of Jorvik.'],
     ['Mid-1800s', 'The “Scandinavian” padlock, credited to Christopher Polhem, becomes the secure choice.'],
     ['1861', 'Linus Yale Jr. patents the small flat key and the pin cylinder used ever since.'],
-    ['1921', 'Harry Soref founds Master Lock to make padlocks from stacked steel plates.'],
+    ['1921', 'Harry Soref and two partners found Master Lock to make padlocks from stacked steel plates.'],
   ],
   parts: [
     {
@@ -71,13 +71,13 @@ export default {
           what: 'The body is a stack of plates punched from sheet steel and riveted together, the way a bank-vault door is built. It is cheap to make and very hard to break.',
           here: 'You can see the layers as lines around the body. A hammer blow that would crack a cast lock just dents one plate.',
           story:
-            "Harry Soref, a locksmith who had emigrated from what is now Ukraine to the United States, wanted to make a padlock that was strong but cheap to build. Strong locks of the time were cast or forged as solid blocks, which was costly. In 1919 he designed a body made from many plates of sheet steel, punched out and stacked together, the same principle as an armoured bank-vault door. Nobody he approached would buy the idea, so in 1921 he set up his own company in Milwaukee, Master Lock, with five employees. It received the first patent on a laminated lock in 1924. In 1974 a famous TV advert showed a sharpshooter’s bullet failing to open one.",
+            "Harry Soref, a locksmith who had emigrated from what is now Ukraine to the United States, wanted to make a padlock that was strong but cheap to build. Strong locks of the time were cast or forged as solid blocks, which was costly. In 1919 he designed a body made from many plates of sheet steel, punched out and stacked together, the same principle as an armoured bank-vault door. Nobody he approached would buy the idea, so in 1921 he and two friends, P. E. Yolles and Sam Stahl, set up their own company in Milwaukee, Master Lock, with five employees. It received the first patent on a laminated lock in 1924. In 1974 a famous TV advert showed a sharpshooter’s bullet failing to open one.",
           read: [{ label: "Master Lock", wiki: "Master_Lock" }, { label: "Padlock", wiki: "Padlock" }],
-          people: [{ name: 'Harry Soref', life: '1887 – 1957', role: 'Locksmith born in what is now Ukraine. When no maker would buy his design, he founded Master Lock in Milwaukee in 1921.', wiki: null, link: 'Harry_Soref' }],
+          people: [{ name: 'Harry Soref', life: '1887 – 1957', role: 'Locksmith born in what is now Ukraine. When no maker would buy his design, he co-founded Master Lock in Milwaukee in 1921.', wiki: null, link: 'Harry_Soref' }],
           uses: ['Gym and school lockers', 'Gates and sheds', 'Toolboxes', 'Shipping containers'],
           timeline: [
             ['1919', 'Soref devises a padlock body made of laminated steel.'],
-            ['1921', 'He starts Master Lock with five employees.'],
+            ['1921', 'He and two partners start Master Lock with five employees.'],
             ['1924', 'The company is granted the first patent on a laminated lock.'],
           ],
         },
@@ -95,7 +95,7 @@ export default {
           year: '1856',
           by: 'Henry Bessemer',
           what: 'Blowing air through molten iron burns out the excess carbon in minutes. It made steel, until then a costly craft material, cheap enough to use by the tonne.',
-          here: 'The shackle is the part a thief attacks. It has to be steel: iron bends and brass saws through.',
+          here: 'The shackle is the part a thief attacks. It has to be steel: iron bends and brass saws through. Today’s shackles are hardened alloy steel made by later methods, but Bessemer was the first to make steel cheap enough for everyday things.',
           story:
             "In the 1850s steel was so expensive it was used only for small things like knives and tools. Big structures were made of iron, which is brittle. Henry Bessemer later wrote that his idea began with a conversation with Napoleon III in 1854 about the need for stronger metal for artillery. Riding home that night, he decided to improve how iron was made. He found that blowing air through molten iron burned out the excess carbon, and the burning itself made the metal hotter, so no extra fuel was needed. A converter could turn tonnes of iron into steel in minutes, in a roaring shower of sparks. He patented the process in 1856.",
           read: [{ label: "Bessemer process", wiki: "Bessemer_process" }, { label: "Henry Bessemer", wiki: "Henry_Bessemer" }],

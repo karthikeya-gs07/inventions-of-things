@@ -77,8 +77,8 @@
     },
     "bulb/filament/1": {
       "file": "bulb/filament-1.m4a",
-      "hash": "2c7615638f67a4a7",
-      "seconds": 144
+      "hash": "2320c1e93de57490",
+      "seconds": 162
     },
     "bulb/stem/0": {
       "file": "bulb/stem-0.m4a",
@@ -197,8 +197,8 @@
     },
     "flashlight/led/0": {
       "file": "flashlight/led-0.m4a",
-      "hash": "7c630a525173bf5a",
-      "seconds": 151
+      "hash": "e3f73f2969b81a67",
+      "seconds": 165
     },
     "flashlight/led/1": {
       "file": "flashlight/led-1.m4a",
@@ -212,13 +212,13 @@
     },
     "flashlight/reflector/0": {
       "file": "flashlight/reflector-0.m4a",
-      "hash": "790debd2704f0e72",
-      "seconds": 143
+      "hash": "338668ee52f0dbff",
+      "seconds": 142
     },
     "flashlight/spring/0": {
       "file": "flashlight/spring-0.m4a",
-      "hash": "13ae3ef010a5a853",
-      "seconds": 140
+      "hash": "5819c6c622315e8b",
+      "seconds": 149
     },
     "flashlight/switch/0": {
       "file": "flashlight/switch-0.m4a",
@@ -277,8 +277,8 @@
     },
     "padlock/body/0": {
       "file": "padlock/body-0.m4a",
-      "hash": "d8de71377d3094d5",
-      "seconds": 131
+      "hash": "b8902b952964e2cf",
+      "seconds": 137
     },
     "padlock/cylinder/0": {
       "file": "padlock/cylinder-0.m4a",
@@ -292,8 +292,8 @@
     },
     "padlock/shackle/0": {
       "file": "padlock/shackle-0.m4a",
-      "hash": "079bbac27553a547",
-      "seconds": 133
+      "hash": "bbf4c929e2c338d3",
+      "seconds": 141
     },
     "pencil/casing/0": {
       "file": "pencil/casing-0.m4a",
