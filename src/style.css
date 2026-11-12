@@ -187,6 +187,19 @@ h2, h3, h4, h5, p { margin: 0; }
 }
 .callout p { margin-top: 6px; color: var(--text); }
 
+/* Origin story */
+.story > p:not(.eyebrow) { margin-top: 10px; line-height: 1.6; }
+.read-label { margin-top: 14px; }
+.reads { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 6px; }
+.reads a {
+  display: flex; align-items: center; gap: 10px; min-height: 40px; padding: 8px 12px; border-radius: 12px;
+  background: color-mix(in srgb, var(--surface-2) 70%, transparent); color: var(--text); text-decoration: none; font-size: 13px;
+}
+.reads a .icon { color: var(--c); }
+.reads a span { flex: 1; min-width: 0; }
+.reads a small { color: var(--muted); font-size: 11px; }
+.reads a:hover { background: color-mix(in srgb, var(--c) 12%, var(--surface-2)); }
+
 /* Inventor cards */
 .people { display: grid; gap: 8px; margin-top: 12px; }
 .person {

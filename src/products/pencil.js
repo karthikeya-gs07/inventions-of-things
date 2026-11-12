@@ -31,6 +31,9 @@ export default {
           by: 'Edward Nairne',
           what: 'Nairne sold cubes of natural rubber for rubbing out pencil marks — before that, people used balled-up bread. The job gave rubber its English name.',
           here: 'Rubber grips graphite particles more strongly than paper does, lifting them off the page as it crumbles.',
+          story:
+            "For centuries, pencil mistakes were rubbed out with lumps of crustless bread. Rubber, a strange elastic substance brought to Europe from South America, was little more than a curiosity. In 1770 the scientist Joseph Priestley noted in a book that he had found “a substance excellently adapted to the purpose of wiping from paper the mark of black lead pencil”, and that it was sold by Edward Nairne, a London maker of scientific instruments. Nairne sold small cubes of it for a high price. A popular story says he discovered it by picking up rubber instead of bread by mistake. The material was named after the job: “rubber”, the thing that rubs out.",
+          read: [{ label: "Eraser", wiki: "Eraser" }, { label: "Edward Nairne", wiki: "Edward_Nairne" }],
           people: [{ name: 'Edward Nairne', life: '1726 – 1806', role: 'English optician and scientific-instrument maker with a shop in Cornhill, London.', wiki: 'Edward_Nairne' }],
           uses: ['Pencil tips', 'Artists’ kneaded erasers', 'Drafting and technical drawing', 'Typewriter erasers'],
           timeline: [
@@ -47,6 +50,9 @@ export default {
           by: 'Charles Goodyear',
           what: 'Heating rubber with sulphur cross-links its molecules, so it stays springy instead of going sticky in heat and brittle in cold.',
           here: 'It is why the eraser on a pencil left in a drawer for years still works instead of rotting or hardening.',
+          story:
+            "In the 1830s America caught “rubber fever”. Rubber raincoats, shoes and boots sold fast, then turned into stinking, sticky glue in summer heat and cracked in winter cold, and the companies collapsed. Charles Goodyear, a failed hardware merchant, became convinced rubber could be fixed. For years he experimented in poverty, mixing rubber with anything he could think of, and was jailed for debt more than once. In 1839, according to his own account, a lump of rubber mixed with sulphur touched a hot stove. Instead of melting, it charred like leather and stayed flexible. Heat and sulphur together were the answer. Goodyear spent years perfecting the process and died in debt.",
+          read: [{ label: "Charles Goodyear", wiki: "Charles_Goodyear" }, { label: "Vulcanization", wiki: "Vulcanization" }],
           people: [{ name: 'Charles Goodyear', life: '1800 – 1860', role: 'Self-taught American inventor. He died deep in debt; the tyre company was named in his honour decades later.', wiki: 'Charles_Goodyear' }],
           uses: ['Car tyres', 'Shoe soles', 'Hoses and seals', 'Rubber bands', 'Hockey pucks'],
           timeline: [
@@ -77,6 +83,9 @@ export default {
           by: 'Hymen Lipman',
           what: 'Lipman patented fixing an eraser to the end of a pencil. The patent sold for $100,000, then was struck down by the US Supreme Court as merely two known things joined.',
           here: 'The crimped metal sleeve is the join: it clamps wood on one side and rubber on the other so writing and correcting live in one tool.',
+          story:
+            "Anyone who writes with a pencil also needs an eraser, and a separate one is easily lost. Hymen Lipman, a stationer in Philadelphia who had also started the first envelope company in the United States, patented a simple fix in 1858: a pencil with the eraser fixed to one end. In 1862 he sold the patent to Joseph Reckendorfer for $100,000, a fortune at the time. Reckendorfer sued the pencil maker Faber for copying it, but in 1875 the US Supreme Court threw out the patent. Putting two existing things together, the court said, was not an invention if neither did anything new. The idea was free for everyone, and spread everywhere.",
+          read: [{ label: "Hymen Lipman", wiki: "Hymen_Lipman" }, { label: "Eraser", wiki: "Eraser" }],
           people: [{ name: 'Hymen Lipman', life: '1817 – 1893', role: 'Jamaican-born stationer in Philadelphia, also credited with America’s first envelope company.', wiki: 'Hymen_Lipman' }],
           uses: ['Most pencils sold in North America', 'Mechanical pencils', 'Digital styluses with an “eraser” end'],
           timeline: [
@@ -102,6 +111,9 @@ export default {
           by: 'Simonio & Lyndiana Bernacotti',
           what: 'An Italian couple hollowed out a juniper stick to hold a graphite rod; soon after, makers switched to two grooved halves glued around the core.',
           here: 'The casing keeps hands clean and stops the brittle core snapping. The hexagonal shape came later — it stops the pencil rolling off the desk.',
+          story:
+            "In the 1500s a deposit of unusually pure graphite was found at Borrowdale in the north of England. It was solid enough to be sawn into sticks, and people began writing and drawing with it. But graphite is soft and brittle: it snapped easily and blackened the hands of anyone who held it. Around 1560 an Italian couple, Simonio and Lyndiana Bernacotti, made what are probably the first designs for a wooden holder, hollowing out a stick of juniper wood and setting the graphite inside. Later makers improved the idea by cutting a groove into two strips of wood and gluing them together around the rod, which is still how pencils are made.",
+          read: [{ label: "Pencil: wood encasement", wiki: "Pencil#Wood_encasement" }],
           people: [{ name: 'Simonio & Lyndiana Bernacotti', life: '16th century', role: 'Italian couple credited with the first carpentry pencils. Little else is documented.', wiki: null }],
           uses: ['Coloured pencils', 'Carpenter’s pencils', 'Eyeliner and lip pencils', 'Charcoal pencils'],
           timeline: [
@@ -126,6 +138,9 @@ export default {
           by: 'Bernard Lassimonne',
           what: 'The first patented sharpener replaced whittling with a knife. Thierry des Estivaux’s 1847 version added the cone-and-blade form still used today.',
           here: 'A fixed blade angle cuts the same clean cone every time, exposing just enough core to write without snapping it.',
+          story:
+            "For most of the pencil’s history, the only way to sharpen one was to whittle it with a knife, slowly, unevenly and often breaking the point. In 1828 Bernard Lassimonne, a mathematician from Limoges in France, applied for the world’s first patent on a device to do the job. In 1847 Thierry des Estivaux designed the hand-held sharpener in its modern form: a cone-shaped hole with a fixed blade, which shaves the wood to the same angle every time the pencil is turned. Walter Kittredge Foster began making sharpeners in the United States in 1855, and the little cone has hardly changed since.",
+          read: [{ label: "Pencil sharpener", wiki: "Pencil_sharpener" }],
           people: [{ name: 'Bernard Lassimonne', life: 'Active 1828', role: 'French mathematician from Limoges who took out the first sharpener patent.', wiki: null }],
           uses: ['Pocket sharpeners', 'Classroom crank sharpeners', 'Electric sharpeners', 'Cosmetic-pencil sharpeners'],
           timeline: [
@@ -154,6 +169,9 @@ export default {
           by: 'Nicolas-Jacques Conté',
           what: 'Cut off from English graphite by war, Conté mixed powdered graphite with clay and fired it in a kiln. More clay gives a harder, lighter line.',
           here: 'This is the “lead” — it contains no lead at all. The clay ratio is what the H and B grades stamped on a pencil measure.',
+          story:
+            "In the 1790s Britain and France were at war, and the best pencil graphite in the world came from England. When the British blockade cut off supplies, France had no good pencils for its schools, offices and army. Lazare Carnot, in charge of the war effort, asked Nicolas-Jacques Conté, an inventive painter and army officer, to find an answer. Conté ground poor-quality graphite into powder, mixed it with clay and water, pressed it into rods and fired them in a kiln. The result wrote smoothly. Even better, changing the amount of clay changed how hard or soft the line was, which is how pencils are still graded today. He patented it in 1795.",
+          read: [{ label: "Nicolas-Jacques Conté", wiki: "Nicolas-Jacques_Conté" }, { label: "Pencil", wiki: "Pencil" }],
           people: [{ name: 'Nicolas-Jacques Conté', life: '1755 – 1805', role: 'French painter, army officer and military balloonist. Reportedly solved the pencil problem in days.', wiki: 'Nicolas-Jacques_Conté' }],
           uses: ['Every modern pencil lead', 'Conté crayons', 'Mechanical-pencil leads', 'Artists’ graphite sticks'],
           timeline: [

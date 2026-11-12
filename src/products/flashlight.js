@@ -64,6 +64,9 @@ export default {
           by: 'Joseph Whitworth',
           what: 'Whitworth proposed one fixed thread angle and pitch for every bolt size, so a screw made in one workshop would fit a nut made in any other.',
           here: 'The cap twists off to change batteries and screws back to a watertight seal — only because cap and body share an exact, repeatable thread.',
+          story:
+            "In the early 1800s every workshop cut its own threads. A bolt from one maker rarely fitted a nut from another, so a broken fastener on a steam engine meant making a new matching pair by hand. Joseph Whitworth, trained under the great toolmaker Henry Maudslay, was obsessed with accuracy; he later built a machine that could measure a millionth of an inch. He gathered sample screws from workshops across Britain, studied their angles and spacing, and in 1841 proposed one compromise: a 55° thread with a fixed number of turns per inch for each size. The railways adopted it, and it became the world’s first national screw standard.",
+          read: [{ label: "British Standard Whitworth", wiki: "British_Standard_Whitworth" }, { label: "Joseph Whitworth", wiki: "Joseph_Whitworth" }],
           people: [{ name: 'Joseph Whitworth', life: '1803 – 1887', role: 'English engineer and toolmaker who made precision measurement an industrial habit.', wiki: 'Joseph_Whitworth' }],
           uses: ['Nuts and bolts', 'Jar and bottle lids', 'Light-bulb bases', 'Camera tripod mounts', 'Plumbing fittings'],
           timeline: [
@@ -93,6 +96,9 @@ export default {
           by: 'Richard Tredwell',
           what: 'The first patented coil spring, meant for suspending carriages: a wire wound into a helix stores energy when squeezed and pushes back with steady force.',
           here: 'It presses the batteries against the front contact so the circuit never breaks when the torch is shaken, and it doubles as the negative terminal.',
+          story:
+            "Eighteenth-century coaches were hung on leather straps or stacks of flat leaf springs. The leaves rubbed against each other, so they squeaked, wore out and had to be spread apart and greased regularly. In 1763 Richard Tredwell of Rotherham patented a different idea for hanging coaches: wire wound into a helix. His drawings show nine of these “worm” springs. A coil needs no lubrication, because nothing slides, and it pushes back evenly however it is squeezed. Tredwell’s patent made little impact at the time, and almost nothing else is known about him, but the coil became one of the most common machine parts in the world.",
+          read: [{ label: "Upholstery coil springs", wiki: "Upholstery_coil_springs" }, { label: "Spring (device)", wiki: "Spring_(device)" }],
           people: [{ name: 'Richard Tredwell', life: 'Active 1763', role: 'Of Rotherham, Yorkshire. His name is also printed as “Tradwell”; little else about him is recorded.', wiki: null }],
           uses: ['Ballpoint pens', 'Mattresses', 'Car suspension', 'Clocks and watches', 'Door locks'],
           timeline: [
@@ -130,6 +136,9 @@ export default {
           by: 'Charles Martin Hall & Paul Héroult',
           what: 'Dissolving alumina in molten cryolite and splitting it with electric current turned aluminium from a metal dearer than gold into an everyday material.',
           here: 'The tube is light, does not rust, and conducts both electricity (it is the return wire of the circuit) and heat away from the LED.',
+          story:
+            "Aluminium is the most common metal in the Earth’s crust, yet in the 1850s it cost more than silver, because no one could pull it out of its ore cheaply. At Oberlin College, a lecturer named Frank Fanning Jewett showed his students a lump of it and said a fortune awaited whoever found a cheap way to make it. One student, Charles Martin Hall, took him at his word. Working in the family woodshed with homemade batteries, helped by his sister Julia, he dissolved alumina in molten cryolite and passed a current through it. On 23 February 1886 small beads of aluminium formed. In France, Paul Héroult, also 22, found the same method that year.",
+          read: [{ label: "Hall–Héroult process", wiki: "Hall–Héroult_process" }, { label: "Charles Martin Hall", wiki: "Charles_Martin_Hall" }],
           people: [
             { name: 'Charles Martin Hall', life: '1863 – 1914', role: 'American chemist. Found the process aged 22 in a woodshed lab; co-founded the company that became Alcoa.', wiki: 'Charles_Martin_Hall' },
             { name: 'Paul Héroult', life: '1863 – 1914', role: 'French scientist who found the same process the same year, then invented the electric arc furnace for steel.', wiki: 'Paul_Héroult' },
@@ -159,6 +168,9 @@ export default {
           by: 'Alessandro Volta',
           what: 'Stacked discs of zinc and copper separated by brine-soaked card produced the first steady electric current — the first battery.',
           here: 'Every cell in the torch is a descendant: two different materials and an electrolyte turning a chemical reaction into current.',
+          story:
+            "The battery began as an argument about frogs. In the 1780s Luigi Galvani saw a dissected frog’s leg twitch when touched with two different metals, and concluded that living tissue held “animal electricity”. Alessandro Volta disagreed: he suspected the two metals themselves made the electricity, and the frog was only acting as a detector. To prove it he removed the animal altogether. He stacked discs of zinc and copper with pieces of card soaked in salt water between them, and got a steady flow of current, something nobody had produced before. On 20 March 1800 he described the pile in a letter to the Royal Society in London.",
+          read: [{ label: "Voltaic pile", wiki: "Voltaic_pile" }, { label: "Luigi Galvani", wiki: "Luigi_Galvani" }],
           people: [{ name: 'Alessandro Volta', life: '1745 – 1827', role: 'Italian physicist. The volt, the unit of electric potential, carries his name.', wiki: 'Alessandro_Volta' }],
           uses: ['Car starter batteries', 'Phone and laptop batteries', 'Electroplating', 'Early telegraph lines'],
           timeline: [
@@ -175,6 +187,9 @@ export default {
           by: 'Lewis Urry (Eveready)',
           what: 'Urry used powdered zinc and manganese dioxide in an alkaline electrolyte, giving several times the life of the older zinc–carbon cell.',
           here: 'Two cells in series supply about 3 volts — enough to drive a white LED for hours from something that fits in a palm.',
+          story:
+            "By the 1950s, zinc–carbon batteries were struggling. New gadgets such as cameras and toys drained them in no time. In 1955 Eveready sent a young Canadian engineer, Lewis Urry, to its laboratory in Parma, Ohio, to make them last longer. Urry decided the old chemistry could not be saved and tried an alkaline electrolyte with manganese dioxide instead. It worked, but could not deliver enough current, until he replaced the solid zinc with zinc powder, giving the reaction far more surface. To convince his managers, he put his cell in a toy car and raced it around the company canteen against one with an ordinary battery. His car kept going long after the other stopped.",
+          read: [{ label: "Lewis Urry", wiki: "Lewis_Urry" }, { label: "Alkaline battery", wiki: "Alkaline_battery" }],
           people: [{ name: 'Lewis Urry', life: '1927 – 2004', role: 'Canadian chemical engineer at Eveready’s lab in Parma, Ohio. He proved the cell by racing two toy cars.', wiki: 'Lewis_Urry' }],
           uses: ['TV remotes', 'Toys', 'Smoke alarms', 'Wall clocks', 'Portable radios'],
           timeline: [
@@ -211,6 +226,9 @@ export default {
           by: 'John Henry Holmes',
           what: 'A spring snaps the contacts apart or together faster than a hand can move, so no arc lingers to burn them away.',
           here: 'One click closes the loop between battery, LED and body. The snap action is why the light comes on cleanly instead of flickering.',
+          story:
+            "When electric light reached homes in the 1880s, the switches were simple levers that pushed two contacts together. Opened slowly by hand, the current kept jumping the widening gap as a small spark, an arc. Each arc pitted one contact and left residue on the other, so switches wore out quickly, and they could set things on fire. John Henry Holmes, an engineer in Newcastle upon Tyne, where electric lighting was arriving early, solved it by taking the hand out of the timing. In his 1884 switch, moving the lever winds up a spring, which then snaps the contacts apart or together in an instant, too fast for an arc to form.",
+          read: [{ label: "Light switch", wiki: "Light_switch" }, { label: "John Henry Holmes", wiki: "John_Henry_Holmes" }],
           people: [{ name: 'John Henry Holmes', life: '1857 – 1935', role: 'English electrical engineer from Newcastle upon Tyne, an early pioneer of domestic electric lighting.', wiki: 'John_Henry_Holmes' }],
           uses: ['Wall light switches', 'Power tools', 'Kettles and appliances', 'Circuit breakers'],
           timeline: [
@@ -250,6 +268,9 @@ export default {
           by: 'Nick Holonyak Jr.',
           what: 'A semiconductor junction that emits light directly when current crosses it — no filament to heat, almost nothing to wear out.',
           here: 'The tiny chip replaces the fragile bulb of older torches and turns far more of the battery’s energy into light instead of heat.',
+          story:
+            "In 1962 several laboratories raced to build a semiconductor laser. The working ones used gallium arsenide, which glows only in infrared that the eye cannot see. Nick Holonyak, a young physicist at General Electric in Syracuse, wanted light people could see. Instead of a pure crystal, he made an alloy, gallium arsenide phosphide, mixing elements to tune the colour of the light. Colleagues doubted such mixed crystals could be grown well enough to work. On 9 October 1962 his device shone red: the first visible semiconductor light. The red digits on calculators and watches, and every coloured LED since, grew from that alloy approach.",
+          read: [{ label: "History of the LED", wiki: "History_of_the_LED" }, { label: "Nick Holonyak", wiki: "Nick_Holonyak" }],
           people: [{ name: 'Nick Holonyak Jr.', life: '1928 – 2022', role: 'American engineer at General Electric, later a professor at Illinois. He predicted LEDs would replace the light bulb.', wiki: 'Nick_Holonyak' }],
           uses: ['Indicator lights', 'Traffic signals', 'Digital displays', 'Car brake lights'],
           timeline: [
@@ -266,6 +287,9 @@ export default {
           by: 'Shuji Nakamura, Isamu Akasaki & Hiroshi Amano',
           what: 'Gallium-nitride LEDs finally produced bright blue light, the missing colour for three decades. It earned the 2014 Nobel Prize in Physics.',
           here: 'The emitter is a blue LED under a yellow phosphor coating; the mix reads as white. Without blue, there is no white LED torch.',
+          story:
+            "By the 1980s there were red and green LEDs, but no bright blue, and without blue there could be no white LED light. Most researchers had given up on gallium nitride, because its crystals were full of defects. Isamu Akasaki kept going, and with his student Hiroshi Amano grew far better crystals on sapphire using a thin buffer layer. In 1989 they made the first gallium nitride p–n junction. Meanwhile at Nichia, a small Japanese chemical firm, Shuji Nakamura built his own growth reactor and found a heating method suited to mass production. In 1993 Nichia launched a blue LED a thousand times brighter than earlier ones. The three shared the 2014 Nobel Prize in Physics.",
+          read: [{ label: "History of the LED", wiki: "History_of_the_LED" }, { label: "Shuji Nakamura", wiki: "Shuji_Nakamura" }],
           people: [
             { name: 'Shuji Nakamura', life: 'Born 1954', role: 'Engineer who built the first high-brightness blue LED at Nichia, a small Japanese chemical firm.', wiki: 'Shuji_Nakamura' },
             { name: 'Isamu Akasaki', life: '1929 – 2021', role: 'Japanese physicist who spent decades proving gallium nitride could be grown well enough to work.', wiki: 'Isamu_Akasaki' },
@@ -305,6 +329,9 @@ export default {
           by: 'Guy Bengough & John Stuart',
           what: 'Running current through aluminium in an acid bath grows a hard, dyeable oxide skin that is part of the metal rather than a coat of paint.',
           here: 'The matte black finish resists scratches and corrosion, and electrically insulates the outside of a body that is carrying current inside.',
+          story:
+            "After the First World War, aircraft makers turned to duralumin, an aluminium alloy almost as strong as steel at a third of the weight. It had one serious flaw: it corroded, and seaplanes that sat in salt water suffered most. Guy Bengough had spent years studying why metals corrode in sea water. With John Stuart he found that instead of painting the metal, they could make it the positive electrode in a bath of chromic acid. The current grows a thick layer of aluminium oxide on the surface, part of the metal itself rather than a coating on top. From 1923 it protected British seaplane parts, and a cheaper sulphuric-acid version followed in 1927.",
+          read: [{ label: "Anodizing", wiki: "Anodizing" }, { label: "Duralumin", wiki: "Duralumin" }],
           people: [
             { name: 'Guy Dunstan Bengough', life: 'Active 1923', role: 'British metallurgist who studied why metals corrode in sea water.', wiki: null },
             { name: 'John McArthur Stuart', life: 'Active 1923', role: 'British chemist and co-holder of the original anodising patent.', wiki: null },
@@ -332,6 +359,9 @@ export default {
           by: 'Diocles',
           what: 'Diocles proved that a parabola sends every ray from its focus out in parallel lines — the geometry behind lighthouses, headlamps and satellite dishes.',
           here: 'The LED sits at the focus. Light that would spill sideways is bounced forward into one tight beam that reaches across a field.',
+          story:
+            "Greek mathematicians were fascinated by “burning mirrors”, which concentrate sunlight to start a fire; legends even claimed Archimedes set Roman ships alight with them. An ordinary curved mirror, shaped like part of a sphere, blurs the light into a smudge instead of a single point. Around 200 BC, Diocles worked out exactly which shape focuses all the sun’s parallel rays onto one spot: the parabola. He set out the proof in a book called On Burning Mirrors. The Greek original was lost, but the work survived in Arabic translation. Run the light the other way, putting a lamp at the focus, and the same shape sends out a narrow beam.",
+          read: [{ label: "Diocles (mathematician)", wiki: "Diocles_(mathematician)" }, { label: "Parabolic reflector", wiki: "Parabolic_reflector" }],
           people: [{ name: 'Diocles', life: 'c. 240 – c. 180 BC', role: 'Greek mathematician. His treatise “On Burning Mirrors” survives only in Arabic translation.', wiki: 'Diocles_(mathematician)' }],
           uses: ['Car headlamps', 'Satellite dishes', 'Radio telescopes', 'Solar concentrators', 'Lighting the Olympic flame'],
           timeline: [
@@ -358,6 +388,9 @@ export default {
           by: 'Hermann Schnell (Bayer) & Daniel Fox (GE)',
           what: 'Discovered independently within days of each other: a clear plastic far tougher under impact than glass.',
           here: 'The window keeps water and grit off the reflector and LED, and survives the drops that would shatter a glass lens.',
+          story:
+            "Polycarbonate was first made in 1898 by the German chemist Alfred Einhorn, but it came out as a brittle oddity, and the idea was set aside for half a century. In 1953 it was found twice within about a week. At Bayer, Hermann Schnell was researching new plastics and produced the first linear polycarbonate. At General Electric in Massachusetts, Daniel Fox was trying to develop a better insulation for electrical wires, and made a branched version that turned out to be clear and unusually tough. The two companies argued over who came first; Bayer won priority. Bayer sold it as Makrolon from 1958, and General Electric as Lexan from 1960.",
+          read: [{ label: "Polycarbonate", wiki: "Polycarbonate" }, { label: "Daniel Fox (chemist)", wiki: "Daniel_Fox_(chemist)" }],
           people: [
             { name: 'Hermann Schnell', life: 'Active 1953', role: 'German chemist at Bayer; his polycarbonate was sold as Makrolon.', wiki: 'Hermann_Josef_Schnell' },
             { name: 'Daniel W. Fox', life: 'Died 1989', role: 'American chemist at General Electric; his version was sold as Lexan.', wiki: 'Daniel_Fox_(chemist)' },

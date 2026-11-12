@@ -70,6 +70,9 @@ export default {
           by: 'Harry Soref',
           what: 'The body is a stack of plates punched from sheet steel and riveted together, the way a bank-vault door is built. It is cheap to make and very hard to break.',
           here: 'You can see the layers as lines around the body. A hammer blow that would crack a cast lock just dents one plate.',
+          story:
+            "Harry Soref, a locksmith who had emigrated from what is now Ukraine to the United States, wanted to make a padlock that was strong but cheap to build. Strong locks of the time were cast or forged as solid blocks, which was costly. In 1919 he designed a body made from many plates of sheet steel, punched out and stacked together, the same principle as an armoured bank-vault door. Nobody he approached would buy the idea, so in 1921 he set up his own company in Milwaukee, Master Lock, with five employees. It received the first patent on a laminated lock in 1924. In 1974 a famous TV advert showed a sharpshooter’s bullet failing to open one.",
+          read: [{ label: "Master Lock", wiki: "Master_Lock" }, { label: "Padlock", wiki: "Padlock" }],
           people: [{ name: 'Harry Soref', life: '1887 – 1957', role: 'Locksmith born in what is now Ukraine. When no maker would buy his design, he founded Master Lock in Milwaukee in 1921.', wiki: null, link: 'Harry_Soref' }],
           uses: ['Gym and school lockers', 'Gates and sheds', 'Toolboxes', 'Shipping containers'],
           timeline: [
@@ -93,6 +96,9 @@ export default {
           by: 'Henry Bessemer',
           what: 'Blowing air through molten iron burns out the excess carbon in minutes. It made steel, until then a costly craft material, cheap enough to use by the tonne.',
           here: 'The shackle is the part a thief attacks. It has to be steel: iron bends and brass saws through.',
+          story:
+            "In the 1850s steel was so expensive it was used only for small things like knives and tools. Big structures were made of iron, which is brittle. Henry Bessemer later wrote that his idea began with a conversation with Napoleon III in 1854 about the need for stronger metal for artillery. Riding home that night, he decided to improve how iron was made. He found that blowing air through molten iron burned out the excess carbon, and the burning itself made the metal hotter, so no extra fuel was needed. A converter could turn tonnes of iron into steel in minutes, in a roaring shower of sparks. He patented the process in 1856.",
+          read: [{ label: "Bessemer process", wiki: "Bessemer_process" }, { label: "Henry Bessemer", wiki: "Henry_Bessemer" }],
           people: [{ name: 'Henry Bessemer', life: '1813 – 1898', role: 'English inventor with more than a hundred patents. The American William Kelly reached a similar process independently.', wiki: 'Henry_Bessemer' }],
           uses: ['Railway rails', 'Bridges', 'Ship hulls', 'Skyscraper frames', 'Tools'],
           timeline: [
@@ -126,6 +132,9 @@ export default {
           by: 'Linus Yale Jr.',
           what: 'Yale shrank the pin lock into a small rotating plug, opened by a thin flat key with a serrated edge instead of a heavy iron one.',
           here: 'The brass plug turns only when the key’s notches lift every pin to exactly the right height. Turning it releases the shackle.',
+          story:
+            "Linus Yale Jr. started out as a portrait painter. Around 1850 he gave up painting to join his father, a maker of locks for banks, and became fascinated by security. His father’s pin-tumbler locks were large, with heavy keys. Yale Jr. shrank the whole mechanism into a small brass cylinder that fits inside a door, and replaced the big key with a thin, flat one whose serrated edge lifts the pins. He patented the design in 1861 and improved it in 1865. In 1868 he founded a lock company with the businessman Henry Towne, but died suddenly later that year. His compact cylinder lock is still the most common lock in the world.",
+          read: [{ label: "Linus Yale Jr.", wiki: "Linus_Yale_Jr." }, { label: "Pin tumbler lock", wiki: "Pin_tumbler_lock" }],
           people: [{ name: 'Linus Yale Jr.', life: '1821 – 1868', role: 'American engineer who trained as a portrait painter before joining his father’s lock business.', wiki: 'Linus_Yale_Jr.' }],
           uses: ['Front doors', 'Car ignitions', 'Filing cabinets', 'Bicycle locks', 'Vending machines'],
           timeline: [
@@ -162,6 +171,9 @@ export default {
           by: 'Linus Yale Sr.',
           what: 'Spring-loaded pins, each cut in two, block the plug from turning. Only a key that lifts every pin so its cut lines up with the edge of the plug lets it move.',
           here: 'Five pin stacks sit beside the cylinder. With five pins and several possible heights each, thousands of different keys are possible.',
+          story:
+            "The idea behind the pin lock is ancient. Around 2000 BC Egyptians fastened doors with a wooden bolt held by wooden pins that dropped into it; a large wooden key with pegs pushed the pins up so the bolt could slide. The principle was forgotten and rediscovered many times. In the United States in the 1840s, Linus Yale Sr., a lock maker in Newport, New York, who made locks for banks, rebuilt the old idea in metal. Each pin was cut in two and pushed down by a spring, blocking a rotating plug. Only a key that lifts every cut to exactly the edge of the plug lets it turn. His 1848 design is the modern pin-tumbler lock.",
+          read: [{ label: "Pin tumbler lock", wiki: "Pin_tumbler_lock" }, { label: "Linus Yale Sr.", wiki: "Linus_Yale_Sr." }],
           people: [{ name: 'Linus Yale Sr.', life: '1797 – 1858', role: 'American metalsmith and lock maker in Newport, New York, who made high-security locks for banks.', wiki: 'Linus_Yale_Sr.' }],
           uses: ['House door locks', 'Deadbolts', 'Desk and locker locks', 'Car doors'],
           timeline: [

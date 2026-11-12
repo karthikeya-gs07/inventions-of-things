@@ -53,6 +53,9 @@ export default {
           by: 'John Boyd Dunlop',
           what: 'A rubber tube filled with air under pressure, wrapped around the wheel. The air is the spring: it swallows bumps that a solid tyre passes straight to the rider.',
           here: 'Small equal wheels were safer than the high-wheeler but shook the rider badly. Air-filled tyres fixed that, and they roll faster too.',
+          story:
+            "In 1887 John Boyd Dunlop, a vet in Belfast, wanted to give his young son a smoother ride on his tricycle over the city’s rough streets. Using his experience with rubber, he made a tube from sheet rubber, filled it with air, and fitted it to a wooden disc. He rolled it across his yard beside a metal wheel from the tricycle: the metal wheel soon stopped, but the air-filled one kept going until it hit a gatepost and bounced back. He fitted tyres to the tricycle, then to bicycles. Patented in 1888, they were proved by a racer, Willie Hume, who won race after race on them. Dunlop later learned that Robert Thomson had patented the same idea decades earlier.",
+          read: [{ label: "John Boyd Dunlop", wiki: "John_Boyd_Dunlop" }, { label: "Robert William Thomson", wiki: "Robert_William_Thomson" }],
           people: [
             { name: 'John Boyd Dunlop', life: '1840 – 1921', role: 'Scottish veterinary surgeon working in Ireland. He made his first air tyre in 1887 for his son’s tricycle.', wiki: 'John_Boyd_Dunlop' },
             { name: 'Robert William Thomson', life: '1822 – 1873', role: 'Scottish inventor who patented a pneumatic tyre in 1845, aged 23. It was decades ahead of any market for it.', wiki: 'Robert_William_Thomson' },
@@ -81,6 +84,9 @@ export default {
           by: 'Eugène Meyer',
           what: 'Instead of thick wooden spokes that push outward, thin wires pull the rim inward. The hub hangs from the spokes above it, so the wheel can be very light.',
           here: 'Each wheel carries the rider on a few dozen wires thinner than a matchstick. It is still one of the strongest structures for its weight.',
+          story:
+            "The first pedal bicycles had heavy wooden wheels with iron rims, and were nicknamed “boneshakers”. Because the pedals turned the front wheel directly, the only way to go faster was to make that wheel bigger, but a big wooden wheel was far too heavy. In 1869 Eugène Meyer, a mechanic in Paris, patented wheels held together by thin wire spokes pulled tight, like the strings of an instrument. The hub hangs from the spokes above it rather than standing on the ones below, so the wheel can be large and very light. This made the tall penny-farthing possible. In 1874 James Starley angled the spokes so the wheel could also carry pedalling and braking forces.",
+          read: [{ label: "Eugène Meyer (inventor)", wiki: "Eugène_Meyer_(inventor)" }, { label: "Bicycle wheel", wiki: "Bicycle_wheel" }],
           people: [
             { name: 'Eugène Meyer', life: 'Active 1869', role: 'French mechanic from Alsace working in Paris. He raced his own bicycles to promote them.', wiki: null, link: 'Eugène_Meyer_(inventor)' },
             { name: 'James Starley', life: '1830 – 1881', role: 'English inventor, often called the father of the bicycle industry. He patented tangent spokes in 1874.', wiki: 'James_Starley' },
@@ -111,6 +117,9 @@ export default {
           by: 'Jules Suriray',
           what: 'A ring of hard steel balls rolling between the axle and the hub. Rolling wastes far less energy than sliding, so the wheel spins almost freely.',
           here: 'Bearings sit in both hubs, the pedals, the cranks and the steering. They are why a bicycle keeps rolling long after you stop pedalling.',
+          story:
+            "On early bicycles the axles turned in plain metal sleeves. The surfaces slid against each other, wasting a lot of the rider’s effort as friction and wearing out quickly. The idea of rolling balls had been patented for carriage axles by Philip Vaughan in Wales as early as 1794, but it had not been applied to bicycles. Jules Suriray, a bicycle mechanic in Paris, did so and was granted a patent on 2 August 1869. In November that year his bearings were fitted to the bicycle ridden by James Moore in the world’s first long-distance road race, from Paris to Rouen. Moore won, and ball bearings soon became standard on bicycles.",
+          read: [{ label: "Jules Suriray", wiki: "Jules_Suriray" }, { label: "Ball bearing", wiki: "Ball_bearing" }],
           people: [{ name: 'Jules Suriray', life: 'Active 1869', role: 'Parisian bicycle mechanic who patented the use of ball bearings in bicycles.', wiki: null, link: 'Jules_Suriray' }],
           uses: ['Car wheels', 'Electric motors', 'Skateboards', 'Hard disk drives', 'Fans'],
           timeline: [
@@ -146,6 +155,9 @@ export default {
           by: 'John Kemp Starley',
           what: 'Two wheels of the same size, the rider sitting low between them, and a chain driving the rear wheel. Unlike the high-wheeler, a sudden stop no longer threw the rider over the handlebars.',
           here: 'This is the layout of the frame itself. Almost every bicycle built since has kept the same two triangles.',
+          story:
+            "By the 1870s the fastest bicycle was the penny-farthing, its rider perched high above a huge front wheel. It was fast but dangerous: hitting a stone or braking hard could pitch the rider head-first over the handlebars, a fall known as “taking a header”. Many people would not risk it. Inventors looked for a safer layout. Harry Lawson designed a rear-chain-driven machine in 1879, but it did not sell. In 1885 John Kemp Starley, in Coventry, produced the Rover: two wheels of similar size, the rider seated low between them, and a chain to the rear wheel. It was as fast as a high-wheeler and far safer, and it set the shape of almost every bicycle since.",
+          read: [{ label: "Safety bicycle", wiki: "Safety_bicycle" }, { label: "John Kemp Starley", wiki: "John_Kemp_Starley" }],
           people: [{ name: 'John Kemp Starley', life: '1855 – 1901', role: 'English inventor and industrialist in Coventry, nephew of James Starley. His firm later became the Rover car company.', wiki: 'John_Kemp_Starley' }],
           uses: ['City and racing bicycles', 'Mountain bikes', 'Early motorcycles', 'Electric bikes'],
           timeline: [
@@ -161,6 +173,9 @@ export default {
           by: 'Reinhard & Max Mannesmann',
           what: 'A solid steel bar is pierced and rolled into a tube with no welded seam, so there is no weak line along its length.',
           here: 'A tube is far stiffer than a solid rod of the same weight. Seamless tubing let frames be both light and strong.',
+          story:
+            "Metal pipes used to be made by bending a flat plate into a tube and joining the edges with a weld. That seam was the weak line where pipes split under pressure. The German brothers Reinhard and Max Mannesmann, sons of a steel-file maker, found a way to make a tube from a solid bar with no seam at all. They fed a hot steel bar between rollers set at an angle to each other, and the rolling twisted and pulled the centre of the bar open into a hollow. They patented the process in 1886 and set up tube mills over the next few years, just as the cycling boom created huge demand for strong, light steel tubing.",
+          read: [{ label: "Mannesmann", wiki: "Mannesmann" }, { label: "Bicycle frame", wiki: "Bicycle_frame" }],
           people: [
             { name: 'Reinhard Mannesmann', life: '1856 – 1922', role: 'German engineer who, with his brother, received the first patent for rolling seamless steel pipe.', wiki: null, link: 'Mannesmann' },
             { name: 'Max Mannesmann', life: '1857 – 1915', role: 'German engineer and co-inventor of the Mannesmann rolling process.', wiki: null, link: 'Mannesmann' },
@@ -196,6 +211,9 @@ export default {
           by: 'Karl Drais',
           what: 'Two wheels in a line, with the front one turned by a handlebar. Drais found that a rider can balance simply by steering into each wobble.',
           here: 'The fork and handlebar are that idea unchanged. Steering is what keeps a bicycle upright; without it you cannot balance at all.',
+          story:
+            "In 1815 the volcano Tambora erupted in Indonesia. Its ash darkened the skies, and 1816 became “the year without a summer” in Europe, with crops failing and oats too scarce to feed horses. Historians have suggested this led Karl Drais, a German forest official in Mannheim, to look for a way to travel without horses. His answer was a wooden frame on two wheels in a line, with a handlebar to turn the front wheel. The rider sat astride it and pushed along the ground with their feet. He discovered that by steering, a rider could balance on just two wheels. On 12 June 1817 he rode it about 7 km, faster than walking.",
+          read: [{ label: "Karl Drais", wiki: "Karl_Drais" }, { label: "Year Without a Summer", wiki: "Year_Without_a_Summer" }],
           people: [{ name: 'Karl Drais', life: '1785 – 1851', role: 'German forest official and prolific inventor. His first ride, in June 1817, covered about 7 km.', wiki: 'Karl_Drais' }],
           uses: ['Children’s balance bikes', 'Kick scooters', 'Motorcycles'],
           timeline: [
@@ -224,6 +242,9 @@ export default {
           by: 'John Boultbee Brooks',
           what: 'A sheet of thick leather stretched like a hammock between a metal nose and a rear frame. It gives under the rider and slowly moulds to their shape.',
           here: 'It carries most of the rider’s weight while leaving the legs free to turn the pedals.',
+          story:
+            "John Boultbee Brooks ran a business in Birmingham making leather harnesses and horse equipment. According to his family’s story, when his horse died he borrowed a bicycle to get to work, and found its hard saddle so uncomfortable that he decided to make a better one. His design stretched a thick sheet of leather between a metal nose and a sprung rear frame, like a hammock. It gives a little under the rider and, over time, moulds to their shape. Brooks filed his first saddle patent in 1882, and his company has made leather saddles ever since.",
+          read: [{ label: "Brooks England", wiki: "Brooks_England" }, { label: "Bicycle saddle", wiki: "Bicycle_saddle" }],
           people: [{ name: 'John Boultbee Brooks', life: 'Founded his firm in 1866', role: 'English leather-goods maker in Birmingham. His company, Brooks, still makes leather saddles.', wiki: null, link: 'Brooks_England' }],
           uses: ['Touring bicycles', 'City bicycles', 'Early motorcycles'],
           timeline: [
@@ -255,6 +276,9 @@ export default {
           by: 'Hans Renold',
           what: 'Links joined by pins, with a free-turning roller on each pin. The rollers roll onto the sprocket teeth instead of scraping, so very little power is lost.',
           here: 'The chain lets a small rear wheel turn several times for each turn of the pedals, so the giant front wheel is no longer needed.',
+          story:
+            "Chains for driving machines were around long before bicycles; Leonardo da Vinci sketched one with rollers in the 1500s. But the chains of the 1800s were made of solid blocks or bare pins that slid and scraped against the sprocket teeth, wasting power and wearing out quickly. Hans Renold, a Swiss engineer, settled in Manchester and in 1879 started a business making chain. In 1880 he patented a better design: each pin was surrounded by a hardened sleeve, or bush, with a free roller turning on the outside. The rollers roll onto the teeth instead of rubbing. His bush roller chain is the design used on bicycles, motorbikes and machines today.",
+          read: [{ label: "Hans Renold", wiki: "Hans_Renold" }, { label: "Roller chain", wiki: "Roller_chain" }],
           people: [{ name: 'Hans Renold', life: '1852 – 1943', role: 'Swiss-born engineer who settled in Manchester and built a chain-making firm that still carries his name.', wiki: 'Hans_Renold' }],
           uses: ['Motorcycles', 'Engine timing chains', 'Conveyors', 'Forklifts', 'Farm machinery'],
           timeline: [
@@ -270,6 +294,9 @@ export default {
           by: 'William Van Anden',
           what: 'A ratchet in the hub that grips when you pedal forward and slips when you stop, so the wheel can keep turning on its own.',
           here: 'It is the ticking sound when you coast. Without it the pedals would spin with the wheel all the way down every hill.',
+          story:
+            "On the first pedal bicycles, the pedals were fixed to the wheel. Whenever the wheel turned, the pedals turned too, so on a downhill they spun wildly and riders had to take their feet off and rest them on pegs. In 1869 William Van Anden of Poughkeepsie, New York, invented a freewheel for the bicycle: a ratchet in the hub that grips when the rider pushes forward and slips when they stop, letting the wheel spin on its own. It was ahead of its time. Only in the 1890s, once chain-driven safety bicycles were common, did rear freewheels spread, letting riders coast and leading on to coaster brakes.",
+          read: [{ label: "Freewheel", wiki: "Freewheel" }, { label: "Bicycle brake", wiki: "Bicycle_brake" }],
           people: [{ name: 'William Van Anden', life: 'Active 1869', role: 'American inventor from Poughkeepsie, New York, who devised the freewheel for the bicycle.', wiki: null, link: 'Freewheel' }],
           uses: ['Helicopter rotors', 'Car starter motors', 'Automatic gearboxes'],
           timeline: [
@@ -304,6 +331,9 @@ export default {
           by: 'Pierre Michaux & Pierre Lallement',
           what: 'Cranks turn the push of the legs into rotation. Historians still argue over who fitted them first; the earliest date they agree on is 1864.',
           here: 'The cranks are the lever between rider and machine. On the first pedal bicycles they were fixed straight to the front wheel.',
+          story:
+            "Early riders of Drais’s machine pushed themselves along with their feet. In Paris in the early 1860s, someone had the idea of fixing cranks and pedals to the front wheel so the rider’s feet could leave the ground. Exactly who is still disputed. The blacksmith Pierre Michaux and his son Ernest were said to have done it while repairing a running machine. Pierre Lallement, a young mechanic, claimed he built one first; he later moved to America and in 1866 received the only US patent for the pedal bicycle. Historians agree only that it happened by 1864. Michaux’s workshop went on to make the first pedal bicycles in large numbers.",
+          read: [{ label: "History of the bicycle", wiki: "History_of_the_bicycle" }, { label: "Pierre Lallement", wiki: "Pierre_Lallement" }],
           people: [
             { name: 'Pierre Lallement', life: '1843 – 1891', role: 'French mechanic who took out the first, and only, American patent for the pedal bicycle in 1866.', wiki: 'Pierre_Lallement' },
             { name: 'Pierre Michaux', life: '1813 – 1883', role: 'Paris blacksmith and carriage-parts maker whose workshop sold the first mass-produced pedal velocipedes.', wiki: 'Pierre_Michaux' },
@@ -344,6 +374,9 @@ export default {
           by: 'Browett & Harrison',
           what: 'Two arms reach around the wheel and squeeze a rubber block against each side of the rim, like a hand gripping it.',
           here: 'It turns the whole rim into a brake disc, with no extra weight on the wheel.',
+          story:
+            "The first pedal bicycles slowed down with a “spoon” brake: a metal shoe pressed onto the tyre by a lever. It wore the tyre down, and on penny-farthings many riders simply slowed by resisting the pedals. In 1887 two English inventors, Browett and Harrison, patented a different approach. Two arms reach around the wheel and squeeze a block of rubber against each side of the rim, gripping it like a hand. Using the rim as the braking surface meant the tyre was not worn away, a big advantage once soft air-filled tyres arrived the following year. The same squeezing principle is used in the disc brakes of modern bicycles and cars.",
+          read: [{ label: "Bicycle brake", wiki: "Bicycle_brake" }],
           people: [{ name: 'Browett & Harrison', life: 'Active 1887', role: 'English patentees of the first caliper brake, made as an alternative to the spoon brake.', wiki: null, link: 'Bicycle_brake' }],
           uses: ['Road and city bicycles', 'Wheelchairs', 'Disc brakes use the same squeeze on a smaller disc'],
           timeline: [

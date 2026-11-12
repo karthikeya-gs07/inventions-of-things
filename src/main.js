@@ -4,7 +4,7 @@ import { instantiate, stepExplode, setHighlight, disposeInstance, PART_COLOR } f
 import { catalog } from './products/index.js';
 import { icon } from './icons.js';
 import { cachedThumb, requestThumb, cachedObjectThumb, requestObjectThumb } from './thumbs.js';
-import { portrait, linkNames } from './people.js';
+import { portrait, linkNames, wikiUrl } from './people.js';
 import { registerPWA, canInstall, onInstallChange, promptInstall } from './pwa.js';
 
 registerPWA();
@@ -390,6 +390,21 @@ function renderDetail() {
         <p>${v.here}</p>
       </div>
     </section>
+    ${
+      v.story
+        ? `<section class="story">
+      ${heading('book', 'The story')}
+      <p>${v.story}</p>
+      ${
+        v.read?.length
+          ? `<p class="eyebrow read-label">Read more</p><ul class="reads">${v.read
+              .map((r) => `<li><a href="${wikiUrl(r.wiki)}" target="_blank" rel="noopener">${icon('link', 13)}<span>${r.label}</span><small>Wikipedia</small></a></li>`)
+              .join('')}</ul>`
+          : ''
+      }
+    </section>`
+        : ''
+    }
     <section>
       ${heading('user', v.people.length > 1 ? 'The inventors' : 'The inventor')}
       <div class="people">${v.people.map(personHtml).join('')}</div>
