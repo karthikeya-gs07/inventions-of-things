@@ -7,13 +7,15 @@
     "dev": "vite",
     "build": "node scripts/check-content.mjs && vite build",
     "preview": "vite preview",
-    "check": "node scripts/check-content.mjs"
+    "check": "node scripts/check-content.mjs",
+    "audio": "node scripts/generate-audio.mjs"
   },
   "dependencies": {
     "three": "^0.187.0",
     "three-mesh-bvh": "^0.9.18"
   },
   "devDependencies": {
+    "kokoro-js": "^1.2.1",
     "vite": "^8.3.8"
   }
 }

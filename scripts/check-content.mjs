@@ -3,6 +3,8 @@
 // added in future automatically gets a complete transcript.
 import { catalog } from '../src/products/index.js';
 import { TRANSCRIPT_FIELDS, transcriptFor } from '../src/transcripts.js';
+import { existsSync, readFileSync } from 'node:fs';
+import { AUDIO_DIR, MANIFEST, inventions } from './audio-common.mjs';
 
 const problems = [];
 let count = 0;
@@ -24,8 +26,18 @@ for (const product of catalog) {
     }
   }
 }
+// Recorded narration must exist and match the current transcript text
+const manifest = existsSync(MANIFEST) ? JSON.parse(readFileSync(MANIFEST, 'utf8')) : { entries: {} };
+const stale = [];
+for (const n of inventions()) {
+  const rec = manifest.entries[n.id];
+  if (!rec || !existsSync(new URL(rec.file, AUDIO_DIR))) stale.push(`${n.name}: no recorded narration`);
+  else if (rec.hash !== n.hash) stale.push(`${n.name}: narration is out of date (transcript changed)`);
+}
+if (stale.length) problems.push(...stale, 'Run "npm run audio" to render the missing narration, then commit public/audio and src/audio-manifest.json.');
+
 if (problems.length) {
   console.error(`Read-aloud transcripts: ${problems.length} problem(s)\n  ${problems.join('\n  ')}`);
   process.exit(1);
 }
-console.log(`Read-aloud transcripts: all ${count} inventions OK`);
+console.log(`Read-aloud: all ${count} inventions have a transcript and recorded narration`);

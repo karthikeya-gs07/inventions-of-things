@@ -58,6 +58,8 @@ self.addEventListener('fetch', (event) => {
     return;
   }
   if (url.origin !== self.location.origin) return;
+  // Narration audio streams with byte-range requests; leave those to the browser
+  if (url.pathname.includes('/audio/')) return;
 
   // Page loads: always try the network first so a new deploy is picked up at once
   // (and an old page never asks for files the host has since deleted).

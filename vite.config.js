@@ -21,7 +21,7 @@ function precacheServiceWorker() {
         });
       const files = walk(outDir)
         .map((path) => relative(outDir, path).split('\\').join('/'))
-        .filter((url) => url !== 'sw.js' && !url.endsWith('.map'));
+        .filter((url) => url !== 'sw.js' && !url.endsWith('.map') && !url.startsWith('audio/'));
       const hash = createHash('sha256');
       for (const url of files.sort()) hash.update(url).update(readFileSync(join(outDir, url)));
       const swPath = join(outDir, 'sw.js');

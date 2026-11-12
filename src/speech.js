@@ -1,15 +1,24 @@
-// Read-aloud using the browser's built-in speech synthesis (Web Speech API).
-// No model is downloaded and nothing leaves the device: the browser or OS voice speaks.
+// Read-aloud.
 //
-// To sound less robotic it:
+// 1. Recorded narration (preferred): every invention's transcript is rendered ahead of time
+//    with one fixed voice (scripts/generate-audio.mjs) and shipped as an audio file, so it
+//    sounds identical on every device. No speech model runs in the browser.
+// 2. Browser voice (fallback): if a recording is missing or fails to load, the browser's
+//    built-in speech synthesis (Web Speech API) reads the same transcript.
+//
+// When the browser voice is used, to sound less robotic it:
 //  - picks the most natural voice the device offers (neural / "Natural" / Enhanced /
 //    Premium / Google voices first, never the novelty or legacy synthetic voices)
 //  - reads at a slightly calmer pace
 //  - speaks one sentence at a time with short breaths between sentences and longer
 //    pauses between sections, instead of one long unbroken stream
 
-export const ttsSupported =
+import audioManifest from './audio-manifest.json';
+
+const browserSpeech =
   typeof window !== 'undefined' && 'speechSynthesis' in window && 'SpeechSynthesisUtterance' in window;
+const recordings = audioManifest.entries ?? {};
+export const ttsSupported = browserSpeech || (typeof Audio !== 'undefined' && Object.keys(recordings).length > 0);
 
 // Old formant-synthesis and novelty voices (macOS / iOS) that sound mechanical
 const ROBOTIC = /\b(Albert|Bad News|Bahh|Bells|Boing|Bubbles|Cellos|Deranged|Eddy|Flo|Fred|Good News|Grandma|Grandpa|Hysterical|Jester|Junior|Kathy|Organ|Pipe Organ|Princess|Ralph|Reed|Rocko|Sandy|Shelley|Superstar|Trinoids|Whisper|Wobble|Zarvox|eSpeak)\b/i;
@@ -38,7 +47,7 @@ function pickVoice() {
   english.sort((a, b) => score(b) - score(a));
   voice = english[0] && score(english[0]) > -1000 ? english[0] : null;
 }
-if (ttsSupported) {
+if (browserSpeech) {
   pickVoice();
   speechSynthesis.addEventListener?.('voiceschanged', pickVoice);
 }
@@ -72,12 +81,44 @@ function sentences(paragraph) {
 let currentId = null;
 let run = 0; // incremented on every start/stop so stale callbacks are ignored
 let timer = null;
+let player = null;
 const listeners = new Set();
 const notify = () => listeners.forEach((cb) => cb(currentId));
 
 export function speak(id, paragraphs) {
-  if (!ttsSupported) return;
   stop();
+  const rec = recordings[id];
+  if (rec && typeof Audio !== 'undefined') playRecording(id, rec, paragraphs);
+  else speakWithBrowser(id, paragraphs);
+}
+
+// play() is called straight from the click, which mobile browsers require for audio
+function playRecording(id, rec, paragraphs) {
+  currentId = id;
+  const token = ++run;
+  const a = new Audio(`${import.meta.env.BASE_URL}audio/${rec.file}`);
+  player = a;
+  const fallBack = () => {
+    if (token !== run) return;
+    player = null;
+    speakWithBrowser(id, paragraphs);
+  };
+  a.addEventListener('ended', () => {
+    if (token !== run) return;
+    player = null;
+    currentId = null;
+    notify();
+  });
+  a.addEventListener('error', fallBack);
+  a.play().catch(fallBack);
+  notify();
+}
+
+function speakWithBrowser(id, paragraphs) {
+  if (!browserSpeech) {
+    currentId = null;
+    return notify();
+  }
   if (!voice) pickVoice();
   currentId = id;
   const token = ++run;
@@ -124,17 +165,22 @@ export function speak(id, paragraphs) {
 }
 
 export function stop() {
-  if (!ttsSupported) return;
   run++;
   clearTimeout(timer);
+  if (player) {
+    player.pause();
+    player.removeAttribute('src');
+    player = null;
+  }
   const was = currentId;
   currentId = null;
-  speechSynthesis.cancel();
+  if (browserSpeech) speechSynthesis.cancel();
   if (was) notify();
 }
 
 export const speakingId = () => currentId;
 export const onSpeechChange = (cb) => listeners.add(cb);
 export const currentVoice = () => voice;
+export const hasRecording = (id) => !!recordings[id];
 
-if (ttsSupported) window.addEventListener('pagehide', stop);
+if (typeof window !== 'undefined') window.addEventListener('pagehide', stop);
