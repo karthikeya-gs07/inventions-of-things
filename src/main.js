@@ -5,6 +5,8 @@ import { catalog } from './products/index.js';
 import { icon } from './icons.js';
 import { cachedThumb, requestThumb, cachedObjectThumb, requestObjectThumb } from './thumbs.js';
 import { portrait, linkNames, wikiUrl } from './people.js';
+import { ttsSupported, speak, stop as stopSpeech, speakingId, onSpeechChange } from './speech.js';
+import { transcriptFor } from './transcripts.js';
 import { registerPWA, canInstall, onInstallChange, promptInstall } from './pwa.js';
 
 registerPWA();
@@ -313,7 +315,40 @@ function setDrawer(next) {
 const stepDrawer = (delta) =>
   setDrawer(DRAWER_ORDER[Math.max(0, Math.min(2, DRAWER_ORDER.indexOf(state.drawer) + delta))]);
 
+// ---------- Read aloud ----------
+// Each invention has a hidden transcript in the panel, written for listening rather than
+// copied from the page (see transcripts.js). The voice button reads that transcript.
+const speechId = (product, part, inv) => `${product.id}/${part.def.id}/${part.def.inventions.indexOf(inv)}`;
+
+function speakButtonHtml(id) {
+  const on = speakingId() === id;
+  return `<button class="speak" data-speak="${id}" aria-pressed="${on}" aria-label="${on ? 'Stop reading' : 'Read this invention aloud'}" title="${on ? 'Stop reading' : 'Read aloud'}">${icon(on ? 'stop' : 'volume', 18)}</button>`;
+}
+
+function transcriptHtml(product, part, inv) {
+  const esc = (t) => t.replace(/&/g, '&amp;').replace(/</g, '&lt;');
+  return `<div class="transcript" hidden data-transcript="${speechId(product, part, inv)}">${transcriptFor(product, part.def, inv)
+    .map((p) => `<p>${esc(p)}</p>`)
+    .join('')}</div>`;
+}
+
+function toggleSpeech(id) {
+  if (speakingId() === id) return stopSpeech();
+  const el = detailEl.querySelector(`[data-transcript="${id}"]`);
+  if (el) speak(id, [...el.querySelectorAll('p')].map((p) => p.textContent));
+}
+
+// Keep the button in step with the voice (it also ends on its own)
+onSpeechChange(() => {
+  const b = detailEl.querySelector('[data-speak]');
+  if (b) b.outerHTML = speakButtonHtml(b.dataset.speak);
+});
+
 function renderDetail() {
+  // Leaving an invention stops the voice
+  const shown = state.selected && state.active ? speechId(state.active.product, state.selected, state.selected.def.inventions[state.invention] ?? state.selected.def.inventions[0]) : null;
+  if (speakingId() && speakingId() !== shown) stopSpeech();
+
   const inst = state.active;
   if (!inst) {
     detailEl.style.removeProperty('--c');
@@ -366,10 +401,11 @@ function renderDetail() {
       <button class="back" data-back>${icon('back', 13)} ${product.name}</button>
       <div class="part-title">
         ${thumbHtml(product, part.def, 'lg')}
-        <div>
+        <div class="grow">
           <p class="eyebrow">Part ${pad(part.index + 1)} / ${pad(product.parts.length)}</p>
           <h2>${part.def.name}</h2>
         </div>
+        ${ttsSupported ? speakButtonHtml(speechId(product, part, v)) : ''}
       </div>
       ${
         list.length > 1
@@ -417,6 +453,7 @@ function renderDetail() {
       ${heading('clock', 'Through time')}
       ${timelineHtml(v.timeline)}
     </section>
+    ${transcriptHtml(product, part, v)}
     <section class="pager">
       <button data-step="-1">${icon('prev', 14)} Previous part</button>
       <button data-step="1">Next part ${icon('next', 14)}</button>
@@ -454,6 +491,7 @@ libraryEl.addEventListener('click', (e) => {
 detailEl.addEventListener('click', (e) => {
   const b = e.target.closest('button');
   if (!b) return;
+  if (b.dataset.speak) return toggleSpeech(b.dataset.speak);
   if ('drawer' in b.dataset) {
     // Tap: minimised -> default -> expanded -> default
     if (!dragMoved) setDrawer(state.drawer === 'mid' ? 'max' : 'mid');

@@ -31,4 +31,6 @@ The production build is an installable PWA that works offline. Pushing to `main`
 
 Each object is one file in `src/products/`, registered in `src/products/index.js`. `flashlight.js` is the template: geometry for each part, plus the inventions, inventors, uses and timeline shown in the panel.
 
+Every invention needs `name`, `year`, `by`, `what`, `here`, `story`, `people`, `uses` and `timeline`. Its read-aloud transcript (the voice button in the panel) is generated from these, worded for listening; set a `transcript` field to write one by hand instead. `npm run check` (also run before every build) fails if any invention is missing what its transcript needs.
+
 Inventor portraits are loaded at view time from Wikipedia's public page-summary API.
