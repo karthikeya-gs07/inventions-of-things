@@ -221,13 +221,15 @@ const timelineHtml = (items) =>
 
 const heading = (name, text) => `<h4 class="section-title">${icon(name, 14)}<span>${text}</span></h4>`;
 
+// p.wiki: the person's own article (also the source of their portrait).
+// p.link: a page about their work, for people with no article, and so no portrait, of their own.
 function personHtml(p) {
   return `<article class="person">
     ${p.wiki ? `<div class="avatar" data-wiki="${p.wiki}" data-name="${p.name}"></div>` : ''}
     <div class="who">
       <h5>${
-        p.wiki
-          ? `<a href="https://en.wikipedia.org/wiki/${encodeURIComponent(p.wiki)}" target="_blank" rel="noopener" title="Open ${p.name} on Wikipedia in a new tab">${p.name}${icon('link', 13)}</a>`
+        p.wiki || p.link
+          ? `<a href="https://en.wikipedia.org/wiki/${encodeURIComponent(p.wiki || p.link)}" target="_blank" rel="noopener" title="Open ${p.name} on Wikipedia in a new tab">${p.name}${icon('link', 13)}</a>`
           : p.name
       }</h5>
       <p class="life">${p.life}</p>

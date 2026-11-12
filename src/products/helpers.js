@@ -181,6 +181,30 @@ export function wire(points, tube, material) {
   return new THREE.Mesh(new THREE.TubeGeometry(curve, 32, tube, 8), material);
 }
 
+// Straight round tube between two [x, y, z] points.
+export function tube(a, b, r, material, seg = 16) {
+  const A = new THREE.Vector3(...a), B = new THREE.Vector3(...b);
+  const m = new THREE.Mesh(new THREE.CylinderGeometry(r, r, A.distanceTo(B), seg), material);
+  m.position.copy(A).add(B).multiplyScalar(0.5);
+  m.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), B.clone().sub(A).normalize());
+  return m;
+}
+
+// Cylinder whose axis runs along Z, centred on [x, y, z].
+export function zcyl(r, length, [x, y, z = 0], material, seg = 32) {
+  const m = new THREE.Mesh(new THREE.CylinderGeometry(r, r, length, seg), material);
+  m.rotation.x = Math.PI / 2;
+  m.position.set(x, y, z);
+  return m;
+}
+
+// Hoop standing upright in the XY plane (a wheel seen from the side), centred on [x, y, z].
+export function hoop(r, tubeR, [x, y, z = 0], material) {
+  const m = new THREE.Mesh(new THREE.TorusGeometry(r, tubeR, 12, 72), material);
+  m.position.set(x, y, z);
+  return m;
+}
+
 export function group(...children) {
   const g = new THREE.Group();
   g.add(...children);

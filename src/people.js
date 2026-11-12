@@ -58,7 +58,22 @@ const NAMES = {
   'Ediswan': 'Edison_and_Swan_Electric_Light_Company', 'Ever-Ready Sharp': 'Mechanical_pencil', 'Sharp': 'Sharp_Corporation',
   'Apollo': 'Apollo_program', 'Wright Flyer': 'Wright_Flyer', 'Washington Monument': 'Washington_Monument',
   'Nobel Prize in Physics': 'Nobel_Prize_in_Physics', 'Supreme Court': 'Supreme_Court_of_the_United_States',
-  'Stanford': 'Stanford_University', 'Mesoamericans': 'Mesoamerica', 'Fritz Hofmann': 'Fritz_Hofmann_(chemist)', 'Tokuji Hayakawa': 'Tokuji_Hayakawa',
+  'Stanford': 'Stanford_University', 'Mesoamericans': 'Mesoamerica',
+  // Bicycle
+  'Karl Drais': 'Karl_Drais', 'Drais': 'Karl_Drais', 'Pierre Michaux': 'Pierre_Michaux', 'Michaux': 'Pierre_Michaux',
+  'Pierre Lallement': 'Pierre_Lallement', 'Lallement': 'Pierre_Lallement', 'John Kemp Starley': 'John_Kemp_Starley',
+  'James Starley': 'James_Starley', 'Starley': 'John_Kemp_Starley', 'Rover': 'John_Kemp_Starley',
+  'Harry John Lawson': 'Harry_John_Lawson', 'Lawson': 'Harry_John_Lawson', 'Dunlop': 'John_Boyd_Dunlop',
+  'Robert William Thomson': 'Robert_William_Thomson', 'George Cayley': 'George_Cayley', 'Eugène Meyer': 'Eugène_Meyer_(inventor)',
+  'Philip Vaughan': 'Philip_Vaughan', 'Suriray': 'Jules_Suriray', 'James Moore': 'James_Moore_(cyclist)', 'SKF': 'SKF',
+  'Mannesmann': 'Mannesmann', 'Brooks': 'Brooks_England', 'Leonardo da Vinci': 'Leonardo_da_Vinci',
+  'James Fussell': 'Roller_chain', 'Renold': 'Hans_Renold', 'Van Anden': 'Freewheel',
+  'Browett and Harrison': 'Bicycle_brake', 'Tour de France': 'Tour_de_France', 'penny-farthing': 'Penny-farthing',
+  // Padlock
+  'Jorvik': 'Scandinavian_York', 'Christopher Polhem': 'Christopher_Polhem', 'Linus Yale Jr.': 'Linus_Yale_Jr.',
+  'Linus Yale Sr.': 'Linus_Yale_Sr.', 'Harry Soref': 'Harry_Soref', 'Soref': 'Harry_Soref', 'Master Lock': 'Master_Lock',
+  'Yale': 'Yale_(company)', 'Benjamin Huntsman': 'Benjamin_Huntsman', 'Bessemer': 'Henry_Bessemer',
+  'Khorsabad': 'Dur-Sharrukin', 'Fritz Hofmann': 'Fritz_Hofmann_(chemist)', 'Tokuji Hayakawa': 'Tokuji_Hayakawa',
 };
 
 const escape = (t) => t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
