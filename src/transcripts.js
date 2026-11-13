@@ -41,7 +41,7 @@ export function speakable(text) {
     .replace(/\bCMOS\b/g, 'sea-moss')
     .replace(/\bMOSFET\b/g, 'moss-fet')
     .replace(/\bMOS\b/g, 'moss')
-    .replace(/\b(SLR|RCA|TDK|IBM|EMI|MIT)\b/g, (w) => w.split('').join('.'))
+    .replace(/\b(SLR|RCA|TDK|IBM|EMI|MIT|USM)\b/g, (w) => w.split('').join('.'))
     .replace(/\bQi\b/g, 'chee')
     .replace(/\bJPEG\b/g, 'jay-peg')
     .replace(/\bSP\/3\b/g, 'S.P. 3')

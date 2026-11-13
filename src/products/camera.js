@@ -78,19 +78,14 @@ export default {
         const grip = cyl(0.26, 0.26, 1.0, 0.6, leather(), 32);
         grip.scale.set(1.1, 1, 0.8);
         grip.position.set(-0.98, 0.6, 0.34);
-        const mount = lathe([[0.5, 0], [0.64, 0], [0.64, 0.1], [0.5, 0.1], [0.5, 0]], metal(0xc9ccd2, { roughness: 0.3 }), 48);
-        mount.rotation.x = Math.PI / 2;
-        mount.position.set(MX, MY, 0.31);
         return group(
-          lowerBody(), topPlate(), grip, mount,
+          lowerBody(), topPlate(), grip,
           zcyl(0.5, 0.012, [MX, MY, 0.316], mat(0x08090a, { roughness: 0.9 }), 48),
-          zcyl(0.06, 0.05, [0.9, 0.4, 0.33], silver(), 20),
           // Top plate controls: shutter button, two dials, flash shoe
           cyl(0.14, 0.14, 0.04, 1.47, silver(), 32).translateX(-0.95).translateZ(0.1),
           cyl(0.08, 0.08, 0.07, 1.5, metal(0xdadde2, { roughness: 0.25 }), 24).translateX(-0.95).translateZ(0.1),
           cyl(0.2, 0.2, 0.13, 1.515, metal(0xb7bbc2, { roughness: 0.38, bumpMap: knurl(30, 2), bumpScale: 1.2 }), 40).translateX(0.92),
-          cyl(0.15, 0.15, 0.11, 1.505, metal(0xb7bbc2, { roughness: 0.38, bumpMap: knurl(24, 2), bumpScale: 1.2 }), 40).translateX(-0.58).translateZ(-0.06),
-          box(0.36, 0.03, 0.36, [0.1, 1.845, -0.02], metal(0x8e939b, { roughness: 0.4 }))
+          cyl(0.15, 0.15, 0.11, 1.505, metal(0xb7bbc2, { roughness: 0.38, bumpMap: knurl(24, 2), bumpScale: 1.2 }), 40).translateX(-0.58).translateZ(-0.06)
         );
       },
       inventions: [
@@ -130,6 +125,56 @@ export default {
             ['1975', 'Sasson builds a self-contained digital camera at Kodak.'],
             ['1981', 'Sony demonstrates the Mavica, a filmless camera that records to a small disk.'],
             ['1988', 'Fujifilm shows the DS-1P, which saves digital pictures on a memory card.'],
+          ],
+        },
+        {
+          name: "Photography",
+          kind: "invention",
+          year: "1826",
+          by: "Nicéphore Niépce and Louis Daguerre",
+          what: "Capturing the picture formed by a lens on a surface that light itself changes, so the image stays after the light has gone.",
+          here: "Everything else in this camera exists to do that one thing better: catch the image thrown by the lens and keep it.",
+          story: "By 1800 artists had long used the camera obscura, a dark box with a lens that throws a picture of the world onto a screen, but the only way to keep the picture was to trace it by hand. Around 1800 Thomas Wedgwood and Humphry Davy caught shadows on paper treated with silver salts, but could not stop them fading. Nicéphore Niépce, a French inventor, tried a different substance: bitumen, a kind of tar that hardens where light falls on it. In 1826 or 1827 he coated a pewter plate with it, put it in a camera obscura at an upstairs window of his house, and left it there. The exposure took at least eight hours, perhaps several days. That plate is the oldest surviving photograph. In 1829 he went into partnership with Louis Daguerre, a Paris stage designer. Niépce died in 1833, and Daguerre went on to a process on silvered plates that needed only minutes. In 1839 the French government bought it and gave it to the world.",
+          read: [
+            { label: "History of photography", wiki: "History_of_photography" },
+            { label: "View from the Window at Le Gras", wiki: "View_from_the_Window_at_Le_Gras" },
+          ],
+          people: [
+            { name: "Nicéphore Niépce", life: "1765 – 1833", role: "French inventor who made the oldest surviving photograph. He died financially ruined, six years before photography was announced.", wiki: "Nicéphore_Niépce" },
+            { name: "Louis Daguerre", life: "1787 – 1851", role: "French painter and theatre designer whose daguerreotype was the first practical photographic process.", wiki: "Louis_Daguerre" },
+          ],
+          uses: ["Portraits and family albums", "News reporting", "Astronomy", "Medical X-rays", "Printing and chip making"],
+          timeline: [
+            ["c. 1800", "Thomas Wedgwood and Humphry Davy record shadows with silver salts but cannot fix them."],
+            ["1826 – 1827", "Niépce makes the oldest surviving photograph from his window."],
+            ["1829", "Niépce and Daguerre become partners."],
+            ["1839", "Daguerre’s process is made public as a gift from France to the world."],
+            ["1839", "Henry Fox Talbot shows a rival process on paper in London."],
+          ],
+        },
+        {
+          name: "Camera obscura",
+          kind: "discovery",
+          kindNote: "The effect is natural: light through a small hole forms a picture by itself. People noticed it, studied it and later built it into a box.",
+          year: "c. 400 BC",
+          by: "Mozi, and Ibn al-Haytham",
+          what: "Light passing through a small hole into a dark space forms an upside-down picture of the scene outside. The word camera comes from the Latin for this “dark room”.",
+          here: "A camera body is still a dark box with one opening. The lens stands where the hole was, and the sensor where the picture lands.",
+          story: "Light travels in straight lines, so rays from the top of a scene that pass through a small hole land at the bottom of the wall behind it, and the picture arrives upside down. One of the earliest written records of this is in a Chinese text of the fourth century BC named after the philosopher Mozi. In the early eleventh century the scholar Ibn al-Haytham, working in Cairo, studied the effect carefully and used it to show that light moves in straight lines. He also used it to watch eclipses without harming the eyes. From the second half of the sixteenth century a glass lens was put in the hole, which gave a brighter and sharper picture, and painters used the device as a drawing aid. The name camera obscura was first used in 1604. In the 1820s Niépce put a light-sensitive plate where the picture fell, and the dark room became the camera.",
+          read: [
+            { label: "Camera obscura", wiki: "Camera_obscura" },
+            { label: "Ibn al-Haytham", wiki: "Ibn_al-Haytham" },
+          ],
+          people: [
+            { name: "Ibn al-Haytham", life: "c. 965 – c. 1040", role: "Scholar from Basra who worked in Cairo. His Book of Optics shaped the study of light for centuries.", wiki: "Ibn_al-Haytham" },
+            { name: "Mozi", life: "c. 470 – c. 391 BC", role: "Chinese philosopher. The text that bears his name describes the inverted image formed through a small hole.", wiki: "Mozi" },
+          ],
+          uses: ["Pinhole cameras", "Safe viewing of solar eclipses", "Drawing aids for painters", "The human eye works the same way"],
+          timeline: [
+            ["4th century BC", "The Chinese text Mozi describes an inverted image formed through a small hole."],
+            ["c. 1027", "Ibn al-Haytham explains in his Book of Optics that light travels in straight lines."],
+            ["Late 1500s", "A lens is fitted in the opening, giving a brighter picture."],
+            ["1604", "The term camera obscura is first used."],
           ],
         },
       ],
@@ -175,6 +220,51 @@ export default {
             ['1985', 'The Minolta 7000 builds the autofocus sensors and motor into the body.'],
           ],
         },
+        {
+          name: "Zoom lens",
+          kind: "invention",
+          year: "1902",
+          by: "Clile C. Allen",
+          what: "A lens whose magnification can be changed smoothly, by sliding groups of glass inside it, while the picture stays in focus.",
+          here: "Turning the wide ring on the barrel moves glass inside the lens, taking the view from wide to close-up without changing lenses.",
+          story: "Changing how much of a scene a camera takes in once meant changing the lens. Telescopes had been built with adjustable magnification as early as 1834, but the picture went out of focus each time the magnification changed. In 1902 the American Clile C. Allen patented the first true zoom lens, in which the picture stayed nearly sharp as it was enlarged. Cinema used the idea first: a zoom can be seen in the opening shot of the 1927 film It, and a zoom lens for movie cameras was in production by 1932. Television followed in the 1950s. Photographers waited longest. The first zoom in regular production for 35 millimetre still cameras was the Zoomar of 1959, which went from 36 to 82 millimetres. Early zooms were less sharp than fixed lenses, but computer design and better glass closed the gap.",
+          read: [
+            { label: "Zoom lens", wiki: "Zoom_lens" },
+          ],
+          people: [
+            { name: "Clile C. Allen", life: "Active 1902", role: "American inventor who patented the first true zoom lens.", wiki: null, link: "Zoom_lens#History" },
+          ],
+          uses: ["Television and cinema cameras", "Phone cameras", "Binoculars and telescopes", "Projectors", "Microscopes"],
+          timeline: [
+            ["1834", "A telescope with variable magnification is reported to the Royal Society."],
+            ["1902", "Clile C. Allen patents the first true zoom lens."],
+            ["1932", "The Cooke Varo zoom for movie cameras goes into production."],
+            ["1959", "The Zoomar is the first zoom in regular production for 35 mm still cameras."],
+          ],
+        },
+        {
+          name: "Ultrasonic motor",
+          kind: "invention",
+          year: "1987",
+          by: "Toshiiku Sashida, and Canon",
+          what: "A motor with no coils or magnets. A ring of special ceramic vibrates faster than we can hear, and the ripples in it push a second ring around.",
+          here: "A ring-shaped motor inside the barrel moves the focusing glass. It is fast, precise and almost silent, which matters when recording video.",
+          story: "The first autofocus lenses were turned by a small electric motor through gears, which made them slow and noisy. Some materials change shape very slightly when a voltage is applied, and engineers had long tried to turn that tiny movement into rotation. Practical motors appeared in the 1970s in the work of the Japanese engineer Toshiiku Sashida. His later designs sent a wave travelling around a ring, like a ripple, so that a second ring pressed against it was carried round in either direction. Canon took up the idea, and in 1987 built it into lenses for its new EOS cameras under the name USM, for ultrasonic motor. The ring fits neatly around the glass, starts and stops instantly, and makes almost no sound. Other makers followed with their own versions.",
+          read: [
+            { label: "Ultrasonic motor", wiki: "Ultrasonic_motor" },
+            { label: "Canon EF lens mount", wiki: "Canon_EF_lens_mount" },
+          ],
+          people: [
+            { name: "Toshiiku Sashida", life: "Active 1970s", role: "Japanese engineer who built some of the earliest practical ultrasonic motors.", wiki: null, link: "Ultrasonic_motor" },
+            { name: "Canon", life: "Active 1987", role: "Japanese camera maker that made the ultrasonic motor famous by building it into autofocus lenses.", wiki: null, link: "Canon_Inc." },
+          ],
+          uses: ["Phone camera focusing", "Car seat and steering adjusters", "Watches", "Medical devices", "Microscope stages"],
+          timeline: [
+            ["1970s", "Sashida builds early practical ultrasonic motors."],
+            ["Early 1980s", "Canon, Nikon and others file patents on ultrasonic motors."],
+            ["1987", "Canon puts an ultrasonic motor into its autofocus lenses."],
+          ],
+        },
       ],
     },
     {
@@ -209,6 +299,231 @@ export default {
             ['1904', 'Harold Dennis Taylor develops a chemical method of making such a layer.'],
             ['1935', 'Smakula invents interference coatings at Carl Zeiss.'],
             ['Today', 'Lenses carry many layers, tuned to cancel reflections across all colours.'],
+          ],
+        },
+        {
+          name: "The lens",
+          kind: "invention",
+          kindNote: "Nobody knows who made the first lens. Polished crystals that may have been lenses survive from the seventh century BC.",
+          year: "Antiquity",
+          by: "Unknown makers",
+          what: "A piece of glass with curved faces. It bends rays of light so that they meet, forming an image of whatever is in front of it.",
+          here: "Everything the camera records has first passed through these pieces of glass. Together they bring the scene to a sharp picture exactly on the sensor.",
+          story: "The word lens is Latin for lentil, because a lens bulging on both sides has the shape of the seed. Polished pieces of rock crystal survive from the ancient world, such as one found at Nimrud, in today’s Iraq, from the seventh century BC, though nobody is sure whether they were used as lenses or worn as ornaments. The oldest certain mention is in a Greek comedy of 424 BC, The Clouds by Aristophanes, which talks of a burning-glass used to start fires. Between the eleventh and thirteenth centuries, readers laid “reading stones”, half-spheres of glass, on their pages to enlarge the letters. Then, in northern Italy in the late thirteenth century, craftsmen began grinding thin lenses to wear in front of the eyes. Spectacle making in Venice and Florence was the start of the optical industry, and of every telescope, microscope and camera lens since.",
+          read: [
+            { label: "Lens", wiki: "Lens" },
+            { label: "Glasses", wiki: "Glasses" },
+          ],
+          people: [
+            { name: "Spectacle makers of Venice and Florence", life: "Active late 1200s", role: "Unnamed craftsmen who began grinding and polishing lenses for spectacles, founding the optical industry.", wiki: null, link: "Lens#History" },
+          ],
+          uses: ["Spectacles and contact lenses", "Telescopes and binoculars", "Microscopes", "Projectors", "Magnifying glasses"],
+          timeline: [
+            ["7th century BC", "The Nimrud lens, a polished rock crystal, is made in Assyria."],
+            ["424 BC", "Aristophanes mentions a burning-glass in his play The Clouds."],
+            ["11th c.", "Reading stones are used to magnify writing."],
+            ["Late 1200s", "Spectacles are invented in northern Italy."],
+          ],
+        },
+        {
+          name: "Achromatic lens",
+          kind: "invention",
+          year: "c. 1730",
+          by: "Chester Moore Hall, and John Dollond",
+          what: "Two lenses of different kinds of glass joined together. The colour error of one cancels the colour error of the other, so all colours focus at the same point.",
+          here: "A camera lens has several such pairs. Without them every edge in the picture would have a coloured fringe.",
+          story: "A simple lens bends blue light more than red, so it cannot bring all colours to the same focus, and bright objects get coloured fringes. Isaac Newton thought the fault could not be cured. Around 1730 Chester Moore Hall, an English barrister who made optics his hobby, found a cure: join a lens of ordinary crown glass to one of heavier flint glass, shaped so that their errors cancel. He wanted to keep it secret, so he ordered the two lenses from two different opticians. Both passed the work on to the same craftsman, George Bass, who saw that the pieces were for one customer, put them together and saw what they did. In the 1750s Bass mentioned it to John Dollond, a former silk weaver turned optician. Dollond worked out how to make such lenses, patented them, and won the Royal Society’s Copley Medal in 1758.",
+          read: [
+            { label: "Achromatic lens", wiki: "Achromatic_lens" },
+            { label: "John Dollond", wiki: "John_Dollond" },
+          ],
+          people: [
+            { name: "Chester Moore Hall", life: "1703 – 1771", role: "English lawyer and amateur optician who made the first achromatic lenses and telescope.", wiki: "Chester_Moore_Hall" },
+            { name: "John Dollond", life: "1706 – 1761", role: "Son of a refugee silk weaver. He left weaving in 1752 to make optical instruments and later served King George III.", wiki: "John_Dollond" },
+          ],
+          uses: ["Telescopes", "Microscopes", "Binoculars", "Projectors", "Rifle sights"],
+          timeline: [
+            ["c. 1730", "Chester Moore Hall makes the first achromatic lenses, in 1729 or 1733."],
+            ["1750s", "George Bass tells John Dollond about Hall’s lenses."],
+            ["1758", "Dollond receives the Copley Medal for his achromatic lenses."],
+          ],
+        },
+        {
+          name: "Calculated photographic lens",
+          kind: "invention",
+          year: "1840",
+          by: "Joseph Petzval",
+          what: "The first camera lens designed by calculation, using the laws of optics, instead of by grinding glass and trying it out.",
+          here: "Every lens for this camera is designed the same way, now by computer: the path of light through each piece of glass is worked out before any glass is cut.",
+          story: "The first photographs of 1839 needed many minutes of exposure, far too long for a person to sit still. A lens that gathered more light was the obvious cure, but lenses were then made by experience, grinding and testing until they worked. Joseph Petzval, a professor of mathematics in Vienna, decided to calculate one instead. The sums were enormous, so Archduke Louis of Austria, who commanded the artillery, lent him eight gunners and three corporals, because gunnery was one of the few trades that trained men to calculate. The lens was built in 1840 by the optician Voigtländer. It gathered about twenty-two times as much light as the lens on Daguerre’s camera, and brought portraits down to under a minute. The two men later fell out, and Voigtländer moved production abroad, beyond the reach of Petzval’s patent. By 1862 he had sold sixty thousand.",
+          read: [
+            { label: "Petzval lens", wiki: "Petzval_lens" },
+            { label: "Joseph Petzval", wiki: "Joseph_Petzval" },
+          ],
+          people: [
+            { name: "Joseph Petzval", life: "1807 – 1891", role: "Mathematician and physicist born in the Kingdom of Hungary, in what is now Slovakia, and professor in Vienna.", wiki: "Joseph_Petzval" },
+          ],
+          uses: ["Portrait lenses", "Cinema projector lenses", "Telescopes", "All modern lens design"],
+          timeline: [
+            ["1839", "The first photographs need exposures of many minutes."],
+            ["1840", "Petzval designs his portrait lens and Voigtländer builds it."],
+            ["1845", "Petzval and Voigtländer fall out over the rights."],
+            ["1862", "Voigtländer has made 60,000 Petzval lenses."],
+          ],
+        },
+        {
+          name: "Optical glass",
+          kind: "material",
+          year: "1884",
+          by: "Otto Schott, with Ernst Abbe and Carl Zeiss",
+          what: "Glass made to a precise recipe so that it bends and spreads light by a known, chosen amount.",
+          here: "The elements in this lens are made of several different glasses. Lens designers pick each one from a catalogue, as a cook picks ingredients.",
+          story: "By the 1870s lens makers could calculate what they wanted, but could not get the glass to build it. Only a few kinds existed, and no two batches behaved quite alike. The physicist Ernst Abbe, who designed microscopes for the instrument maker Carl Zeiss in Jena, wrote about how much this held optics back. A young glass chemist, Otto Schott, read him. In 1879 Schott made a new glass containing lithium and sent Abbe a sample to measure. It was the start of a long collaboration. Schott moved to Jena in 1882 and worked through one ingredient after another, silica, soda, potash, lime, lead and 28 other elements, recording what each did to the glass. In 1884 the three men founded a glassworks in Jena to make the results. Schott went on to develop borosilicate glass there, the heat-proof glass of laboratory flasks and oven dishes.",
+          read: [
+            { label: "Otto Schott", wiki: "Otto_Schott" },
+            { label: "Optical glass", wiki: "Optical_glass" },
+          ],
+          people: [
+            { name: "Otto Schott", life: "1851 – 1935", role: "German chemist who turned glass making from a craft into a science, and invented borosilicate glass.", wiki: "Otto_Schott" },
+          ],
+          uses: ["Microscopes", "Telescopes", "Spectacle lenses", "Optical fibre", "Laboratory glassware"],
+          timeline: [
+            ["1879", "Schott sends Ernst Abbe a sample of a new lithium glass."],
+            ["1882", "Schott moves to Jena to work with Abbe and Zeiss."],
+            ["1884", "The three found the Schott glassworks in Jena."],
+            ["1887 – 1893", "Schott develops borosilicate glass."],
+          ],
+        },
+      ],
+    },
+    {
+      id: 'mount',
+      name: 'Lens mount',
+      anchor: [MX + 0.45, MY - 0.4, 0.42],
+      explode: [0, 0, 0.3],
+      make: () => {
+        const ringM = lathe([[0.5, 0], [0.64, 0], [0.64, 0.1], [0.5, 0.1], [0.5, 0]], metal(0xc9ccd2, { roughness: 0.3 }), 48);
+        ringM.rotation.x = Math.PI / 2;
+        ringM.position.set(MX, MY, 0.31);
+        const g = group(ringM, zcyl(0.06, 0.05, [0.9, 0.4, 0.33], silver(), 20));
+        // Row of gold contacts that carry power and data to the lens
+        for (let i = 0; i < 9; i++) {
+          const a = Math.PI * 1.5 + (i - 4) * 0.11;
+          g.add(zcyl(0.016, 0.02, [MX + Math.cos(a) * 0.455, MY + Math.sin(a) * 0.455, 0.335], metal(0xd4af37, { roughness: 0.3 }), 10));
+        }
+        // Three bayonet lugs
+        for (let i = 0; i < 3; i++) {
+          const a = (i / 3) * Math.PI * 2 + 0.5;
+          const lug = box(0.2, 0.05, 0.02, [MX + Math.cos(a) * 0.5, MY + Math.sin(a) * 0.5, 0.4], metal(0xb9bcc2, { roughness: 0.35 }));
+          lug.rotation.z = a + Math.PI / 2;
+          g.add(lug);
+        }
+        return g;
+      },
+      inventions: [
+        {
+          name: "Electronic lens mount",
+          kind: "design",
+          kindNote: "The bayonet fitting and electrical contacts both existed. Canon’s step was to remove every mechanical link between camera and lens.",
+          year: "1987",
+          by: "Canon",
+          what: "A twist-and-lock fitting that holds the lens in exactly the right place, with a row of electrical contacts through which the camera powers and controls it.",
+          here: "The gold pins in the mount carry power and instructions to the motors in the lens, and bring back what the lens is doing. That is how a lens can focus and set its aperture by itself.",
+          story: "A camera with interchangeable lenses needs a joint that holds the lens precisely, time after time. Early lenses screwed in. The bayonet, in which tabs on the lens drop into slots and lock with a short twist, was quicker and always left the lens at the same angle, so levers and pins could line up between lens and camera. For decades those links were mechanical: a lever in the camera closed the aperture, and with autofocus, a shaft from a motor in the body turned the focusing ring. In 1987 Canon abandoned its existing mount and introduced the EF mount for its new EOS cameras. EF stood for electro-focus. Each lens had its own motors, and nothing passed through the mount except electricity: power and data, through a row of contacts. By 2014 Canon had made a hundred million EF lenses. Mirrorless mounts all work this way.",
+          read: [
+            { label: "Lens mount", wiki: "Lens_mount" },
+            { label: "Canon EF lens mount", wiki: "Canon_EF_lens_mount" },
+          ],
+          people: [
+            { name: "Canon", life: "Active 1987", role: "Japanese camera maker. Its EF mount was the first to rely on electrical contacts alone.", wiki: null, link: "Canon_EF_lens_mount" },
+          ],
+          uses: ["Mirrorless and SLR cameras", "Cinema cameras", "Lens adapters", "Smart teleconverters"],
+          timeline: [
+            ["1987", "Canon introduces the all-electronic EF mount."],
+            ["2008", "The Micro Four Thirds mount is the first designed for mirrorless cameras."],
+            ["2014", "Canon makes its 100-millionth EF lens."],
+            ["2018", "Nikon and Canon launch new mounts for mirrorless cameras."],
+          ],
+        },
+      ],
+    },
+    {
+      id: 'aperture',
+      name: 'Aperture',
+      anchor: [MX, MY + 0.3, 0.9],
+      explode: [0, 1.0, 2.5],
+      make: () => {
+        const g = [lathe([[0.3, 0.47], [0.42, 0.47], [0.42, 0.49], [0.3, 0.49], [0.3, 0.47]], mat(0x101113, { roughness: 0.5 }), 48)];
+        for (let i = 0; i < 7; i++) {
+          const a = (i / 7) * Math.PI * 2;
+          const blade = box(0.3, 0.004, 0.16, [Math.cos(a) * 0.24, 0.48 + i * 0.0015, Math.sin(a) * 0.24], metal(0x2b2d31, { roughness: 0.4 }));
+          blade.rotation.y = -a + 0.9;
+          g.push(blade);
+        }
+        return alongLens(...g);
+      },
+      inventions: [
+        {
+          name: "Iris diaphragm",
+          kind: "invention",
+          kindNote: "Its inventor is not known. The historian of optics Rudolf Kingslake could not trace it; some credit Niépce, around 1820.",
+          year: "1858",
+          by: "Unknown; patented by Charles Harrison and Joseph Schnitzer",
+          what: "A ring of thin overlapping blades that swing together to make a round hole larger or smaller, like the iris of an eye.",
+          here: "Seven blades inside the lens set how much light gets through. A small opening also brings more of the scene, near and far, into focus.",
+          story: "As early as 1567 the Venetian nobleman Daniele Barbaro noticed that the picture in a camera obscura became sharper if part of the lens was covered. Early photographers controlled the light in the same crude way, by sliding a brass strip with a hole in it into the lens. These were called Waterhouse stops, after John Waterhouse, who introduced them in 1858, and a photographer carried a set of them with holes of different sizes. In the same year the American lens maker Charles Harrison and Joseph Schnitzer patented something better: six blades inside the lens that could be moved together to shrink the opening. Who first thought of copying the eye in this way is not known; some give the credit to Niépce, around 1820. The iris became standard, and the size of its opening, the f-number, is still the first setting a photographer learns.",
+          read: [
+            { label: "Diaphragm (optics)", wiki: "Diaphragm_(optics)" },
+            { label: "Aperture", wiki: "Aperture" },
+          ],
+          people: [
+            { name: "Charles C. Harrison", life: "Active 1858", role: "American lens maker who, with Joseph Schnitzer, patented an adjustable stop of six moving blades.", wiki: null, link: "Diaphragm_(optics)#History" },
+          ],
+          uses: ["Microscopes", "Telescopes", "Stage spotlights", "Laser equipment", "The pupil of the eye works the same way"],
+          timeline: [
+            ["1567", "Daniele Barbaro notes that covering part of a lens sharpens the picture."],
+            ["c. 1820", "Niépce may have used an iris diaphragm."],
+            ["1858", "John Waterhouse introduces interchangeable stops."],
+            ["1858", "Harrison and Schnitzer patent a six-bladed adjustable stop."],
+            ["1867", "J. H. Brown has made a popular improved iris diaphragm."],
+          ],
+        },
+      ],
+    },
+    {
+      id: 'flash',
+      name: 'Flash shoe',
+      anchor: [0.1, 1.88, -0.02],
+      explode: [0, 0.65, 0],
+      make: () =>
+        group(
+          box(0.36, 0.03, 0.36, [0.1, 1.845, -0.02], metal(0x8e939b, { roughness: 0.4 })),
+          box(0.05, 0.05, 0.36, [-0.055, 1.875, -0.02], metal(0x8e939b, { roughness: 0.4 })),
+          box(0.05, 0.05, 0.36, [0.255, 1.875, -0.02], metal(0x8e939b, { roughness: 0.4 })),
+          cyl(0.04, 0.04, 0.012, 1.866, metal(0xd4af37, { roughness: 0.3 }), 16).translateX(0.1).translateZ(-0.02)
+        ),
+      inventions: [
+        {
+          name: "Electronic flash",
+          kind: "invention",
+          year: "1931",
+          by: "Harold Edgerton",
+          what: "A glass tube of gas that gives a brilliant burst of light when a stored electric charge is released through it. It lasts a tiny fraction of a second and can be fired again and again.",
+          here: "A flash unit slides into this shoe. The contact in the middle fires it at the exact moment the shutter is open.",
+          story: "Early photographers lit dark scenes by burning magnesium. Flash powder, introduced in Germany in 1887, was a small explosion in an open tray, with smoke and some danger. Flashbulbs, sold from 1929, sealed the burning metal inside glass, but each bulb worked only once. Harold Edgerton was not thinking of photography at all. As a student at the Massachusetts Institute of Technology he was studying electric motors, and used flashing lamps to make the spinning parts appear to stand still. In 1931 he introduced a flash tube that reached full brightness almost instantly and went out again just as fast. A colleague, Charles Stark Draper, encouraged him to point it at everyday things, starting with water running from a tap. His pictures of a bullet passing through an apple and of bursting balloons showed people things too quick to see. He later worked with the explorer Jacques Cousteau, and was known as Papa Flash.",
+          read: [
+            { label: "Flash (photography)", wiki: "Flash_(photography)" },
+            { label: "Harold Edgerton", wiki: "Harold_Edgerton" },
+          ],
+          people: [
+            { name: "Harold Edgerton", life: "1903 – 1990", role: "American professor of electrical engineering at MIT, who turned the stroboscope from a laboratory tool into a way of seeing fast events.", wiki: "Harold_Edgerton" },
+          ],
+          uses: ["Phone and camera flashes", "Studio lighting", "Aircraft and tower warning lights", "High-speed photography", "Stage strobe lights"],
+          timeline: [
+            ["1887", "Adolf Miethe and Johannes Gaedicke introduce flash powder."],
+            ["1929", "Flashbulbs go on sale in Germany."],
+            ["1931", "Edgerton introduces the electronic flash tube."],
+            ["1937", "Edgerton begins working with the photographer Gjon Mili on multiple-flash pictures."],
           ],
         },
       ],
@@ -319,6 +634,77 @@ export default {
             ["2014", "Sony’s Alpha 7 II adds five-axis sensor stabilisation to a full-frame camera."],
           ],
         },
+        {
+          name: "Photoelectric effect",
+          kind: "discovery",
+          kindNote: "A law of nature, discovered and then explained. Every image sensor depends on it.",
+          year: "1887",
+          by: "Heinrich Hertz, and Albert Einstein",
+          what: "Light can knock electrons loose from a material. More light frees more electrons, so the amount of electric charge measures how bright the light was.",
+          here: "Each of the sensor’s millions of cells is a tiny piece of silicon that turns the light falling on it into electric charge. The camera counts that charge.",
+          story: "In 1887 Heinrich Hertz was doing the experiments that proved radio waves exist. His detector was a small gap across which a spark jumped. He noticed that the spark jumped more easily when ultraviolet light shone on the gap: light was helping electricity leave the metal. Others measured the effect and found it puzzling. Brighter light released more electrons, but not faster ones, and light below a certain colour released none, however bright. In 1905 Albert Einstein, then a clerk in the Swiss patent office, proposed an explanation. Light comes in separate packets of energy, later called photons, and each packet frees one electron or none. The idea was a foundation of quantum physics, and it was for this, not relativity, that he received the Nobel Prize for 1921. A camera sensor counts photons in exactly this way.",
+          read: [
+            { label: "Photoelectric effect", wiki: "Photoelectric_effect" },
+            { label: "Heinrich Hertz", wiki: "Heinrich_Hertz" },
+          ],
+          people: [
+            { name: "Heinrich Hertz", life: "1857 – 1894", role: "German physicist who proved that radio waves exist, and noticed the photoelectric effect along the way.", wiki: "Heinrich_Hertz" },
+            { name: "Albert Einstein", life: "1879 – 1955", role: "German-born physicist. His Nobel Prize was awarded for explaining the photoelectric effect.", wiki: "Albert_Einstein" },
+          ],
+          uses: ["Solar panels", "Automatic doors and light sensors", "Night-vision devices", "Television cameras", "Light meters"],
+          timeline: [
+            ["1887", "Hertz observes that ultraviolet light helps a spark to jump."],
+            ["1905", "Einstein explains the effect with packets of light."],
+            ["1921", "Einstein is awarded the Nobel Prize in Physics for it."],
+          ],
+        },
+        {
+          name: "Charge-coupled device",
+          kind: "invention",
+          year: "1969",
+          by: "Willard Boyle and George Smith",
+          what: "The first practical image chip. Light builds up electric charge in rows of tiny cells, and the charges are then passed along from cell to cell, like buckets along a line, to be read out one by one.",
+          here: "This camera’s sensor is the later CMOS type, but the charge-coupled device came first. It made digital cameras possible and showed how to build the light-catching cells that every sensor still uses.",
+          story: "In the late 1960s Willard Boyle and George Smith at Bell Labs were working on a new kind of computer memory. Bell Labs was also developing a memory that stored data as tiny magnetic bubbles, and the two men asked whether the same thing could be done with electric charge on silicon. They realised that a charge could be held on a very small capacitor, and that with the right voltages a row of them would hand the charge along from one to the next. In their notebook in 1969 they called these charge bubble devices. Silicon also releases charge when light falls on it, so a grid of such cells could record a picture. Colleagues including Michael Tompsett showed that in 1970, and Tompsett filed the first patent on using it for imaging. Steven Sasson’s first digital camera of 1975 was built around one. Boyle and Smith shared the Nobel Prize in Physics in 2009.",
+          read: [
+            { label: "Charge-coupled device", wiki: "Charge-coupled_device" },
+            { label: "Willard Boyle", wiki: "Willard_Boyle" },
+          ],
+          people: [
+            { name: "Willard Boyle", life: "1924 – 2011", role: "Canadian physicist at Bell Labs and co-inventor of the charge-coupled device.", wiki: "Willard_Boyle" },
+            { name: "George E. Smith", life: "1930 – 2025", role: "American physicist at Bell Labs who shared the 2009 Nobel Prize with Boyle.", wiki: "George_E._Smith" },
+          ],
+          uses: ["Space telescopes", "Scientific and medical cameras", "Early digital cameras and camcorders", "Barcode scanners", "Fax machines and scanners"],
+          timeline: [
+            ["1969", "Boyle and Smith invent the charge-coupled device at Bell Labs."],
+            ["1970", "A team at Bell Labs demonstrates it capturing an image."],
+            ["1975", "Sasson builds the first digital camera around one."],
+            ["2009", "Boyle and Smith receive the Nobel Prize in Physics."],
+          ],
+        },
+        {
+          name: "Three-colour method",
+          kind: "technique",
+          year: "1855",
+          by: "James Clerk Maxwell",
+          what: "Any colour the eye can see can be recorded as three measurements, of red, green and blue light, and rebuilt by mixing those three again.",
+          here: "The sensor records only red, green and blue. Every colour in the finished picture is a mixture of the three, which is why the Bayer filter over the sensor has just those colours.",
+          story: "Around 1800 Thomas Young suggested that the eye does not need a separate detector for every colour: three kinds, most sensitive to red, green and blue, would be enough. In an 1855 paper on colour vision the young Scottish physicist James Clerk Maxwell drew the practical conclusion. Photograph a scene three times, through a red, a green and a blue filter, and project the three pictures on top of each other through the same filters, and the colours should reappear. He asked the photographer Thomas Sutton to try it for a lecture he gave in 1861. The subject was a bow of ribbon with coloured stripes. Maxwell himself remarked that the result was imperfect, and said better materials were needed. But the principle was right. Colour film, colour television, every screen and every digital camera work by his three-colour method.",
+          read: [
+            { label: "Color photography", wiki: "Color_photography" },
+            { label: "James Clerk Maxwell", wiki: "James_Clerk_Maxwell" },
+          ],
+          people: [
+            { name: "James Clerk Maxwell", life: "1831 – 1879", role: "Scottish physicist, best known for the theory that unites electricity, magnetism and light.", wiki: "James_Clerk_Maxwell" },
+            { name: "Thomas Sutton", life: "Died 1875", role: "English photographer and inventor who took the three pictures for Maxwell’s demonstration.", wiki: "Thomas_Sutton_(photographer)" },
+          ],
+          uses: ["Phone and computer screens", "Colour television", "Colour film", "Colour printing", "Stage lighting"],
+          timeline: [
+            ["1855", "Maxwell proposes the three-colour method in a paper on colour vision."],
+            ["1861", "Thomas Sutton photographs a ribbon three times for Maxwell’s lecture."],
+            ["1976", "Bryce Bayer’s filter applies the method to a single image sensor."],
+          ],
+        },
       ],
     },
     {
@@ -355,6 +741,30 @@ export default {
             ['2003', 'A Kodak digital camera carries the first full-colour OLED screen.'],
           ],
         },
+        {
+          name: "Mirrorless design",
+          kind: "design",
+          kindNote: "Every part existed already. The step was to take the mirror out and let the sensor feed the viewfinder.",
+          year: "2008",
+          by: "Panasonic",
+          what: "A camera with interchangeable lenses and no mirror. The sensor is exposed all the time and sends its picture to a small screen in the viewfinder.",
+          here: "Look into the eyepiece and you see a screen, not the scene. It shows the picture as the sensor will record it, with the brightness and colour already applied.",
+          story: "For fifty years the serious camera was the single-lens reflex. A mirror behind the lens sent the view up to the eye, and swung out of the way with a slap at the moment of exposure. The mirror and the glass prism above it made the camera bulky, and the lens had to sit well forward to leave room. Once sensors could run continuously, the mirror was no longer needed. Early digital cameras without one, such as the Epson R-D1 of 2004, kept an optical window to look through. In October 2008 Panasonic released the Lumix G1 in Japan, with the sensor feeding an electronic viewfinder. It was the first camera of the Micro Four Thirds system, and the word mirrorless was coined to describe it. Olympus, Samsung and Sony followed. By 2023 mirrorless cameras had overtaken reflex cameras, and nearly every maker had switched to them.",
+          read: [
+            { label: "Mirrorless camera", wiki: "Mirrorless_camera" },
+            { label: "Panasonic Lumix DMC-G1", wiki: "Panasonic_Lumix_DMC-G1" },
+          ],
+          people: [
+            { name: "Panasonic", life: "Active 2008", role: "Japanese electronics company that released the first mirrorless camera, the Lumix G1.", wiki: null, link: "Panasonic_Lumix_DMC-G1" },
+          ],
+          uses: ["Photography", "Film and video production", "Vlogging cameras", "Drone cameras"],
+          timeline: [
+            ["2004", "The Epson R-D1 has no mirror but keeps an optical viewfinder."],
+            ["2008", "The Panasonic Lumix G1 is the first mirrorless camera."],
+            ["2013", "The Sony Alpha 7 brings a full-frame sensor to mirrorless."],
+            ["2023", "Mirrorless cameras have overtaken reflex cameras."],
+          ],
+        },
       ],
     },
     {
@@ -388,6 +798,27 @@ export default {
             ['1962', 'Richard Williams at RCA finds that electric fields change liquid crystals.'],
             ['1968', 'RCA shows its first liquid-crystal displays.'],
             ['1970', 'Martin Schadt and Wolfgang Helfrich patent the low-power twisted nematic effect.'],
+          ],
+        },
+        {
+          name: "Touchscreen",
+          kind: "invention",
+          year: "1965",
+          by: "Eric Johnson",
+          what: "A screen that senses where a finger touches it, so the picture itself becomes the control.",
+          here: "Tap the rear screen to choose where the camera focuses, or swipe through the pictures you have taken.",
+          story: "In the early 1960s computers were controlled with keyboards and switches. Eric Johnson, an engineer at the Royal Radar Establishment in Malvern, England, was looking for a quicker way for operators to work with a display. He laid fine wires across the front of a screen and used the fact that a fingertip changes the electrical capacitance of a wire it touches, so the equipment could tell which spot had been pressed. He described the idea in a short article in 1965 and more fully in 1967. It was the first touchscreen worked by a finger. In the early 1970s Frank Beck and Bent Stumpe at CERN, the European physics laboratory, built transparent touchscreens for the controls of a particle accelerator, in use from 1973. Touchscreens stayed a specialist tool for decades, until phones made them universal.",
+          read: [
+            { label: "Touchscreen", wiki: "Touchscreen" },
+          ],
+          people: [
+            { name: "Eric Johnson", life: "Active 1965", role: "British engineer at the Royal Radar Establishment in Malvern who built the first finger-driven touchscreen.", wiki: null, link: "Touchscreen#History" },
+          ],
+          uses: ["Phones and tablets", "Cash machines", "Ticket machines", "Car dashboards", "Shop tills"],
+          timeline: [
+            ["1965", "Eric Johnson describes a capacitive touchscreen."],
+            ["1967", "He publishes a fuller account with photographs and diagrams."],
+            ["1973", "Touchscreens built at CERN go into use."],
           ],
         },
       ],
@@ -451,6 +882,30 @@ export default {
             ["1974", "Ahmed, Natarajan and Rao publish it."],
             ["1992", "The JPEG standard is published."],
             ["2015", "Several billion JPEG images are made every day."],
+          ],
+        },
+        {
+          name: "Integrated circuit",
+          kind: "invention",
+          year: "1958",
+          by: "Jack Kilby, and Robert Noyce",
+          what: "A whole electronic circuit, its transistors and the connections between them, made together on one small piece of semiconductor.",
+          here: "Every dark rectangle on this board is one. The processor, the memory, the sensor and the chips that drive the screens are all integrated circuits.",
+          story: "By the late 1950s engineers could design circuits far too complicated to build. Every transistor had to be made separately and wired to the others by hand, and each soldered joint was a chance of failure. Jack Kilby joined Texas Instruments in mid-1958. As a new employee he had no right to a summer holiday, so he was almost alone in the laboratory when the others went away. He used the time to try an idea: make every part of a circuit out of the same piece of semiconductor. He showed a working example on 12 September 1958. Its parts were still joined by fine gold wires. A few months later Robert Noyce, at Fairchild Semiconductor in California, made the practical version, in which the connections are laid down flat on the surface of a silicon chip. Modern chips follow Noyce’s design. Kilby received the Nobel Prize in Physics in 2000.",
+          read: [
+            { label: "Integrated circuit", wiki: "Integrated_circuit" },
+            { label: "Jack Kilby", wiki: "Jack_Kilby" },
+          ],
+          people: [
+            { name: "Jack Kilby", life: "1923 – 2005", role: "American engineer at Texas Instruments, who also co-invented the handheld calculator.", wiki: "Jack_Kilby" },
+            { name: "Robert Noyce", life: "1927 – 1990", role: "American physicist who co-founded Fairchild Semiconductor and Intel.", wiki: "Robert_Noyce" },
+          ],
+          uses: ["Computers and phones", "Cars", "Bank cards", "Hearing aids", "Spacecraft"],
+          timeline: [
+            ["1958", "Kilby demonstrates the first integrated circuit on 12 September."],
+            ["1959", "Noyce develops the monolithic silicon chip at Fairchild."],
+            ["1971", "The Intel 4004 puts a whole processor on one chip."],
+            ["2000", "Kilby receives the Nobel Prize in Physics."],
           ],
         },
       ],
@@ -520,6 +975,27 @@ export default {
             ['1984', 'He presents the first type, known as NOR flash.'],
             ['1987', 'He presents the denser NAND flash, the type used in memory cards.'],
             ['1988', 'Intel introduces a commercial NOR flash chip.'],
+          ],
+        },
+        {
+          name: "SD card",
+          kind: "standard",
+          year: "1999",
+          by: "SanDisk, Panasonic and Toshiba",
+          what: "An agreed size, shape and set of electrical rules for a small memory card, so one card fits devices from any maker.",
+          here: "The card in this slot is an SD card. It will also fit a laptop, a card reader or another make of camera.",
+          story: "In the late 1990s nearly every camera maker had its own memory card. SanDisk’s CompactFlash of 1994 was an early success, but Sony then introduced its Memory Stick, and Olympus and Fujifilm their own card, and a card from one camera would not fit another. In 1996 SanDisk, Siemens and Nokia had developed a card the size of a postage stamp, the MultiMediaCard, but few products adopted it. In August 1999 SanDisk joined Panasonic and Toshiba to announce a successor, the Secure Digital card, with copy protection built in and a small sliding tab to prevent accidental erasing. In January 2000 the three founded the SD Association to publish the rules and license the logo. It now has about a thousand member companies, and the SD card outlasted its rivals.",
+          read: [
+            { label: "SD card", wiki: "SD_card" },
+          ],
+          people: [
+            { name: "SD Association", life: "Founded 2000", role: "Non-profit body set up by SanDisk, Panasonic and Toshiba to develop and promote the standard.", wiki: null, link: "SD_card" },
+          ],
+          uses: ["Phones, as microSD", "Drones and action cameras", "Games consoles", "Dash cams", "Small computers"],
+          timeline: [
+            ["1994", "SanDisk introduces CompactFlash."],
+            ["1999", "SanDisk, Panasonic and Toshiba announce the SD card in August."],
+            ["2000", "The SD Association is formed in January."],
           ],
         },
       ],

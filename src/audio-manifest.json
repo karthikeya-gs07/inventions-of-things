@@ -105,6 +105,11 @@
       "hash": "0dec14737ec523ad",
       "seconds": 149
     },
+    "camera/aperture/0": {
+      "file": "camera/aperture-0.m4a",
+      "hash": "1beab615cfe835f5",
+      "seconds": 170
+    },
     "camera/battery/0": {
       "file": "camera/battery-0.m4a",
       "hash": "26dada4a43e82985",
@@ -120,6 +125,11 @@
       "hash": "364ea28d8694e51b",
       "seconds": 155
     },
+    "camera/board/2": {
+      "file": "camera/board-2.m4a",
+      "hash": "a3723434b3f7237c",
+      "seconds": 164
+    },
     "camera/body/0": {
       "file": "camera/body-0.m4a",
       "hash": "29e3d26fd9d9fcee",
@@ -130,9 +140,24 @@
       "hash": "8e0d1f8e07f0ad02",
       "seconds": 143
     },
+    "camera/body/2": {
+      "file": "camera/body-2.m4a",
+      "hash": "c254e43b2ea62389",
+      "seconds": 182
+    },
+    "camera/body/3": {
+      "file": "camera/body-3.m4a",
+      "hash": "fb48d8f6e410ac0d",
+      "seconds": 174
+    },
     "camera/card/0": {
       "file": "camera/card-0.m4a",
       "hash": "67e370913a5ef849",
+      "seconds": 142
+    },
+    "camera/card/1": {
+      "file": "camera/card-1.m4a",
+      "hash": "178969660440e6ba",
       "seconds": 142
     },
     "camera/evf/0": {
@@ -140,20 +165,70 @@
       "hash": "122d760124c52615",
       "seconds": 162
     },
+    "camera/evf/1": {
+      "file": "camera/evf-1.m4a",
+      "hash": "1a26acb200c2228d",
+      "seconds": 159
+    },
+    "camera/flash/0": {
+      "file": "camera/flash-0.m4a",
+      "hash": "dcd6154aa7f74aa4",
+      "seconds": 162
+    },
     "camera/glass/0": {
       "file": "camera/glass-0.m4a",
       "hash": "0f9f84720ee04b2a",
       "seconds": 157
+    },
+    "camera/glass/1": {
+      "file": "camera/glass-1.m4a",
+      "hash": "5a3f618237f2b96c",
+      "seconds": 161
+    },
+    "camera/glass/2": {
+      "file": "camera/glass-2.m4a",
+      "hash": "8289020eb74cc0cc",
+      "seconds": 161
+    },
+    "camera/glass/3": {
+      "file": "camera/glass-3.m4a",
+      "hash": "7bc69b5ac4fd2ffd",
+      "seconds": 151
+    },
+    "camera/glass/4": {
+      "file": "camera/glass-4.m4a",
+      "hash": "061a5c20665f7b9d",
+      "seconds": 151
     },
     "camera/lens/0": {
       "file": "camera/lens-0.m4a",
       "hash": "4f47e8afaba54776",
       "seconds": 181
     },
+    "camera/lens/1": {
+      "file": "camera/lens-1.m4a",
+      "hash": "1015da76d038019c",
+      "seconds": 153
+    },
+    "camera/lens/2": {
+      "file": "camera/lens-2.m4a",
+      "hash": "42f5d6538a8d25cf",
+      "seconds": 154
+    },
+    "camera/mount/0": {
+      "file": "camera/mount-0.m4a",
+      "hash": "4e54c1e4cadea3bf",
+      "seconds": 166
+    },
     "camera/screen/0": {
       "file": "camera/screen-0.m4a",
       "hash": "e26b2b8a17d5a85e",
       "seconds": 164
+    },
+    "camera/screen/1": {
+      "file": "camera/screen-1.m4a",
+      "hash": "1c2fdf090bc73166",
+      "seconds": 135
     },
     "camera/sensor/0": {
       "file": "camera/sensor-0.m4a",
@@ -169,6 +244,21 @@
       "file": "camera/sensor-2.m4a",
       "hash": "66cfd4fa10ed59c9",
       "seconds": 174
+    },
+    "camera/sensor/3": {
+      "file": "camera/sensor-3.m4a",
+      "hash": "0e841df00d30ada6",
+      "seconds": 171
+    },
+    "camera/sensor/4": {
+      "file": "camera/sensor-4.m4a",
+      "hash": "81fe34dc88c30f4a",
+      "seconds": 177
+    },
+    "camera/sensor/5": {
+      "file": "camera/sensor-5.m4a",
+      "hash": "349817ef695c7c17",
+      "seconds": 162
     },
     "camera/shutter/0": {
       "file": "camera/shutter-0.m4a",

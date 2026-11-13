@@ -121,6 +121,22 @@ const NAMES = {
   'Bowden': 'Bowden_cable', 'Koss': 'Koss_Corporation', 'Minolta': 'Minolta', 'Faggin': 'Federico_Faggin',
   'Shima': 'Masatoshi_Shima', 'Nasir Ahmed': 'Nasir_Ahmed_(engineer)', 'Ahmed': 'Nasir_Ahmed_(engineer)',
   'JPEG': 'JPEG', 'Gaulard and Gibbs': 'Lucien_Gaulard', 'Ganz works': 'Ganz_Works', 'William Stanley': 'William_Stanley_Jr.',
+  // Camera, second pass
+  'Thomas Wedgwood': 'Thomas_Wedgwood_(photographer)', 'Niépce': 'Nicéphore_Niépce', 'Daguerre': 'Louis_Daguerre',
+  'Henry Fox Talbot': 'Henry_Fox_Talbot', 'Mozi': 'Mozi', 'Ibn al-Haytham': 'Ibn_al-Haytham', 'camera obscura': 'Camera_obscura',
+  'Nimrud lens': 'Nimrud_lens', 'Aristophanes': 'Aristophanes', 'Reading stones': 'Reading_stone', 'Spectacles': 'Glasses',
+  'Chester Moore Hall': 'Chester_Moore_Hall', 'George Bass': 'Achromatic_lens#History', 'John Dollond': 'John_Dollond',
+  'Dollond': 'John_Dollond', 'Copley Medal': 'Copley_Medal', 'Petzval': 'Joseph_Petzval', 'Voigtländer': 'Voigtländer',
+  'Schott': 'Otto_Schott', 'Ernst Abbe': 'Ernst_Abbe', 'Abbe': 'Ernst_Abbe', 'Zeiss': 'Carl_Zeiss',
+  'Royal Society': 'Royal_Society', 'Clile C. Allen': 'Zoom_lens#History', 'Cooke Varo': 'Zoom_lens#History', 'Zoomar': 'Zoom_lens#History',
+  'Sashida': 'Ultrasonic_motor', 'Daniele Barbaro': 'Daniele_Barbaro', 'John Waterhouse': 'Waterhouse_stop',
+  'Harrison and Schnitzer': 'Diaphragm_(optics)#History', 'J. H. Brown': 'Diaphragm_(optics)#History',
+  'Micro Four Thirds': 'Micro_Four_Thirds_system', 'Adolf Miethe': 'Adolf_Miethe', 'Edgerton': 'Harold_Edgerton', 'Gjon Mili': 'Gjon_Mili',
+  'Hertz': 'Heinrich_Hertz', 'Einstein': 'Albert_Einstein', 'Boyle and Smith': 'Charge-coupled_device', 'Maxwell': 'James_Clerk_Maxwell',
+  'Thomas Sutton': 'Thomas_Sutton_(photographer)', 'Panasonic Lumix G1': 'Panasonic_Lumix_DMC-G1', 'Panasonic': 'Panasonic',
+  'Sony Alpha 7': 'Sony_α7', 'Eric Johnson': 'Touchscreen#History', 'CERN': 'CERN', 'Kilby': 'Jack_Kilby', 'Noyce': 'Robert_Noyce',
+  'Fairchild': 'Fairchild_Semiconductor', 'Intel 4004': 'Intel_4004', 'SanDisk': 'SanDisk', 'CompactFlash': 'CompactFlash',
+  'SD Association': 'SD_Association', 'SD card': 'SD_card',
 };
 
 const escape = (t) => t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
