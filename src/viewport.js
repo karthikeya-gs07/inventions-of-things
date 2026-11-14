@@ -51,7 +51,21 @@ export function createViewport(canvas) {
   rim.position.set(-9, 6, -10);
   const fill = new THREE.DirectionalLight(0xffd9b0, 0.35);
   fill.position.set(-6, 3, 9);
-  scene.add(key, key.target, rim, fill, new THREE.HemisphereLight(0xcfe0ff, 0x0a0b0d, 0.3));
+  // Straight-down light, studio look only: its blurred shadow pools under each object like a contact shadow
+  const top = new THREE.DirectionalLight(0xffffff, 0);
+  top.castShadow = true; // stays on in both looks: at zero intensity it adds nothing, and the shaders never recompile
+  top.shadow.mapSize.set(1024, 1024);
+  top.shadow.autoUpdate = false;
+  Object.assign(top.shadow.camera, { left: -16, right: 16, top: 16, bottom: -16, near: 1, far: 60 });
+  top.shadow.bias = -0.0002;
+  top.shadow.normalBias = 0.02;
+  top.shadow.radius = 5;
+  top.shadow.blurSamples = 16;
+  top.position.set(0, 30, 0.01);
+  scene.add(top, top.target);
+
+  const hemi = new THREE.HemisphereLight(0xcfe0ff, 0x0a0b0d, 0.3);
+  scene.add(key, key.target, rim, fill, hemi);
 
   /* ---------- Floor: lit surface so shadows and light pools read, plus the grid ---------- */
   const ground = new THREE.Mesh(
@@ -73,15 +87,27 @@ export function createViewport(canvas) {
   }
   scene.add(minor, major);
 
+  // Studio look: no visible floor, only the shadow the objects drop on a seamless backdrop
+  const backdrop = new THREE.Mesh(
+    new THREE.PlaneGeometry(400, 400),
+    new THREE.ShadowMaterial({ color: 0x2a211c, opacity: 0.55 })
+  );
+  backdrop.rotation.x = -Math.PI / 2;
+  backdrop.position.y = -0.002;
+  backdrop.receiveShadow = true;
+  backdrop.visible = false;
+  scene.add(backdrop);
+
   const axis = (a, b, color) => {
     const l = new THREE.Line(new THREE.BufferGeometry().setFromPoints([a, b]), new THREE.LineBasicMaterial({ color }));
     l.position.y = 0.002;
     return l;
   };
-  scene.add(
+  const axes = [
     axis(new THREE.Vector3(-100, 0, 0), new THREE.Vector3(100, 0, 0), 0xa23c4a),
-    axis(new THREE.Vector3(0, 0, -100), new THREE.Vector3(0, 0, 100), 0x57903f)
-  );
+    axis(new THREE.Vector3(0, 0, -100), new THREE.Vector3(0, 0, 100), 0x57903f),
+  ];
+  scene.add(...axes);
 
   /* ---------- Post-processing: HDR buffer, bloom on glowing parts, filmic output ---------- */
   const target = new THREE.WebGLRenderTarget(1, 1, { type: THREE.HalfFloatType, samples: 4 });
@@ -189,9 +215,55 @@ export function createViewport(canvas) {
 
   // Keep the shadow-casting key light centred on whatever is in focus
   const KEY_OFFSET = new THREE.Vector3(7, 13, 9);
+
+  /* ---------- Looks: the dark workshop grid, or a soft-lit photo studio ---------- */
+  const LOOKS = {
+    grid: {
+      bg: BG, tone: THREE.ACESFilmicToneMapping, exposure: 0.85, env: 0.42, bloom: 0.12,
+      key: [0xfff2e0, 1.9, [7, 13, 9], 5], top: 0, rim: 0.9, fill: [0xffd9b0, 0.35],
+      hemi: [0xcfe0ff, 0x0a0b0d, 0.3],
+    },
+    // One large overhead source from the front left, strong neutral fill, no coloured rim
+    studio: {
+      bg: 0xf1f0ee, tone: THREE.NeutralToneMapping, exposure: 1, env: 0.75, bloom: 0.04,
+      key: [0xfffaf2, 1.1, [-7, 13, 6], 4], top: 0.45, rim: 0, fill: [0xffffff, 0.5],
+      hemi: [0xffffff, 0xd9d5cf, 1.0],
+    },
+  };
+  let look = 'grid';
+  function setLook(name) {
+    const L = LOOKS[name] ?? LOOKS.grid;
+    look = LOOKS[name] ? name : 'grid';
+    const studio = look === 'studio';
+    scene.background.set(L.bg);
+    scene.fog.color.set(L.bg);
+    renderer.toneMapping = L.tone;
+    renderer.toneMappingExposure = L.exposure;
+    scene.environmentIntensity = L.env;
+    bloom.strength = L.bloom;
+    key.color.set(L.key[0]);
+    key.intensity = L.key[1];
+    KEY_OFFSET.fromArray(L.key[2]);
+    key.shadow.radius = L.key[3];
+    key.position.copy(key.target.position).add(KEY_OFFSET);
+    top.intensity = L.top;
+    rim.intensity = L.rim;
+    fill.color.set(L.fill[0]);
+    fill.intensity = L.fill[1];
+    hemi.color.set(L.hemi[0]);
+    hemi.groundColor.set(L.hemi[1]);
+    hemi.intensity = L.hemi[2];
+    for (const o of [ground, minor, major, ...axes]) o.visible = !studio;
+    backdrop.visible = studio;
+    shadowDirty = true;
+    dirty = true;
+  }
+
   function focusLight(center) {
     key.target.position.set(center.x, 0, center.z);
     key.position.copy(key.target.position).add(KEY_OFFSET);
+    top.target.position.copy(key.target.position);
+    top.position.set(center.x, 30, center.z + 0.01);
     shadowDirty = true;
     dirty = true;
   }
@@ -278,6 +350,7 @@ export function createViewport(canvas) {
     dirty = false;
     if (shadowDirty) {
       key.shadow.needsUpdate = true;
+      top.shadow.needsUpdate = true;
       shadowDirty = false;
     }
     for (const cb of frameCallbacks) cb(dt, moving || animating);
@@ -288,7 +361,7 @@ export function createViewport(canvas) {
 
   return {
     scene, camera, renderer, controls, canvas,
-    flyTo, frame, focusLight, setInsets, setGizmoCorner, zoomBy, setView, setMode, project,
+    flyTo, frame, focusLight, setLook, setInsets, setGizmoCorner, zoomBy, setView, setMode, project,
     gizmoClick: (e) => gizmo.handleClick(e),
     onFrame: (cb) => frameCallbacks.push(cb),
     onAnimate: (cb) => animators.push(cb),

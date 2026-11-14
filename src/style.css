@@ -317,6 +317,16 @@ a.wiki:hover { color: var(--c); }
   100% { transform: scale(1.5); opacity: 0; }
 }
 
+/* Studio look: the scene behind the interface is pale, so text laid straight on it turns dark */
+#app.studio .brand h1 { color: #1c2024; }
+#app.studio .brand em { color: #66707b; }
+#app.studio .legend { color: #6d757f; }
+#app.studio .legend dt { color: #33393f; }
+#app.studio .tag { color: #6d757f; }
+#app.studio .tag:hover, #app.studio .tag.is-active { color: #14181c; }
+#app.studio .marker::before { box-shadow: 0 0 0 2px #fff, 0 1px 6px rgba(20, 40, 70, 0.45); }
+#app.studio .marker.is-selected::before { background: var(--c); box-shadow: 0 0 0 3px #fff, 0 0 0 5px var(--c); }
+
 .tag {
   position: absolute; left: 0; top: 0; pointer-events: auto; white-space: nowrap;
   font: 10px var(--mono); letter-spacing: 0.1em; text-transform: uppercase;

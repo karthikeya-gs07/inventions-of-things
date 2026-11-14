@@ -14,6 +14,7 @@ registerPWA();
 onInstallChange(() => renderLibrary());
 
 const STORE_KEY = 'inventions.scene';
+const LOOK_KEY = 'inventions.look';
 const SLOT_SPACING = 10; // objects sit side by side along X so none hides another
 
 const canvas = document.getElementById('view');
@@ -28,7 +29,7 @@ const libToggle = document.getElementById('lib-toggle');
 const vp = createViewport(canvas);
 
 // drawer: 'min' (handle only) · 'mid' (default) · 'max' (expanded) — touch layouts only
-const state = { instances: [], active: null, selected: null, invention: 0, hover: null, exploded: false, drawer: 'mid' };
+const state = { instances: [], active: null, selected: null, invention: 0, hover: null, exploded: false, drawer: 'mid', look: 'grid' };
 let pickables = [];
 
 const pad = (n) => String(n).padStart(2, '0');
@@ -141,6 +142,20 @@ function setExploded(on) {
   document.querySelectorAll('[data-act="explode"]').forEach((b) => b.setAttribute('aria-pressed', String(on)));
   frameActive(null);
 }
+
+// 'grid' is the dark workshop floor; 'studio' is a pale seamless backdrop with soft light
+function setLook(name) {
+  const studio = name === 'studio';
+  state.look = studio ? 'studio' : 'grid';
+  vp.setLook(state.look);
+  document.getElementById('app').classList.toggle('studio', studio);
+  document.querySelector('meta[name="theme-color"]')?.setAttribute('content', studio ? '#f1f0ee' : '#14181c');
+  document.querySelectorAll('[data-act="studio"]').forEach((b) => b.setAttribute('aria-pressed', String(studio)));
+  try {
+    localStorage.setItem(LOOK_KEY, state.look);
+  } catch {}
+}
+const toggleLook = () => setLook(state.look === 'studio' ? 'grid' : 'studio');
 
 function step(delta) {
   const parts = state.active?.parts;
@@ -527,6 +542,7 @@ document.getElementById('app').addEventListener('click', (e) => {
   if (act === 'zoom-out') vp.zoomBy(1 / 0.75);
   if (act === 'explode') setExploded(!state.exploded);
   if (act === 'reset') frameActive();
+  if (act === 'studio') toggleLook();
 });
 
 window.addEventListener('keydown', (e) => {
@@ -535,6 +551,7 @@ window.addEventListener('keydown', (e) => {
   if (k === 'r') frameActive();
   else if (k === 'f') frameActive(null);
   else if (k === 'e') setExploded(!state.exploded);
+  else if (k === 'l') toggleLook();
   else if (k === 'escape') select(null);
   else if (k === '1') vp.setView('front');
   else if (k === '3') vp.setView('right');
@@ -675,6 +692,11 @@ try {
 } catch {}
 const initial = Array.isArray(saved) ? saved.filter((id) => catalog.some((p) => p.id === id)) : ['flashlight'];
 initial.forEach((id) => addProduct(id, { focus: false }));
+let savedLook = null;
+try {
+  savedLook = localStorage.getItem(LOOK_KEY);
+} catch {}
+if (savedLook === 'studio') setLook('studio');
 render();
 measureInsets();
 if (state.instances[0]) setActive(state.instances[0]);
