@@ -93,6 +93,48 @@ export default {
             ["Today", "It is used on virtually every motor vehicle in the world."],
           ],
         },
+        {
+          name: "Detachable tyre",
+          kind: "invention",
+          year: "1891",
+          by: "Édouard Michelin",
+          what: "A tyre in two parts: a tough outer cover held on the rim, and a separate air tube inside it that can be taken out, patched and put back.",
+          here: "A puncture on this bicycle is a ten-minute job at the roadside: lever off the cover, patch the tube, pump it up.",
+          story: "Dunlop’s first air tyres of 1888 were glued to the rim and bound on with cloth. They were fast and comfortable, but a puncture meant cutting the tyre off and waiting hours for new glue to dry. Racers quickly took to air tyres anyway, and punctures were the price. In 1891 Édouard Michelin, who ran a rubber works with his brother André in Clermont-Ferrand, France, introduced a tyre that was held to the rim by clamps instead of glue. It could be taken off to reach a separate inner tube, which was patched or replaced, and the tyre was back in use in minutes. The modern version, in which wire hoops in the edges of the cover hook under the rim, did away with the clamps. The detachable tyre helped the small-wheeled safety bicycle win over the public, and Michelin soon applied it to motor cars.",
+          read: [
+            { label: "Bicycle tire", wiki: "Bicycle_tire" },
+            { label: "Michelin", wiki: "Michelin" },
+          ],
+          people: [
+            { name: "Édouard Michelin", life: "1859 – 1940", role: "French industrialist who, with his brother André, turned a family rubber works into a tyre company.", wiki: "Édouard_Michelin_(industrialist)" },
+          ],
+          uses: ["Bicycle and motorcycle tyres", "Car tyres until tubeless types arrived", "Wheelbarrows", "Wheelchairs"],
+          timeline: [
+            ["1888", "Dunlop’s first air tyres are glued to the rim."],
+            ["1890", "A canvas layer is added to the rubber to reduce punctures."],
+            ["1891", "Édouard Michelin introduces the detachable tyre."],
+          ],
+        },
+        {
+          name: 'Vulcanisation',
+          kind: 'process',
+          year: '1839',
+          by: 'Charles Goodyear',
+          what: 'Heating rubber with sulphur cross-links its molecules, so it stays springy instead of going sticky in heat and brittle in cold.',
+          here: "Raw rubber would go sticky on a hot road and crack in the cold. The tyres and inner tubes are vulcanised rubber, which stays springy in any weather.",
+          story:
+            "In the 1830s America caught “rubber fever”. Rubber raincoats, shoes and boots sold fast, then turned into stinking, sticky glue in summer heat and cracked in winter cold, and the companies collapsed. Charles Goodyear, a failed hardware merchant, became convinced rubber could be fixed. For years he experimented in poverty, mixing rubber with anything he could think of, and was jailed for debt more than once. In 1839, according to his own account, a lump of rubber mixed with sulphur touched a hot stove. Instead of melting, it charred like leather and stayed flexible. Heat and sulphur together were the answer. Goodyear spent years perfecting the process and died in debt.",
+          read: [{ label: "Charles Goodyear", wiki: "Charles_Goodyear" }, { label: "Vulcanization", wiki: "Vulcanization" }],
+          people: [{ name: 'Charles Goodyear', life: '1800 – 1860', role: 'Self-taught American inventor. He died deep in debt; the tyre company was named in his honour decades later.', wiki: 'Charles_Goodyear' }],
+          uses: ['Car tyres', 'Shoe soles', 'Hoses and seals', 'Rubber bands', 'Hockey pucks'],
+          timeline: [
+            ['c. 1600 BC', 'Mesoamericans cure latex with plant juice to make bouncing balls.'],
+            ['1839', 'Goodyear drops a rubber–sulphur mix on a hot stove and it chars instead of melting.'],
+            ['1844', 'Goodyear’s US patent is granted, months after Thomas Hancock’s in Britain.'],
+            ['1888', 'John Boyd Dunlop patents the pneumatic tyre.'],
+            ['1909', 'Fritz Hofmann makes the first synthetic rubber.'],
+          ],
+        },
       ],
     },
     {
@@ -122,6 +164,30 @@ export default {
             ['1808', 'George Cayley proposes tension wheels for flying machines.'],
             ['1869', 'Eugène Meyer receives the first patent for wire wheels on bicycles.'],
             ['1874', 'James Starley patents tangent spokes, which carry pedalling and braking forces better.'],
+          ],
+        },
+        {
+          name: "The wheel",
+          kind: "invention",
+          kindNote: "Nobody knows who made the first one. It appears in several places within a few centuries.",
+          year: "c. 3500 BC",
+          by: "Unknown makers",
+          what: "A disc that turns on an axle. Rolling replaces dragging, so a load moves with a small fraction of the effort.",
+          here: "A bicycle is two wheels and a way to turn one of them. Everything else on it serves the wheels.",
+          story: "People farmed and made pottery for thousands of years before anyone built a wheel. It is harder than it looks: the wheel must be round, the hole exactly in the middle, and the axle smooth, a tight fit and strong, which needs good tools. The oldest hints are small clay model wheels from north of the Black Sea, made before 4000 BC. From about 3500 BC the evidence appears across a wide area almost at once: drawings of wagons on clay tablets at Uruk in Mesopotamia, a picture of a cart on a pot from Poland, wheel ruts in northern Germany. The first wheels were solid discs of wood. Lighter wheels with spokes came about 2000 BC, for chariots. The wheel then changed little until the 1870s, when wire spokes and rubber tyres arrived for the bicycle.",
+          read: [
+            { label: "Wheel", wiki: "Wheel" },
+            { label: "Spoke", wiki: "Spoke" },
+          ],
+          people: [
+            { name: "Unknown wheelwrights", life: "Active c. 3500 BC", role: "The first wheel makers left no names. Evidence of their work appears across Europe and western Asia at about the same time.", wiki: null, link: "Wheel#History" },
+          ],
+          uses: ["Every vehicle on land", "Gears and pulleys", "Potter’s wheels", "Water wheels and turbines", "Suitcases and shopping trolleys"],
+          timeline: [
+            ["Before 4000 BC", "Miniature clay wheels are made north of the Black Sea."],
+            ["c. 3500 BC", "Wheeled wagons are drawn on clay tablets at Uruk."],
+            ["c. 2000 BC", "Spoked wheels are made for chariots."],
+            ["1870s", "Wire wheels and rubber tyres are developed for bicycles."],
           ],
         },
       ],
@@ -155,6 +221,28 @@ export default {
             ['Aug 1869', 'Suriray patents ball bearings for bicycles in Paris.'],
             ['Nov 1869', 'James Moore wins the first road race, Paris–Rouen, on a bicycle fitted with them.'],
             ['1907', 'SKF is founded in Sweden to make the self-aligning ball bearing.'],
+          ],
+        },
+        {
+          name: "Quick-release skewer",
+          kind: "invention",
+          year: "1927",
+          by: "Tullio Campagnolo",
+          what: "A rod through the hollow axle with a lever on one end. Flipping the lever clamps or frees the wheel in a second, with no tools.",
+          here: "Many bicycles hold their wheels this way. The lever beside the hub lets a wheel come out for a repair, or to fit the bicycle in a car.",
+          story: "In the 1920s racing bicycles had one gear on each side of the rear wheel. To change gear on a climb, the rider had to stop, undo two wing nuts, take the wheel out, turn it round and bolt it back. Tullio Campagnolo was an Italian amateur racer from Vicenza, where his father kept a hardware shop. In a race in 1927 he was well placed when he stopped to turn his wheel. The weather had turned cold and his hands were too numb to loosen the wing nuts. He lost valuable time. He went home and designed a way to free a wheel with a single lever: a rod through a hollow axle, tightened by a cam. He patented the quick-release skewer and went on to found the Campagnolo company, whose parts were used by many of the great professional riders.",
+          read: [
+            { label: "Quick release skewer", wiki: "Quick_release_skewer" },
+            { label: "Tullio Campagnolo", wiki: "Tullio_Campagnolo" },
+          ],
+          people: [
+            { name: "Tullio Campagnolo", life: "1901 – 1983", role: "Italian racing cyclist and inventor who founded the component maker Campagnolo.", wiki: "Tullio_Campagnolo" },
+          ],
+          uses: ["Bicycle wheels and seat posts", "Folding bicycles and scooters", "Camera tripods", "Car racks"],
+          timeline: [
+            ["1922", "Campagnolo begins racing as an amateur."],
+            ["1927", "Numb hands in a cold race prompt him to invent the quick release."],
+            ["Today", "The same lever clamps seat posts and folding frames."],
           ],
         },
       ],
@@ -216,6 +304,28 @@ export default {
             ['1886', 'The Mannesmann brothers patent their rolling process.'],
             ['1887 – 1889', 'They found tube mills to put it into production.'],
             ['1890s', 'The bicycle boom creates a large demand for light steel tube.'],
+          ],
+        },
+        {
+          name: "Butted tubing",
+          kind: "process",
+          year: "1897",
+          by: "The Reynolds company",
+          what: "A steel tube made thicker at its ends, where it is joined and the stress is highest, and thinner along the middle, where metal would be wasted.",
+          here: "Good steel frames use tubes like this. They are as strong at the joints as a plain tube but noticeably lighter.",
+          story: "A bicycle frame is stressed most where its tubes meet, and the heat of joining them weakens the steel there too. Plain tubes had to be thick enough all along their length to be safe at the ends, so they carried dead weight in the middle. John Reynolds had made nails in Birmingham, England, since 1841, and his firm moved into tubes as the bicycle trade grew. In 1897 the company patented a way of drawing a seamless tube so that its wall was thicker at the ends than in the middle, with no join and nothing showing on the outside. The following year the Patent Butted Tube Company was set up to make them. In the 1930s it introduced a strong steel alloy called 531, and for half a century most of the best racing frames, until aluminium and carbon fibre arrived, were built from it.",
+          read: [
+            { label: "Reynolds Technology", wiki: "Reynolds_Technology" },
+          ],
+          people: [
+            { name: "The Reynolds company", life: "Founded 1841", role: "Birmingham firm that began as a nail maker under John Reynolds and became the best-known maker of bicycle tubing.", wiki: null, link: "Reynolds_Technology" },
+          ],
+          uses: ["Racing bicycle frames", "Bicycle spokes", "Motorcycle frames", "Golf club shafts"],
+          timeline: [
+            ["1841", "John Reynolds starts making nails in Birmingham."],
+            ["1897", "The company patents butted tubes."],
+            ["1898", "The Patent Butted Tube Company is formed."],
+            ["1930s", "Reynolds 531 tubing is introduced."],
           ],
         },
       ],
@@ -380,6 +490,45 @@ export default {
             ['1866', 'Lallement is granted his US patent.'],
             ['1870s', 'The penny-farthing enlarges the driven wheel to go faster.'],
             ['1885', 'The chain moves the cranks to the middle of the frame.'],
+          ],
+        },
+      ],
+    },
+    {
+      id: 'bell',
+      name: 'Bell',
+      anchor: [0.9, 2.6, 0.26],
+      explode: [0, 0.7, 0.5],
+      make: () => {
+        const dome = new THREE.Mesh(new THREE.SphereGeometry(0.085, 28, 14, 0, Math.PI * 2, 0, Math.PI / 2), alloy());
+        dome.position.set(0.9, 2.5, 0.26);
+        return group(
+          dome,
+          zcyl(0.04, 0.05, [0.9, 2.47, 0.26], darkSteel(), 16),
+          tube([0.9, 2.5, 0.35], [0.9, 2.53, 0.4], 0.012, darkSteel())
+        );
+      },
+      inventions: [
+        {
+          name: "Bicycle bell",
+          kind: "invention",
+          year: "1877",
+          by: "John Richard Dedicoat",
+          what: "A small metal dome on the handlebar, struck by a hammer worked with the thumb, to warn people that a bicycle is coming.",
+          here: "A flick of the thumb rings it. A bicycle is nearly silent, so the bell is how it announces itself.",
+          story: "The high-wheeled bicycles of the 1870s were fast and almost silent, and they shared the road with walkers, horses and carts that could not hear them coming. Riders shouted, blew whistles or carried bugles. John Richard Dedicoat of Birmingham, who had been apprenticed at the engineering firm founded by James Watt, became a bicycle maker and sold a machine called the Pegasus. He is credited with inventing the bicycle bell, and patents for bicycle bells appear from 1877. Not all his ideas worked as well. He also devised a spring step to help riders mount a high bicycle, which is said to have thrown the rider not into the saddle but clean over the handlebars. The usual bell today has a thumb lever geared to spin two loose metal discs inside the dome so that they strike it repeatedly.",
+          read: [
+            { label: "Bicycle bell", wiki: "Bicycle_bell" },
+            { label: "John Richard Dedicoat", wiki: "John_Richard_Dedicoat" },
+          ],
+          people: [
+            { name: "John Richard Dedicoat", life: "1840 – 1903", role: "Birmingham bicycle maker, who also invented a pencil-sharpening machine.", wiki: "John_Richard_Dedicoat" },
+          ],
+          uses: ["Bicycles", "Scooters", "Shop counters and hotel desks, in a similar form", "Trams"],
+          timeline: [
+            ["1870s", "Riders of high-wheelers warn people with shouts, whistles and bugles."],
+            ["1877", "Patents for bicycle bells appear; Dedicoat is credited with the invention."],
+            ["Today", "Some countries require a bell on a bicycle by law."],
           ],
         },
       ],

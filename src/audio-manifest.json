@@ -1,5 +1,10 @@
 {
   "entries": {
+    "bicycle/bell/0": {
+      "file": "bicycle/bell-0.m4a",
+      "hash": "c162d54d0313b40f",
+      "seconds": 136
+    },
     "bicycle/brake/0": {
       "file": "bicycle/brake-0.m4a",
       "hash": "d158be0a78bf6e5c",
@@ -35,10 +40,20 @@
       "hash": "4dd6aa52bbc0090b",
       "seconds": 137
     },
+    "bicycle/frame/2": {
+      "file": "bicycle/frame-2.m4a",
+      "hash": "26c131a3bd1af6c4",
+      "seconds": 139
+    },
     "bicycle/hubs/0": {
       "file": "bicycle/hubs-0.m4a",
       "hash": "06996b6f1b8827f6",
       "seconds": 144
+    },
+    "bicycle/hubs/1": {
+      "file": "bicycle/hubs-1.m4a",
+      "hash": "5282224662911fac",
+      "seconds": 134
     },
     "bicycle/saddle/0": {
       "file": "bicycle/saddle-0.m4a",
@@ -60,15 +75,35 @@
       "hash": "f5e533a52ee31a5d",
       "seconds": 141
     },
+    "bicycle/tyres/2": {
+      "file": "bicycle/tyres-2.m4a",
+      "hash": "8131fc5d717156a3",
+      "seconds": 138
+    },
+    "bicycle/tyres/3": {
+      "file": "bicycle/tyres-3.m4a",
+      "hash": "c347b2a98bf1405b",
+      "seconds": 147
+    },
     "bicycle/wheels/0": {
       "file": "bicycle/wheels-0.m4a",
       "hash": "4d443e92bac23450",
       "seconds": 144
     },
+    "bicycle/wheels/1": {
+      "file": "bicycle/wheels-1.m4a",
+      "hash": "14a2906f382496c9",
+      "seconds": 152
+    },
     "bulb/base/0": {
       "file": "bulb/base-0.m4a",
       "hash": "9997ec1344069bdb",
       "seconds": 144
+    },
+    "bulb/base/1": {
+      "file": "bulb/base-1.m4a",
+      "hash": "2dc8e94544532e32",
+      "seconds": 155
     },
     "bulb/envelope/0": {
       "file": "bulb/envelope-0.m4a",
@@ -85,6 +120,21 @@
       "hash": "ea216f1fdc0226ae",
       "seconds": 137
     },
+    "bulb/envelope/3": {
+      "file": "bulb/envelope-3.m4a",
+      "hash": "2201529db832fe1f",
+      "seconds": 145
+    },
+    "bulb/envelope/4": {
+      "file": "bulb/envelope-4.m4a",
+      "hash": "99c214e888e77e8e",
+      "seconds": 151
+    },
+    "bulb/envelope/5": {
+      "file": "bulb/envelope-5.m4a",
+      "hash": "bdf06025377e42b5",
+      "seconds": 162
+    },
     "bulb/filament/0": {
       "file": "bulb/filament-0.m4a",
       "hash": "661c3e3a1eed9d89",
@@ -99,6 +149,16 @@
       "file": "bulb/filament-2.m4a",
       "hash": "e499422eb33cf770",
       "seconds": 161
+    },
+    "bulb/filament/3": {
+      "file": "bulb/filament-3.m4a",
+      "hash": "ca9697fcb0945dd6",
+      "seconds": 150
+    },
+    "bulb/filament/4": {
+      "file": "bulb/filament-4.m4a",
+      "hash": "ef20b5a9ad960f1b",
+      "seconds": 143
     },
     "bulb/stem/0": {
       "file": "bulb/stem-0.m4a",
@@ -270,6 +330,11 @@
       "hash": "70697bee23ea44e1",
       "seconds": 147
     },
+    "charger/base/1": {
+      "file": "charger/base-1.m4a",
+      "hash": "a707fd2f97c03342",
+      "seconds": 167
+    },
     "charger/board/0": {
       "file": "charger/board-0.m4a",
       "hash": "f013985508077a23",
@@ -279,6 +344,21 @@
       "file": "charger/board-1.m4a",
       "hash": "0ec1a33fe526493b",
       "seconds": 172
+    },
+    "charger/board/2": {
+      "file": "charger/board-2.m4a",
+      "hash": "dc8fff8cf33d8cbe",
+      "seconds": 160
+    },
+    "charger/board/3": {
+      "file": "charger/board-3.m4a",
+      "hash": "a7b05875b96dfbc3",
+      "seconds": 149
+    },
+    "charger/board/4": {
+      "file": "charger/board-4.m4a",
+      "hash": "ac1e12a9d92fcd29",
+      "seconds": 164
     },
     "charger/coil/0": {
       "file": "charger/coil-0.m4a",
@@ -305,10 +385,20 @@
       "hash": "33a3226f00c9c6a6",
       "seconds": 156
     },
+    "charger/top/1": {
+      "file": "charger/top-1.m4a",
+      "hash": "a6eff04248e8c2f3",
+      "seconds": 151
+    },
     "charger/usb/0": {
       "file": "charger/usb-0.m4a",
       "hash": "06c2b7d91aac2bc6",
       "seconds": 152
+    },
+    "charger/usb/1": {
+      "file": "charger/usb-1.m4a",
+      "hash": "97cf4960fae627ba",
+      "seconds": 142
     },
     "flashlight/batteries/0": {
       "file": "flashlight/batteries-0.m4a",
@@ -320,10 +410,30 @@
       "hash": "f6a0a0887d66ac25",
       "seconds": 147
     },
+    "flashlight/batteries/2": {
+      "file": "flashlight/batteries-2.m4a",
+      "hash": "ea1011230745df87",
+      "seconds": 148
+    },
+    "flashlight/batteries/3": {
+      "file": "flashlight/batteries-3.m4a",
+      "hash": "b73778c5c4fb2de9",
+      "seconds": 145
+    },
     "flashlight/body/0": {
       "file": "flashlight/body-0.m4a",
       "hash": "34322e6c04a5b11a",
       "seconds": 170
+    },
+    "flashlight/body/1": {
+      "file": "flashlight/body-1.m4a",
+      "hash": "905420e4fc578a8b",
+      "seconds": 155
+    },
+    "flashlight/body/2": {
+      "file": "flashlight/body-2.m4a",
+      "hash": "c0a1f8dd1e256dc4",
+      "seconds": 157
     },
     "flashlight/head/0": {
       "file": "flashlight/head-0.m4a",
@@ -345,6 +455,11 @@
       "hash": "c6e257af3902bee0",
       "seconds": 158
     },
+    "flashlight/led/3": {
+      "file": "flashlight/led-3.m4a",
+      "hash": "ea72e915519f969f",
+      "seconds": 164
+    },
     "flashlight/lens/0": {
       "file": "flashlight/lens-0.m4a",
       "hash": "89dd73d999ff6710",
@@ -365,6 +480,11 @@
       "hash": "522defbbe6e098f7",
       "seconds": 161
     },
+    "flashlight/spring/1": {
+      "file": "flashlight/spring-1.m4a",
+      "hash": "772b029dad1651a6",
+      "seconds": 151
+    },
     "flashlight/switch/0": {
       "file": "flashlight/switch-0.m4a",
       "hash": "e29c252616cd230e",
@@ -375,6 +495,11 @@
       "hash": "7e444cf20d3382d0",
       "seconds": 149
     },
+    "flashlight/tailcap/1": {
+      "file": "flashlight/tailcap-1.m4a",
+      "hash": "386e44fd4df9d8cc",
+      "seconds": 166
+    },
     "headphones/battery/0": {
       "file": "headphones/battery-0.m4a",
       "hash": "8b7d831849dbb4de",
@@ -384,6 +509,21 @@
       "file": "headphones/board-0.m4a",
       "hash": "f2aa7254da1942cc",
       "seconds": 161
+    },
+    "headphones/board/1": {
+      "file": "headphones/board-1.m4a",
+      "hash": "b6f47f39b8e81e6e",
+      "seconds": 175
+    },
+    "headphones/board/2": {
+      "file": "headphones/board-2.m4a",
+      "hash": "48e20038e89281c8",
+      "seconds": 150
+    },
+    "headphones/board/3": {
+      "file": "headphones/board-3.m4a",
+      "hash": "2d858e70bdcad99b",
+      "seconds": 174
     },
     "headphones/cups/0": {
       "file": "headphones/cups-0.m4a",
@@ -400,6 +540,11 @@
       "hash": "c7ac4ee0d14073a5",
       "seconds": 134
     },
+    "headphones/cushions/1": {
+      "file": "headphones/cushions-1.m4a",
+      "hash": "9b3f2803b23c5f50",
+      "seconds": 148
+    },
     "headphones/drivers/0": {
       "file": "headphones/drivers-0.m4a",
       "hash": "3321c8104c1243a3",
@@ -408,6 +553,16 @@
     "headphones/drivers/1": {
       "file": "headphones/drivers-1.m4a",
       "hash": "8ff5455bf173d380",
+      "seconds": 138
+    },
+    "headphones/drivers/2": {
+      "file": "headphones/drivers-2.m4a",
+      "hash": "660cbb58237f14c2",
+      "seconds": 144
+    },
+    "headphones/drivers/3": {
+      "file": "headphones/drivers-3.m4a",
+      "hash": "baa2998005f3ec90",
       "seconds": 138
     },
     "headphones/headband/0": {
@@ -425,20 +580,45 @@
       "hash": "1cf0b4bd9e635604",
       "seconds": 152
     },
+    "headphones/mics/2": {
+      "file": "headphones/mics-2.m4a",
+      "hash": "2f6c4ab2934700cf",
+      "seconds": 164
+    },
     "padlock/body/0": {
       "file": "padlock/body-0.m4a",
       "hash": "9a6a9a416278ea0d",
       "seconds": 140
+    },
+    "padlock/body/1": {
+      "file": "padlock/body-1.m4a",
+      "hash": "724c55057009d5b7",
+      "seconds": 144
+    },
+    "padlock/body/2": {
+      "file": "padlock/body-2.m4a",
+      "hash": "814ed54b2775b33c",
+      "seconds": 141
     },
     "padlock/cylinder/0": {
       "file": "padlock/cylinder-0.m4a",
       "hash": "096cb3e4578bfd73",
       "seconds": 135
     },
+    "padlock/cylinder/1": {
+      "file": "padlock/cylinder-1.m4a",
+      "hash": "83d2e24d09bebaef",
+      "seconds": 140
+    },
     "padlock/pins/0": {
       "file": "padlock/pins-0.m4a",
       "hash": "4929279547ae54a7",
       "seconds": 153
+    },
+    "padlock/pins/1": {
+      "file": "padlock/pins-1.m4a",
+      "hash": "de6ceb48aca309af",
+      "seconds": 161
     },
     "padlock/shackle/0": {
       "file": "padlock/shackle-0.m4a",
@@ -449,6 +629,16 @@
       "file": "pencil/casing-0.m4a",
       "hash": "3648fd6c4c0a098a",
       "seconds": 137
+    },
+    "pencil/casing/1": {
+      "file": "pencil/casing-1.m4a",
+      "hash": "1976f393a6377a81",
+      "seconds": 133
+    },
+    "pencil/casing/2": {
+      "file": "pencil/casing-2.m4a",
+      "hash": "5a8e4de45a446e72",
+      "seconds": 130
     },
     "pencil/core/0": {
       "file": "pencil/core-0.m4a",
@@ -469,6 +659,11 @@
       "file": "pencil/eraser-1.m4a",
       "hash": "f5eb8bda6cb574e6",
       "seconds": 144
+    },
+    "pencil/eraser/2": {
+      "file": "pencil/eraser-2.m4a",
+      "hash": "84fc739235e34283",
+      "seconds": 135
     },
     "pencil/ferrule/0": {
       "file": "pencil/ferrule-0.m4a",

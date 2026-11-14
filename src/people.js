@@ -137,6 +137,23 @@ const NAMES = {
   'Sony Alpha 7': 'Sony_α7', 'Eric Johnson': 'Touchscreen#History', 'CERN': 'CERN', 'Kilby': 'Jack_Kilby', 'Noyce': 'Robert_Noyce',
   'Fairchild': 'Fairchild_Semiconductor', 'Intel 4004': 'Intel_4004', 'SanDisk': 'SanDisk', 'CompactFlash': 'CompactFlash',
   'SD Association': 'SD_Association', 'SD card': 'SD_card',
+  // Deeper pass on the other seven objects
+  'David Misell': 'Flashlight#History', 'Carl Josef Bayer': 'Carl_Josef_Bayer', 'Georges Leclanché': 'Georges_Leclanché',
+  'Gassner': 'Carl_Gassner', 'American Ever Ready Company': 'Eveready_Battery_Company',
+  'American National Standards Institute': 'American_National_Standards_Institute', 'Hooke': 'Robert_Hooke',
+  'Jesse Ramsden': 'Jesse_Ramsden', 'Senot': 'Screw-cutting_lathe', 'Maudslay': 'Henry_Maudslay', 'Ohl': 'Russell_Ohl',
+  'William Shockley': 'William_Shockley', 'Shockley': 'William_Shockley', 'Ebenezer Wood': 'Pencil#United_States',
+  'Fritz Hofmann': 'Fritz_Hofmann_(chemist)', 'Buna': 'Buna_rubber', 'Ribbon Machine': 'Incandescent_light_bulb#Ribbon_machine',
+  'Corning': 'Corning_Inc.', 'Henry Cavendish': 'Henry_Cavendish', 'Rayleigh': 'John_William_Strutt,_3rd_Baron_Rayleigh',
+  'Ramsay': 'William_Ramsay', 'Elhuyar brothers': 'Fausto_Elhuyar', 'Bergara': 'Bergara', 'Joule': 'James_Prescott_Joule',
+  'Pearl Street Station': 'Pearl_Street_Station', 'Dedicoat': 'John_Richard_Dedicoat', 'Uruk': 'Uruk',
+  'Édouard Michelin': 'Édouard_Michelin_(industrialist)', 'Campagnolo': 'Tullio_Campagnolo', 'John Reynolds': 'Reynolds_Technology',
+  'Patent Butted Tube Company': 'Reynolds_Technology', 'Reynolds 531': 'Reynolds_531', 'Paul Jacques Malouin': 'Paul_Jacques_Malouin',
+  'Sorel': 'Stanislas_Sorel', 'Otto Bayer': 'Otto_Bayer', 'Sturgeon': 'William_Sturgeon', 'Bell': 'Alexander_Graham_Bell',
+  'Thomas Watson': 'Thomas_A._Watson', 'Hughes': 'David_Edward_Hughes', 'Bardeen': 'John_Bardeen', 'Brattain': 'Walter_Brattain',
+  'Reeves': 'Alec_Reeves', 'Lamarr': 'Hedy_Lamarr', 'Antheil': 'George_Antheil', 'Cuban Missile Crisis': 'Cuban_Missile_Crisis',
+  'Von Kleist': 'Ewald_Georg_von_Kleist', 'Musschenbroek': 'Pieter_van_Musschenbroek', 'Benjamin Franklin': 'Benjamin_Franklin',
+  'Texas Instruments': 'Texas_Instruments', 'TMS 1000': 'Texas_Instruments_TMS1000', 'USB': 'USB',
 };
 
 const escape = (t) => t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
